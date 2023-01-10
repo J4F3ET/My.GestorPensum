@@ -1,0 +1,61 @@
+:root {
+    --container: #c2c5aa;
+    --semestre: rgb(182, 173, 144);
+    --calculos: rgb(88, 47, 14, 0.70);
+    --coding: rgb(127, 79, 36, 0.70);
+    --fisica: #656d4a;
+    --hardware: rgb(65, 72, 51, 0.60);
+    --lengua: #a68a64;
+    --electivas: rgb(127, 79, 36, 0.70);
+}
+
+.body {
+    margin: 0;
+    padding: 0;
+}
+
+.contenedor-materias {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 40px;
+    grid-auto-rows: auto;
+    row-gap: 20px;
+
+    width: 100vw;
+    padding: 30px;
+    background-color: var(--container);
+}
+
+.item {
+    padding: 10px;
+    background-color: lightslategray;
+    border-radius: 5px;
+}
+
+.semestre {
+    background-color: var(--semestre);
+}
+
+.calculo {
+    background-color: var(--calculos);
+}
+
+.coding {
+    background-color: var(--coding);
+}
+
+.fisica {
+    background-color: var(--fisica);
+}
+
+.hard {
+    background-color: var(--hardware);
+}
+
+.lengua {
+    background-color: var(--lengua);
+}
+
+.otros {
+    background-color: var(--electivas);
+}
