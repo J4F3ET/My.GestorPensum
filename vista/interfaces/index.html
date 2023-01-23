@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;600;700&display=swap" rel="stylesheet">
     <title>Pensum</title>
 
 </head>
@@ -24,7 +29,10 @@
                         </div>
                     </div>
                 <!-- FIN DE ESTRUCTURA DEL SEMESTRE -->
-                <a href="#" class="btn">Agregar materia</a>
+                <a href="#" class="btn">
+                    Agregar materia
+                    <i class="bi bi-folder-plus"></i>
+                </a>
             </div>
         </section>
         <section id="seccion_horario" class="seccion horario">
@@ -33,191 +41,594 @@
                 <form action="">
                     <table>
                         <thead>
-                            <td class="head_horario_tabla ">Horario</td>
-                            <td class="head_horario_tabla ">Lunes</td>
-                            <td class="head_horario_tabla ">Martes</td>
-                            <td class="head_horario_tabla ">Miercoles</td>
-                            <td class="head_horario_tabla ">Jueves</td>
-                            <td class="head_horario_tabla ">Viernes</td>
-                            <td class="head_horario_tabla ">Sabado</td>
-                            <td class="head_horario_tabla ">Domingo</td>
+                            <tr class="fila_horario">
+                                <td class="head_horario_tabla ">Horario</td>
+                                <td class="head_horario_tabla ">Lunes</td>
+                                <td class="head_horario_tabla ">Martes</td>
+                                <td class="head_horario_tabla ">Miercoles</td>
+                                <td class="head_horario_tabla ">Jueves</td>
+                                <td class="head_horario_tabla ">Viernes</td>
+                                <td class="head_horario_tabla ">Sabado</td>
+                                <td class="head_horario_tabla ">Domingo</td>
+                            </tr>
                         </thead>
                         <tbody>
                             <tr class="fila_horario">
                                 <td class="columna_horario">6:00 - 7:00</td>
-                                <td class="columna_horario"><input disabled type="text" name="lunes_6" id="lunes_6" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="martes_6" id="martes_6" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="miercoles_6" id="miercoles_6" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="jueves_6" id="jueves_6" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="viernes_6" id="viernes_6" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="sabado_6" id="sabado_6" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="domingo_6" id="domingo_6" data-dia></td>
+                                <td class="columna_horario">
+                                    <select disabled id="lunes_6" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="martes_6" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="miercoles_6" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="jueves_6" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="viernes_6" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="sabado_6" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="domingo_6" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
                             </tr>
                             <tr class="fila_horario">
                                 <td class="columna_horario">7:00 - 8:00</td>
-                                <td class="columna_horario"><input disabled type="text" name="lunes_7" id="lunes_7" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="martes_7" id="martes_7" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="miercoles_7" id="miercoles_7" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="jueves_7" id="jueves_7" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="viernes_7" id="viernes_7" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="sabado_7" id="sabado_7" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="domingo_7" id="domingo_7" data-dia></td>
+                                <td class="columna_horario">
+                                    <select  id="lunes_7" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="martes_7" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="miercoles_7" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="jueves_7" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="viernes_7" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="sabado_7" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="domingo_7" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
                             </tr>
                             <tr class="fila_horario">
                                 <td class="columna_horario">8:00 - 9:00</td>
-                                <td class="columna_horario"><input disabled type="text" name="lunes_8" id="lunes_8" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="martes_8" id="martes_8" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="miercoles_8" id="miercoles_8" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="jueves_8" id="jueves_8" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="viernes_8" id="viernes_8" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="sabado_8" id="sabado_8" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="domingo_8" id="domingo_8" data-dia></td>
+                                <td class="columna_horario">
+                                    <select  id="lunes_8" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="martes_8" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="miercoles_8" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="jueves_8" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="viernes_8" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="sabado_8" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="domingo_8" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
                             </tr>
                             <tr class="fila_horario">
                                 <td class="columna_horario">9:00 - 10:00</td>
-                                <td class="columna_horario"><input disabled type="text" name="lunes_9" id="lunes_9" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="martes_9" id="martes_9" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="miercoles_9" id="miercoles_9" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="jueves_9" id="jueves_9" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="viernes_9" id="viernes_9" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="sabado_9" id="sabado_9" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="domingo_9" id="domingo_9" data-dia></td>
+                                <td class="columna_horario">
+                                    <select  id="lunes_9" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="martes_9" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="miercoles_9" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="jueves_9" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="viernes_9" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="sabado_9" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="domingo_9" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
                             </tr>
                             <tr class="fila_horario">
                                 <td class="columna_horario">10:00 - 11:00</td>
-                                <td class="columna_horario"><input disabled type="text" name="lunes_10" id="lunes_10" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="martes_10" id="martes_10" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="miercoles_10" id="miercoles_10" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="jueves_10" id="jueves_10" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="viernes_10" id="viernes_10" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="sabado_10" id="sabado_10" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="domingo_10" id="domingo_10" data-dia></td>
+                                <td class="columna_horario">
+                                    <select  id="lunes_10" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="martes_10" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="miercoles_10" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="jueves_10" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="viernes_10" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="sabado_10" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="domingo_10" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
                             </tr>
                             <tr class="fila_horario">
                                 <td class="columna_horario">11:00 - 12:00</td>
-                                <td class="columna_horario"><input disabled type="text" name="lunes_11" id="lunes_11" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="martes_11" id="martes_11" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="miercoles_11" id="miercoles_11" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="jueves_11" id="jueves_11" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="viernes_11" id="viernes_11" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="sabado_11" id="sabado_11" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="domingo_11" id="domingo_11" data-dia></td>
+                                <td class="columna_horario">
+                                    <select  id="lunes_11" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="martes_11" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="miercoles_11" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="jueves_11" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="viernes_11" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="sabado_11" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="domingo_11" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
                             </tr>
                             <tr class="fila_horario">
                                 <td class="columna_horario">12:00 - 13:00</td>
-                                <td class="columna_horario"><input disabled type="text" name="lunes_12" id="lunes_12" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="martes_12" id="martes_12" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="miercoles_12" id="miercoles_12" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="jueves_12" id="jueves_12" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="viernes_12" id="viernes_12" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="sabado_12" id="sabado_12" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="domingo_12" id="domingo_12" data-dia></td>
+                                <td class="columna_horario">
+                                    <select  id="lunes_12" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="martes_12" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="miercoles_12" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="jueves_12" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="viernes_12" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="sabado_12" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="domingo_12" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
                             </tr>
                             <tr class="fila_horario">
                                 <td class="columna_horario">13:00 - 14:00</td>
-                                <td class="columna_horario"><input disabled type="text" name="lunes_13" id="lunes_13" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="martes_13" id="martes_13" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="miercoles_13" id="miercoles_13" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="jueves_13" id="jueves_13" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="viernes_13" id="viernes_13" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="sabado_13" id="sabado_13" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="domingo_13" id="domingo_13" data-dia></td>
+                                <td class="columna_horario">
+                                    <select  id="lunes_13" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="martes_13" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="miercoles_13" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="jueves_13" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="viernes_13" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="sabado_13" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="domingo_13" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
                             </tr>
                             <tr class="fila_horario">
                                 <td class="columna_horario">14:00 - 15:00</td>
-                                <td class="columna_horario"><input disabled type="text" name="lunes_14" id="lunes_14" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="martes_14" id="martes_14" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="miercoles_14" id="miercoles_14" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="jueves_14" id="jueves_14" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="viernes_14" id="viernes_14" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="sabado_14" id="sabado_14" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="domingo_14" id="domingo_14" data-dia></td>
+                                <td class="columna_horario">
+                                    <select  id="lunes_14" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="martes_14" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="miercoles_14" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="jueves_14" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="viernes_14" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="sabado_14" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="domingo_14" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
                             </tr>
                             <tr class="fila_horario">
                                 <td class="columna_horario">15:00 - 16:00</td>
-                                <td class="columna_horario"><input disabled type="text" name="lunes_15" id="lunes_15" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="martes_15" id="martes_15" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="miercoles_15" id="miercoles_15" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="jueves_15" id="jueves_15" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="viernes_15" id="viernes_15" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="sabado_15" id="sabado_15" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="domingo_15" id="domingo_15" data-dia></td>
+                                <td class="columna_horario">
+                                    <select  id="lunes_15" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="martes_15" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="miercoles_15" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="jueves_15" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="viernes_15" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="sabado_15" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="domingo_15" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
                             </tr>
                             <tr class="fila_horario">
                                 <td class="columna_horario">16:00 - 17:00</td>
-                                <td class="columna_horario"><input disabled type="text" name="lunes_16" id="lunes_16" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="martes_16" id="martes_16" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="miercoles_16" id="miercoles_16" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="jueves_16" id="jueves_16" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="viernes_16" id="viernes_16" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="sabado_16" id="sabado_16" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="domingo_16" id="domingo_16" data-dia></td>
+                                <td class="columna_horario">
+                                    <select  id="lunes_16" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="martes_16" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="miercoles_16" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="jueves_16" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="viernes_16" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="sabado_16" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="domingo_16" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
                             </tr>
                             <tr class="fila_horario">
                                 <td class="columna_horario">17:00 - 18:00</td>
-                                <td class="columna_horario"><input disabled type="text" name="lunes_17" id="lunes_17" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="martes_17" id="martes_17" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="miercoles_17" id="miercoles_17" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="jueves_17" id="jueves_17" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="viernes_17" id="viernes_17" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="sabado_17" id="sabado_17" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="domingo_17" id="domingo_17" data-dia></td>
+                                <td class="columna_horario">
+                                    <select  id="lunes_17" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="martes_17" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="miercoles_17" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="jueves_17" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="viernes_17" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="sabado_17" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="domingo_17" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
                             </tr>
                             <tr class="fila_horario">
                                 <td class="columna_horario">18:00 - 19:00</td>
-                                <td class="columna_horario"><input disabled type="text" name="lunes_18" id="lunes_18" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="martes_18" id="martes_18" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="miercoles_18" id="miercoles_18" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="jueves_18" id="jueves_18" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="viernes_18" id="viernes_18" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="sabado_18" id="sabado_18" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="domingo_18" id="domingo_18" data-dia></td>
+                                <td class="columna_horario">
+                                    <select  id="lunes_18" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="martes_18" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="miercoles_18" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="jueves_18" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="viernes_18" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="sabado_18" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="domingo_18" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
                             </tr>
                             <tr class="fila_horario">
                                 <td class="columna_horario">19:00 - 20:00</td>
-                                <td class="columna_horario"><input disabled type="text" name="lunes_19" id="lunes_19" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="martes_19" id="martes_19" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="miercoles_19" id="miercoles_19" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="jueves_19" id="jueves_19" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="viernes_19" id="viernes_19" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="sabado_19" id="sabado_19" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="domingo_19" id="domingo_19" data-dia></td>
+                                <td class="columna_horario">
+                                    <select  id="lunes_19" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="martes_19" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="miercoles_19" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="jueves_19" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="viernes_19" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="sabado_19" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="domingo_19" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
                             </tr>
                             <tr class="fila_horario">
                                 <td class="columna_horario">20:00 - 21:00</td>
-                                <td class="columna_horario"><input disabled type="text" name="lunes_20" id="lunes_20" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="martes_20" id="martes_20" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="miercoles_20" id="miercoles_20" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="jueves_20" id="jueves_20" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="viernes_20" id="viernes_20" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="sabado_20" id="sabado_20" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="domingo_20" id="domingo_20" data-dia></td>
+                                <td class="columna_horario">
+                                    <select  id="lunes_20" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="martes_20" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="miercoles_20" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="jueves_20" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="viernes_20" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="sabado_20" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="domingo_20" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
                             </tr>
                             <tr class="fila_horario">
                                 <td class="columna_horario">21:00 - 22:00</td>
-                                <td class="columna_horario"><input disabled type="text" name="lunes_21" id="lunes_21" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="martes_21" id="martes_21" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="miercoles_21" id="miercoles_21" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="jueves_21" id="jueves_21" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="viernes_21" id="viernes_21" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="sabado_21" id="sabado_21" data-dia></td>
-                                <td class="columna_horario"><input disabled type="text" name="domingo_21" id="domingo_21" data-dia></td>
+                                <td class="columna_horario">
+                                    <select  id="lunes_21" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="martes_21" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="miercoles_21" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="jueves_21" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="viernes_21" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="sabado_21" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
+                                <td class="columna_horario">
+                                    <select  id="domingo_21" data-dia>
+                                        <option data-form-horario-option>Seleccione</option>
+                                    </select></td>
                             </tr>
                         </tbody>
                     </table>
+                    <button class="btn">
+                        Modificar horario
+                        <i class="bi bi-person-gear"></i>
+                    </button>
+                    <button class="btn">
+                        Eliminar Horario
+                        <i class="bi bi-trash"></i>
+                    </button>
                 </form>
             </div>
         </section>
         <section id="seccion_creditos" class="seccion creditos">
             <h2 class="titulo_Seccion">Creditos academicos</h2>
             <div class="container">
-                
+                <table>
+                    <thead>
+                        <td class="head_creditosAcademicos_tabla"><i class="bi bi-layers"></i>Clasificación</td>
+                        <td class="head_creditosAcademicos_tabla"><i class="bi bi-plus-slash-minus"></i>Total</td>
+                        <td class="head_creditosAcademicos_tabla"><i class="bi bi-card-checklist"></i></i>Aprobados</td>
+                        <td class="head_creditosAcademicos_tabla"><i class="bi bi-card-list"></i>Por cursar</td>
+                        <td class="head_creditosAcademicos_tabla"><i class="bi bi-bar-chart-line"></i>Cursado</td>
+                    </thead>
+                    <tbody>
+                        <tr class="fila_creditosAcademicos">
+                            <td class="columna_creditosAcademicos">OB</td>
+                            <td class="columna_creditosAcademicos"><input disabled type="text" name="totalCreditos_1" id="totalCreditos_1" class="input_creditosAcademicos"></td>
+                            <td class="columna_creditosAcademicos"><input disabled type="text" name="creditosAprobados_1" id="creditosAprobados_1" class="input_creditosAcademicos"></td>
+                            <td class="columna_creditosAcademicos"><input disabled type="text" name="credditosPorAprobar_1" id="credditosPorAprobar_1" class="input_creditosAcademicos"></td>
+                            <td class="columna_creditosAcademicos"><input disabled type="text" name="grafica1" id="grafica1" class="input_creditosAcademicos"></td>
+                        </tr>
+                        <tr class="fila_creditosAcademicos">
+                            <td class="columna_creditosAcademicos">OC</td>
+                            <td class="columna_creditosAcademicos"><input disabled type="text" name="totalCreditos_2" id="totalCreditos_2" class="input_creditosAcademicos"></td>
+                            <td class="columna_creditosAcademicos"><input disabled type="text" name="creditosAprobados_2" id="creditosAprobados_2" class="input_creditosAcademicos"></td>
+                            <td class="columna_creditosAcademicos"><input disabled type="text" name="credditosPorAprobar_2" id="credditosPorAprobar_2" class="input_creditosAcademicos"></td>
+                            <td class="columna_creditosAcademicos"><input disabled type="text" name="grafica_2" id="grafica_2" class="input_creditosAcademicos"></td>
+                        </tr>
+                        <tr class="fila_creditosAcademicos">
+                            <td class="columna_creditosAcademicos">EI</td>
+                            <td class="columna_creditosAcademicos"><input disabled type="text" name="totalCreditos_3" id="totalCreditos_3" class="input_creditosAcademicos"></td>
+                            <td class="columna_creditosAcademicos"><input disabled type="text" name="creditosAprobados_3" id="creditosAprobados_3" class="input_creditosAcademicos"></td>
+                            <td class="columna_creditosAcademicos"><input disabled type="text" name="credditosPorAprobar_3" id="credditosPorAprobar_3" class="input_creditosAcademicos"></td>
+                            <td class="columna_creditosAcademicos"><input disabled type="text" name="grafica_3" id="grafica_3" class="input_creditosAcademicos"></td>
+                        </tr>
+                        <tr class="fila_creditosAcademicos">
+                            <td class="columna_creditosAcademicos">EE</td>
+                            <td class="columna_creditosAcademicos"><input disabled type="text" name="totalCreditos_4" id="totalCreditos_4" class="input_creditosAcademicos"></td>
+                            <td class="columna_creditosAcademicos"><input disabled type="text" name="creditosAprobados_4" id="creditosAprobados_4" class="input_creditosAcademicos"></td>
+                            <td class="columna_creditosAcademicos"><input disabled type="text" name="credditosPorAprobar_4" id="credditosPorAprobar_4" class="input_creditosAcademicos"></td>
+                            <td class="columna_creditosAcademicos"><input disabled type="text" name="grafica_4" id="grafica_4" class="input_creditosAcademicos"></td>
+                        </tr>
+                        <tr class="fila_creditosAcademicos">
+                            <td class="columna_creditosAcademicos"><i class="bi bi-calculator"></i>Total de creditos</td>
+                            <td class="columna_creditosAcademicos"><input disabled type="text" name="totalCreditos_5" id="totalCreditos_5" class="input_creditosAcademicos"></td>
+                            <td class="columna_creditosAcademicos"><input disabled type="text" name="creditosAprobados_5" id="creditosAprobados_5" class="input_creditosAcademicos"></td>
+                            <td class="columna_creditosAcademicos"><input disabled type="text" name="credditosPorAprobar_5" id="credditosPorAprobar_5" class="input_creditosAcademicos"></td>
+                            <td class="columna_creditosAcademicos"><input disabled type="text" name="grafica_5" id="grafica_5" class="input_creditosAcademicos"></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </section>
         <section id="seccion_footer" class="seccion footer">
-
+            <div class="div_footer">
+                <ul class="lista_footer">
+                    <li class="item_lista_footer"><i class="bi bi-code-slash"></i>Jafet Stiven Lopez Zuñiga</li>
+                    <li class="item_lista_footer"><i class="bi bi-github"></i><a href="https://github.com/J4F3ET">https://github.com/J4F3ET</a></li>
+                </ul>
+            </div>
+            <div class="div_footer">
+                <ul class="lista_footer">
+                    <li class="item_lista_footer"><i class="bi bi-code-slash"></i>Laura Daniela Aponte Beltran</li>
+                    <li class="item_lista_footer"><i class="bi bi-github"></i><a href="https://github.com/aldanielago">https://github.com/aldanielago</a></li>
+                </ul>
+            </div>
         </section>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <script src="sweetalert2.all.min.js"></script>  
 </body>
 </html>
