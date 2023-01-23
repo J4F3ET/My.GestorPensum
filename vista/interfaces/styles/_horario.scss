@@ -1,0 +1,14 @@
+.horario {
+    overflow-y: scroll;
+}
+
+.hora {
+    left: 0;
+    margin: 5px;
+    padding: 8px;
+
+    position: sticky;
+    border-radius: 5px;
+    text-align: center;
+    background-color: $nav;
+}

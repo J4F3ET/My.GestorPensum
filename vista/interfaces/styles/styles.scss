@@ -1,0 +1,52 @@
+$background: #C2C5AA; 
+$calculo: #936639; 
+$borde-calculo: #582F0E; 
+$programacion: #656D4A; 
+$borde-programacion: #333D29; 
+$electronica: #B6AD90; 
+$borde-electronica: #827C69; 
+$otras: #A4AC86; 
+$borde-otras: #656D4A; 
+$nav: #656D4A;
+$font-content: 'Inconsolata', monospace;  
+
+html {
+    font-size: 62.5%; 
+}
+
+* {
+	margin: 0; 
+	padding: 0; 
+	box-sizing: border-box; 
+}
+
+body {
+    margin: 0;
+    font-size: 2rem;
+    background-color: $background;
+    font-family: $font-content;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    
+    height: 40px;
+    background-color: $nav;
+}
+
+.nav a {
+    color: black;
+}
+
+.titulo_seccion {
+    margin: 8px;
+
+    font-size: 3rem;
+    text-align: center;
+    text-shadow: 1px 1px 10px #656D4A, 0 0 1em #B6AD90, 0 0 0.2em #B6AD90;
+}
+
+@import "horario.scss"; 
+@import "creditos.scss"; 
