@@ -1,0 +1,17 @@
+/*Teniedo en cuenta que no se filtra por materia sino por decisión del usuario*/
+
+.materia__opcion1 {
+    @include materia($opcion1, $borde-opcion1); 
+}
+
+.materia__opcion2 {
+    @include materia($opcion2, $borde-opcion2); 
+}
+
+.materia__opcion3 {
+    @include materia($opcion3, $borde-opcion3); 
+}
+
+.materia__opcion1 {
+    @include materia($opcion4, $borde-opcion4); 
+}

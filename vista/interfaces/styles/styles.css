@@ -1,3 +1,5 @@
+@charset "UTF-8";
+/*Colores para las materias*/
 html {
   font-size: 62.5%;
 }
@@ -41,8 +43,17 @@ body {
   text-shadow: 1px 1px 10px #656D4A, 0 0 1em #B6AD90, 0 0 0.2em #B6AD90;
 }
 
-.horario {
+.container__horario {
   overflow-y: scroll;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .hora {
@@ -53,4 +64,49 @@ body {
   border-radius: 5px;
   text-align: center;
   background-color: #656D4A;
+}
+
+/*Teniedo en cuenta que no se filtra por materia sino por decisión del usuario*/
+.materia__opcion1 {
+  height: auto;
+  margin: 5px;
+  padding: 8px;
+  border-radius: 5px;
+  font-family: "Inconsolata", monospace;
+  font-size: 1.5rem;
+  background-color: #B6AD90;
+  border: 1px solid #827C69;
+}
+
+.materia__opcion2 {
+  height: auto;
+  margin: 5px;
+  padding: 8px;
+  border-radius: 5px;
+  font-family: "Inconsolata", monospace;
+  font-size: 1.5rem;
+  background-color: #936639;
+  border: 1px solid #582F0E;
+}
+
+.materia__opcion3 {
+  height: auto;
+  margin: 5px;
+  padding: 8px;
+  border-radius: 5px;
+  font-family: "Inconsolata", monospace;
+  font-size: 1.5rem;
+  background-color: #656D4A;
+  border: 1px solid #333D29;
+}
+
+.materia__opcion1 {
+  height: auto;
+  margin: 5px;
+  padding: 8px;
+  border-radius: 5px;
+  font-family: "Inconsolata", monospace;
+  font-size: 1.5rem;
+  background-color: #A4AC86;
+  border: 1px solid #656D4A;
 }

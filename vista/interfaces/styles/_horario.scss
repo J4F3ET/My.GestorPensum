@@ -1,5 +1,6 @@
-.horario {
+.container__horario {
     overflow-y: scroll;
+    @include centrar; 
 }
 
 .hora {
