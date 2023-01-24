@@ -108,3 +108,9 @@ dialog:modal{
     width: 80%;
     padding: 3px;
 }
+.input_submit:hover{
+    color: aliceblue;
+    background: #656D4A;
+    border: solid 1px #656D4A;
+    box-shadow: 2px 2px 2px #73765d ;
+}

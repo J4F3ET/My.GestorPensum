@@ -1,0 +1,22 @@
+{
+  "name": "pensum-ingenieria-telematica-ud",
+  "version": "1.0.0",
+  "description": "conexion mysql",
+  "main": "conn.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/J4F3ET/Pensum-Ingeniria-Telematica-UD.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/J4F3ET/Pensum-Ingeniria-Telematica-UD/issues"
+  },
+  "homepage": "https://github.com/J4F3ET/Pensum-Ingeniria-Telematica-UD#readme",
+  "dependencies": {
+    "mysql": "^2.18.1"
+  }
+}
