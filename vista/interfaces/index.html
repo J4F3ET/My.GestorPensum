@@ -34,7 +34,7 @@
                         </div>
                     </div>
                 <!-- FIN DE ESTRUCTURA DEL SEMESTRE -->
-                <a href="#" class="btn">
+                <a href="#" class="btn" data-btn-agregar-materia>
                     Agregar materia
                     <i class="bi bi-folder-plus"></i>
                 </a>
@@ -340,7 +340,7 @@
                             <button class="btn_cerrar_modal" onclick="cerrarModalHorario()" id="cerrar_moda_horario"><i class="bi bi-x-lg"></i></button>
                         </section>
                         <section class="modal_body">
-                            <form action="" method="dialog" class="formulario_modal">
+                            <form action="/agregar_horario_post" method="post" class="formulario_modal">
                                 <div class="container_inputs_materia_horario">
                                     <label for="buscador_input">Materia:</label>
                                     <input
@@ -489,6 +489,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.all.min.js"></script> 
     <script src="./js/modal.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js" integrity="sha512-UNM1njAgOFUa74Z0bADwAq8gbTcqZC8Ej4xPSzpnh0l6KMevwvkBvbldF9uR++qKeJ+MOZHRjV1HZjoRvjDfNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="./js/app.js"></script>
+    <script type="module" src="./js/app.js"></script>
+    <script type="module" src="../../modelo/conn.js"></script>
 </body>
 </html>

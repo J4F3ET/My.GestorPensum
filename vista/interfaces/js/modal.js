@@ -23,7 +23,34 @@ function bloquear(input){
     input.requiered = false;
     input.value="";
 }
-horario_nombre_materia.addEventListener('change',(event)=>{
+horario_nombre_materia.addEventListener('focus',()=>{
+    horario_nombre_materia.value;
+    const url = 'http://127.0.0.1:5500/solicitando_materias_de_usuario';
+    const data = {
+        id:'1',
+        
+    }
+//     const url = 'https://jsonplaceholder.typicode.com/users';
+// const data = {
+//     name: 'John Doe',
+//     email: 'johndoe@example.com'
+// };
+// const options = {
+//     method: 'POST',
+//     body: JSON.stringify(data),
+//     headers: {
+//         'Content-Type': 'application/json'
+//     }
+// };
+// fetch(url, options)
+//     .then(response => response.json())
+//     .then(data => {
+//         console.log(data);
+//     })
+//     .catch(error => console.error(error));
+
+});
+horario_nombre_materia.addEventListener('blur',()=>{
     const input_dia= document.querySelector('#dia_horario_input');
     const input_hora= document.querySelector('#hora_horario_input');
     const btn_enviar = document.querySelector('#btn_enviar_horario');
@@ -46,4 +73,4 @@ horario_nombre_materia.addEventListener('change',(event)=>{
         bloquear(input_dia);
         bloquear(input_hora);
     }
-});
+})

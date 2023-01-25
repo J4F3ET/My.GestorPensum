@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-01-2023 a las 14:45:08
+-- Tiempo de generación: 25-01-2023 a las 03:19:10
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.1.12
 
@@ -41,6 +41,18 @@ INSERT INTO `color` (`id`, `nombre`) VALUES
 (2, '936639'),
 (3, '656D4A'),
 (4, 'A4AC86');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `horario`
+--
+
+CREATE TABLE `horario` (
+  `id` int(11) NOT NULL,
+  `id_materia` int(11) NOT NULL,
+  `ubicacion` varchar(13) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -113,6 +125,29 @@ INSERT INTO `tipo_materia` (`id`, `nombre`) VALUES
 (4, 'Electivos Extrínsecos'),
 (5, 'Componente Propedéutico');
 
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuario`
+--
+
+CREATE TABLE `usuario` (
+  `id` int(11) NOT NULL,
+  `nombre` varchar(30) NOT NULL,
+  `password` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuario_materia`
+--
+
+CREATE TABLE `usuario_materia` (
+  `id_usuario` int(11) NOT NULL,
+  `id_materia` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 --
 -- Índices para tablas volcadas
 --
@@ -122,6 +157,13 @@ INSERT INTO `tipo_materia` (`id`, `nombre`) VALUES
 --
 ALTER TABLE `color`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `horario`
+--
+ALTER TABLE `horario`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_materia` (`id_materia`);
 
 --
 -- Indices de la tabla `materia`
@@ -150,6 +192,19 @@ ALTER TABLE `tipo_materia`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `usuario`
+--
+ALTER TABLE `usuario`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `usuario_materia`
+--
+ALTER TABLE `usuario_materia`
+  ADD PRIMARY KEY (`id_usuario`,`id_materia`),
+  ADD KEY `id_materia` (`id_materia`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -158,6 +213,12 @@ ALTER TABLE `tipo_materia`
 --
 ALTER TABLE `color`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT de la tabla `horario`
+--
+ALTER TABLE `horario`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `materia`
@@ -172,8 +233,20 @@ ALTER TABLE `tipo_materia`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
+-- AUTO_INCREMENT de la tabla `usuario`
+--
+ALTER TABLE `usuario`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- Restricciones para tablas volcadas
 --
+
+--
+-- Filtros para la tabla `horario`
+--
+ALTER TABLE `horario`
+  ADD CONSTRAINT `horario_ibfk_1` FOREIGN KEY (`id_materia`) REFERENCES `materia` (`id`);
 
 --
 -- Filtros para la tabla `materia`
@@ -193,6 +266,13 @@ ALTER TABLE `materia_beneficio`
 --
 ALTER TABLE `materia_requisito`
   ADD CONSTRAINT `materia_requisito_ibfk_1` FOREIGN KEY (`id`) REFERENCES `materia` (`id`);
+
+--
+-- Filtros para la tabla `usuario_materia`
+--
+ALTER TABLE `usuario_materia`
+  ADD CONSTRAINT `usuario_materia_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id`),
+  ADD CONSTRAINT `usuario_materia_ibfk_2` FOREIGN KEY (`id_materia`) REFERENCES `materia` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
