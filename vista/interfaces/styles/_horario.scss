@@ -1,14 +1,22 @@
-.horario {
+.tabla_horario {
+    width: 1140px;
     overflow-y: scroll;
 }
 
-.hora {
-    left: 0;
+.h_tabla {
+    display: flex;
+    width: 1140px;
+    overflow: scroll;
+}
+
+.extremos_tabla {
+    display: inline-block;
+    width: 120px;
     margin: 5px;
     padding: 8px;
 
     position: sticky;
     border-radius: 5px;
     text-align: center;
-    background-color: $nav;
+    background-color: $secundario;
 }

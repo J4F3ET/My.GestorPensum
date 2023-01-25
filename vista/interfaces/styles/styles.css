@@ -1,3 +1,5 @@
+@charset "UTF-8";
+/*Teniendo en cuenta que se filtra segun la opción del usuario*/
 html {
   font-size: 62.5%;
 }
@@ -5,8 +7,6 @@ html {
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
 }
 
 body {
@@ -26,7 +26,8 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 40px;
+  height: 50px;
+  margin-bottom: 10px;
   background-color: #656D4A;
 }
 
@@ -34,23 +35,137 @@ body {
   color: black;
 }
 
-.titulo_seccion {
-  margin: 8px;
-  font-size: 3rem;
-  text-align: center;
-  text-shadow: 1px 1px 10px #656D4A, 0 0 1em #B6AD90, 0 0 0.2em #B6AD90;
-}
-
-.horario {
+.container_pensum {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 10px;
+  width: 1140px;
   overflow-y: scroll;
 }
 
-.hora {
-  left: 0;
+.semestre {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+}
+
+.materia_opcion1 {
+  display: block;
+  width: 120px;
+  height: 72px;
+  overflow: scroll;
+  padding: 5px;
+  background-color: #B6AD90;
+  border: 1px solid #827C69;
+  border-radius: 5px;
+}
+
+.materia_opcion2 {
+  display: block;
+  width: 120px;
+  height: 72px;
+  overflow: scroll;
+  padding: 5px;
+  background-color: #936639;
+  border: 1px solid #582F0E;
+  border-radius: 5px;
+}
+
+.materia_opcion3 {
+  display: block;
+  width: 120px;
+  height: 72px;
+  overflow: scroll;
+  padding: 5px;
+  background-color: #656D4A;
+  border: 1px solid #333D29;
+  border-radius: 5px;
+}
+
+.materia_opcion4 {
+  display: block;
+  width: 120px;
+  height: 72px;
+  overflow: scroll;
+  padding: 5px;
+  background-color: #A4AC86;
+  border: 1px solid #656D4A;
+  border-radius: 5px;
+}
+
+.btn_pensum {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5px;
+  margin: 10px;
+}
+.btn_pensum span {
+  font-size: 2rem;
+}
+.btn_pensum .bi {
+  font-size: 2em;
+  margin-right: 5px;
+}
+
+.tabla_horario {
+  width: 1140px;
+  overflow-y: scroll;
+}
+
+.h_tabla {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 1140px;
+  overflow: scroll;
+}
+
+.extremos_tabla {
+  display: inline-block;
+  width: 120px;
   margin: 5px;
   padding: 8px;
   position: sticky;
   border-radius: 5px;
   text-align: center;
   background-color: #656D4A;
+}
+
+.titulo_Seccion {
+  margin: 8px;
+  font-size: 3rem;
+  text-align: center;
+  text-shadow: 1px 1px 10px #656D4A, 0 0 1em #B6AD90, 0 0 0.2em #B6AD90;
+}
+
+.footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  color: black;
+  background-color: #656D4A;
+  margin-top: 20px;
+}
+.footer a {
+  color: black;
 }
