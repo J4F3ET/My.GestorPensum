@@ -1,14 +1,59 @@
-.horario {
+.container_tabla {
+    width: 1140px;
+    overflow: auto;
+}
+
+.container_tabla::-webkit-scrollbar {
+    display: none;
+}
+
+.tabla_horario {
+    table-layout: fixed;
+    border-collapse: separate;
     overflow-y: scroll;
 }
 
-.hora {
-    left: 0;
-    margin: 5px;
-    padding: 8px;
-
-    position: sticky;
-    border-radius: 5px;
+th {
+    min-width: 140px;
     text-align: center;
-    background-color: $nav;
+}
+
+tbody td {
+    text-align: center;
+}
+
+.contenido {
+    @include caja; 
+    @include materia($opcion4, $b-opcion4); 
+    border-radius: 5px;
+    overflow: auto;
+}
+
+tr:nth-child(even){
+    display: none;
+}
+
+.contenido::-webkit-scrollbar {
+    display: none;
+}
+
+th {
+    span {
+        display: inline-block; 
+        padding: 10px; 
+        width: 120px; 
+
+        text-align: center;
+        border: 1px solid $secundario;
+        background-color: #808a5f;
+        border-radius: 5px;
+    }
+}
+
+tbody {
+    th {
+        span {
+            height: 72px;
+        }
+    }
 }
