@@ -1,0 +1,74 @@
+.container_pensum {
+    display: flex; 
+    flex-direction: row; 
+    gap: 10px; 
+
+    width: 1140px;
+    overflow: auto;
+
+    button {
+        overflow: auto;
+    }
+
+    button::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.container_pensum::-webkit-scrollbar {
+    display: none;
+}
+
+.semestre {
+    display: flex; 
+    flex-direction: column; 
+    gap: 10px; 
+}
+
+.materia_opcion1 {
+    @include caja; 
+    @include materia($opcion1, $b-opcion1); 
+}
+
+.materia_opcion2 {
+    @include caja;
+    @include materia($opcion2, $b-opcion2); 
+}
+
+.materia_opcion3 {
+    @include caja;
+    @include materia($opcion3, $b-opcion3); 
+}
+
+.materia_opcion4 {
+    @include caja;
+    @include materia($opcion4, $b-opcion4); 
+}
+
+.btn_container {
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    margin: 10px;
+    border: 1px solid $secundario;
+
+    span {
+        font-size: 1.2rem;
+    }
+
+    .bi {
+        font-size: 1.2em;
+    }
+}
+
+.btn:hover {
+    background-color: $secundario;
+    color: white;
+}

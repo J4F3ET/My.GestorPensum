@@ -12,20 +12,27 @@ $b-opcion3: #333D29;
 $opcion4: #A4AC86; 
 $b-opcion4: #656D4A; 
 
-html {
-    font-size: 62.5%; 
-}
-
 * {
 	margin: 0; 
-	padding: 0; 
 }
 
 body {
     margin: 0;
-    font-size: 2rem;
-    background-color: $primario;
+    background-image: linear-gradient(to right bottom, #c2c5aa, #bdc2a2, #b8be9b, #b3bb93, #aeb88c);
     font-family: $font-content;
+}
+
+.seccion {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.titulo_Seccion {
+    margin-bottom: 10px;
+
+    font-size: 2rem;
+    text-align: center;
+    text-shadow: 1px 1px 10px #656D4A, 0 0 1em #B6AD90, 0 0 0.2em #B6AD90;
 }
 
 @mixin materia($back, $bord){
@@ -35,11 +42,12 @@ body {
 }
 
 @mixin caja {
-    display: block; 
+    display: inline-block; 
+    padding: 10px; 
     width: 120px; 
     height: 72px;
-    overflow: scroll;
-    padding: 5px; 
+
+    text-align: center;
 }
 
 @import "header.scss"; 

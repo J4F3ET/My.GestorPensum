@@ -1,0 +1,20 @@
+.creditos {
+    display: flex;
+    justify-content: center;
+
+    input {
+        background-color: none;
+        border: none;
+        width: 120px;
+    }
+
+    .extremos {
+        background-color: #808a5f;
+        border-radius: 5px;
+        padding: 6px;
+    }
+
+    .tabla_horario {
+        border-spacing: 5px;
+    }
+}
