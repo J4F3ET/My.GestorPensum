@@ -1,0 +1,57 @@
+$primario: #C2C5AA; 
+$secundario: #656D4A;
+$font-content: 'Inconsolata', monospace;  
+
+/*Teniendo en cuenta que se filtra segun la opción del usuario*/
+$opcion1: #B6AD90; 
+$b-opcion1: #827C69; 
+$opcion2: #936639; 
+$b-opcion2: #582F0E; 
+$opcion3: #656D4A; 
+$b-opcion3: #333D29; 
+$opcion4: #A4AC86; 
+$b-opcion4: #656D4A; 
+
+* {
+	margin: 0; 
+}
+
+body {
+    margin: 0;
+    background-image: linear-gradient(to right bottom, #c2c5aa, #bdc2a2, #b8be9b, #b3bb93, #aeb88c);
+    font-family: $font-content;
+}
+
+.seccion {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.titulo_Seccion {
+    margin-bottom: 10px;
+
+    font-size: 2rem;
+    text-align: center;
+    text-shadow: 1px 1px 10px #656D4A, 0 0 1em #B6AD90, 0 0 0.2em #B6AD90;
+}
+
+@mixin materia($back, $bord){
+    background-color: $back; 
+    border: 1px solid $bord; 
+    border-radius: 5px; 
+}
+
+@mixin caja {
+    display: inline-block; 
+    padding: 10px; 
+    width: 120px; 
+    height: 72px;
+
+    text-align: center;
+}
+
+@import "header.scss"; 
+@import "pensum.scss"; 
+@import "horario.scss"; 
+@import "creditos.scss";
+@import "footer.scss"; 

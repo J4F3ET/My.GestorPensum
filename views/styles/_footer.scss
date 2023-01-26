@@ -1,0 +1,25 @@
+.footer {
+    display: flex;
+    justify-content: space-evenly;
+
+    color: black;
+    background-color: $secundario; 
+
+    margin-top: 20px;
+    padding-top: 20px;
+
+    a {
+        color: black;
+    }
+
+    ul {
+        list-style: none;
+    }
+}
+
+.item_lista_footer:hover {
+    color: white;
+    a {
+        color: white;
+    }
+}
