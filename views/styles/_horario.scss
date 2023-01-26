@@ -11,10 +11,11 @@
     table-layout: fixed;
     border-collapse: separate;
     overflow-y: scroll;
+    border-spacing: 10px;
 }
 
 th {
-    min-width: 140px;
+    width: 20%;
     text-align: center;
 }
 
@@ -37,11 +38,15 @@ tr:nth-child(even){
     display: none;
 }
 
+.extremos_tabla {
+    position: sticky;
+}
+
 th {
     span {
         display: inline-block; 
         padding: 10px; 
-        width: 120px; 
+        width: 100px; 
 
         text-align: center;
         border: 1px solid $secundario;
@@ -53,7 +58,7 @@ th {
 tbody {
     th {
         span {
-            height: 72px;
+            height: 60px;
         }
     }
 }
