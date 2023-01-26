@@ -411,7 +411,7 @@
             <dialog class="dialog_modal" id="modal_horario">
                 <div class="container_modal">
                     <section class="modal_titulo modal_nav">
-                        <h2 class="modal_titulo">Agregando materia al horario</h2>
+                        <h2 class="modal_titulo">Agregando materia al horario</>
                         <button class="btn_cerrar_modal" onclick="cerrarModalHorario()" id="cerrar_moda_horario"><i class="bi bi-x-lg"></i></button>
                     </section>
                     <section class="modal_body">
@@ -482,16 +482,17 @@
                                 </datalist>
                             </div>
                             <div class="container_input_submit_horario">
-                                <button id="btn_enviar_horario" type="submit" class="input_modal input_submit"><i class="bi bi-send"></i>Enviar</button>
+                                <button id="btn_enviar_horario" type="submit" class="input_modal input_submit">
+                                    <i class="bi bi-send"> </i> 
+                                    <span> Enviar</span>
+                                </button>
                             </div>
                         </form>
-                    </section>
-                    <section class="modal_footer">
                     </section>
                 </div>
             </dialog>
             <!-- FIN MODAL -->
-            <button class="btn"><i class="bi bi-trash"></i> Eliminar Horario</button>
+            <button class="btn"><i class="bi bi-trash"></i>Eliminar Horario</button>
         </div>
         </section>
 
