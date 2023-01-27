@@ -1,10 +1,7 @@
-// import express from 'express';
-// import morgan from 'morgan';
-// import login from './router/login_router.js';
-// import path from 'path';
 const express = require('express');
 const morgan = require('morgan');
 const login = require('./router/login_router.js');
+const index = require('./router/index_router.js');
 const path = require('path');
 const app = express();
 
@@ -20,5 +17,6 @@ app.use(express.urlencoded({ extended: true }));
 // ENROUTERS
 
 app.use(login);
+app.use(index);
 
 app.listen("5500");
