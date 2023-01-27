@@ -6,22 +6,17 @@ dialog::backdrop {
     left: 0px;
     background: #4f504594;
 }
-
 dialog:modal{
     position: absolute;
     left: 35%;
     right: 35%;
-
     inset-block-start: 30%;
     inset-block-end: 30%;
-
     max-width: calc(100% - 6px);
     max-height: calc((100% - 6px) - 2em);
-
     user-select: text;
     visibility: visible;
     overflow: auto;
-
     border: 1px solid #656D4A;
     box-shadow: 2px 3px 3px #656D4A;
 }
@@ -49,7 +44,6 @@ dialog:modal{
     background: #656D4A;
     padding: 8px;
 }
-
 .btn_cerrar_modal{
     border: none;
     background: none;
@@ -57,7 +51,6 @@ dialog:modal{
     color: #333D29;
     outline: #656D4A;
 }
-
 .btn_cerrar_modal:hover{
     color: aliceblue;
 }
@@ -91,13 +84,11 @@ dialog:modal{
     background-color: #878a6dd4;
     box-shadow: inset 0 1px 1px #656D4A;
 }
-
 .input_modal:hover{
     border-radius: 5px;
     border: solid 1px #656D4A;
     box-shadow: 1px 1px 1px #73765d ;
 }
-
 .input_modal:active{
     border-radius: 4px;
     background-color: #656D4A;
@@ -109,7 +100,6 @@ dialog:modal{
     justify-content: center;
     align-items: center;
     gap: 5px;
-
     padding: 0;
     margin: 10px 0;
 }
@@ -118,7 +108,6 @@ dialog:modal{
     display: flex;
     justify-content: center;
     align-items: center;
-
     margin-top: 0.5rem;
 }
 
@@ -127,7 +116,6 @@ dialog:modal{
     height: 2rem;
     border: 1px solid #656D4A;
 }
-
 .input_submit:hover{
     color: aliceblue;
     background: #656D4A;
