@@ -34,14 +34,10 @@ body {
     text-align: center;
     text-shadow: 1px 1px 10px #656D4A, 0 0 1em #B6AD90, 0 0 0.2em #B6AD90;
 }
-<<<<<<< HEAD
 .seccion_centrada {
     display: flex;
     justify-content: center;
 }
-=======
-
->>>>>>> 211fdeca81d154feac5e99895ba97a70f3e1e5f8
 @mixin materia($back, $bord){
     background-color: $back; 
     border: 1px solid $bord; 
@@ -51,14 +47,8 @@ body {
 @mixin caja {
     display: inline-block; 
     padding: 10px; 
-<<<<<<< HEAD
     width: 100px; 
     height: 60px;
-=======
-    width: 120px; 
-    height: 72px;
-
->>>>>>> 211fdeca81d154feac5e99895ba97a70f3e1e5f8
     text-align: center;
 }
 
