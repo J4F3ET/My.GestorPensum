@@ -1,0 +1,26 @@
+.footer {
+    display: flex;
+    justify-content: space-evenly;
+
+    color: black;
+    font-size: 1.1rem;
+    background-color: $secundario; 
+
+    margin-top: 20px;
+    padding: 20px;
+
+    a {
+        color: black;
+    }
+
+    ul {
+        list-style: none;
+    }
+}
+
+.item_lista_footer:hover {
+    color: white;
+    a {
+        color: white;
+    }
+}
