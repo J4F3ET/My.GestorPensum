@@ -9,7 +9,7 @@ const path = require('path');
 const app = express();
 
 // MIDDLEWARES
-console.log(path.join(path.resolve(__dirname, '..', 'controllers')));
+// console.log(path.join(path.resolve(__dirname, '..', 'controllers')));
 app.use(morgan());
 app.set('view engine', 'ejs');
 app.set('views',path.join(path.resolve(__dirname, '..', 'views'),'public'));

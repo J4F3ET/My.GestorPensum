@@ -7,18 +7,37 @@
         <title>Login</title>
         <link rel="stylesheet" href="../styles/modal.css">
         <link rel="stylesheet" href="../styles/styles.css">
+        <link rel="stylesheet" type="text/css" href="../lib/Sweetalert2/sweetalert2.css">
     </head>
     <body>
         <main>
-            <form method="post" enctype="application/x-www-form-urlencoded"  action="/login"  class="form" data-form-login>
+            <form method="post" enctype="application/x-www-form-urlencoded"  action="/login" id="formulario_login" class="form" data-form-login>
                 <div class="container">
-                    <input data-input-login-name  type="text" name="name" id="name" class="input_modal">
+                    <input 
+                        title="Nombre de usuario" 
+                        required 
+                        data-input-login-name  
+                        type="text" 
+                        name="name" 
+                        id="login_name" 
+                        class="input_modal"
+                    >
                 </div>
                 <div class="container">
-                    <input data-input-login-password  type="password" name="password" id="password" class="input_modal">
+                    <input 
+                        title="Contraseña de usuario" 
+                        required 
+                        data-input-login-password  
+                        type="password" 
+                        name="password" 
+                        id="login_password" 
+                        class="input_modal"
+                    >
                 </div>
                 <input data-form-login-btn type="submit" value="Enviar" class="input_submit">
             </form>
         </main>
     </body>
+    <script src="../lib/Sweetalert2/sweetalert2.js"></script>  
+    <script type="text/javascript" src="../components/login.js"></script>
 </html>
