@@ -7,9 +7,9 @@ const public = path.resolve(__dirname, '..', '..', 'views','public');
 const private = path.resolve(__dirname, '..', '..', 'views','private');
 
 const router = Router();
- router.get('/index',async (req, res) =>{
+// router.get(`/index?`,async (req, res) =>{
 
 
- });
+//  });
 
 module.exports = router;
