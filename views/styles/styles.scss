@@ -34,7 +34,10 @@ body {
     text-align: center;
     text-shadow: 1px 1px 10px #656D4A, 0 0 1em #B6AD90, 0 0 0.2em #B6AD90;
 }
-
+.seccion_centrada {
+    display: flex;
+    justify-content: center;
+}
 @mixin materia($back, $bord){
     background-color: $back; 
     border: 1px solid $bord; 
@@ -44,9 +47,8 @@ body {
 @mixin caja {
     display: inline-block; 
     padding: 10px; 
-    width: 120px; 
-    height: 72px;
-
+    width: 100px; 
+    height: 60px;
     text-align: center;
 }
 

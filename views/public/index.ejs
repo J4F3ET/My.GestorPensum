@@ -19,12 +19,14 @@
         <section class="seccio nav">
             <a href="#seccion_pensum">Pensum</a>
             <a href="#seccion_horario">Horario</a>
-            <a href="#seccion_creditos">Creditos academicos</a>
-            <a href="./modal_materia.html">MODAL</a>    
+            <a href="#seccion_creditos">Creditos</a>   
         </section>
 
         <section  id="seccion_pensum" class="seccion pensum">
             <h2 class="titulo_Seccion">Pensum</h2>
+            
+            <div class="seccion_centrada">
+
             <div class="container container_pensum">
                 <!-- ESTRUCTURA DEL SEMESTRE -->
                     <div class="semestre">
@@ -54,16 +56,18 @@
                     </div>
                 <!-- FIN DE ESTRUCTURA DEL SEMESTRE -->
             </div>
+            </div>
             <div class="btn_container">
-                <a href="#" class="btn btn_pensum">
-                    <i class="bi bi-folder-plus"></i>
-                    <span>Agregar materia</span>
+                <a href="#" class="btn_pensum">
+                    <button class="btn "><i class="bi bi-folder-plus"></i>Agregar materia</button>
                 </a>
             </div>
         </section>
 
         <section id="seccion_horario" class="seccion horario">
             <h2 class="titulo_Seccion">Horario</h2>
+            <div class="seccion_centrada">
+
             <div class="container container_tabla">
                 <table class="tabla_horario">
                     <thead>
@@ -287,7 +291,7 @@
                         </tr>
                         <tr class="fila_horario">
                             <th scope="row" class="columna_horario extremos_tabla">
-                                <span>16:00</span>
+                                <span class="extremos_tabla">16:00</span>
                             </td>
                             <td class="columna_horario">
                                 <span  id="lunes_16" data-dia class="contenido"></span></td>
@@ -402,6 +406,8 @@
                     </tbody>
                 </table>
             </div>
+            </div>
+
             <div class="btn_container">
             <button onclick="openModalHorario()" class="btn " id="boton_open_modal_horario"><i class= "bi bi-person-gear"></i>Modificar horario </button>
             <!-- MODAL -->
@@ -479,21 +485,23 @@
                                 </datalist>
                             </div>
                             <div class="container_input_submit_horario">
-                                <button id="btn_enviar_horario" type="submit" class="input_modal input_submit"><i class="bi bi-send"></i>Enviar</button>
+                                <button id="btn_enviar_horario" type="submit" class="input_modal input_submit">
+                                    <i class="bi bi-send"> </i> 
+                                    <span> Enviar</span>
+                                </button>
                             </div>
                         </form>
-                    </section>
-                    <section class="modal_footer">
                     </section>
                 </div>
             </dialog>
             <!-- FIN MODAL -->
-            <button class="btn"><i class="bi bi-trash"></i> Eliminar Horario</button>
+            <button class="btn"><i class="bi bi-trash"></i>Eliminar Horario</button>
         </div>
         </section>
 
         <section id="seccion_creditos" class="seccion">
             <h2 class="titulo_Seccion">Creditos academicos</h2>
+            <div class="seccion_centrada">
             <div class="container container_tabla creditos">
                 <table class="tabla_horario">
                     <thead>
@@ -570,6 +578,8 @@
                     </tbody>
                 </table>
             </div>
+            </div>
+
         </section>
         
         <section id="seccion_footer" class="footer">
@@ -577,7 +587,7 @@
                 <ul class="lista_footer">
                     <li class="item_lista_footer">
                         <i class="bi bi-code-slash"></i>
-                        <span>Jafet Stiven Lopez Zuñiga</span>
+                        <span>Jafet Lopez</span>
                     </li>
                     <li class="item_lista_footer">
                         <i class="bi bi-github"></i>
@@ -589,7 +599,7 @@
                 <ul class="lista_footer">
                     <li class="item_lista_footer">
                         <i class="bi bi-code-slash"></i>
-                        <span>Laura Daniela Aponte Beltran</span>
+                        <span>Laura Aponte</span>
                     </li>
                     <li class="item_lista_footer">
                         <i class="bi bi-github"></i>

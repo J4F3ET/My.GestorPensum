@@ -1,5 +1,5 @@
 dialog::backdrop {
-    position: fixed;;
+    position: fixed;
     top: 0px;
     right: 0px;
     bottom: 0px;
@@ -20,21 +20,29 @@ dialog:modal{
     border: 1px solid #656D4A;
     box-shadow: 2px 3px 3px #656D4A;
 }
+
 .dialog_modal{
+    margin: 0;
+    padding: 0;
     background: #A4AC86;
 }
+
 .modal_nav{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: inline-block; 
 }
+
 .modal_titulo{
-    background: #656D4A;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+
     color: aliceblue;
     font-size: x-large;
     font-weight:525;
-    border-radius: 0 0 5px 5px;
-    padding: 3px 5px 1px 5px;
+    
+    background: #656D4A;
+    padding: 8px;
 }
 .btn_cerrar_modal{
     border: none;
@@ -46,32 +54,35 @@ dialog:modal{
 .btn_cerrar_modal:hover{
     color: aliceblue;
 }
+
 .modal_body{
-    padding: 10px;
+    padding: 15px 50px;  
 }
+
 .container_inputs_materia_horario,
 .container_input_dia_horario,
 .container_input_hora_horario{
     display: flex;
-    font-size:large;
-    justify-content:space-between;
-    margin-bottom: 0.5rem;
+    font-size: large;
+    justify-content: space-between;
+    padding: 10px;
 }
-.container_inputs_materia_horario{
- margin-bottom: 2rem;
-}
+
 .input_modal{
-    background-color: #e8ead78c;
-    border-radius: 4px;
-    border: solid 0.1px #656D4A;
-    height: 2.4rem;
+    height: 1.5rem;
     margin-left: 1.1rem;
+    border-radius: 5px;
+    border: solid 0.1px #656D4A;
+    
+    font-family: 'Inconsolata', monospace;
     outline: #656D4A;
+    background-color: #e8ead78c;
 }
+
 .input_bloqueado{
-    box-shadow: inset 0 1px 1px #656D4A;
-    background-color: #878a6dd4;
     cursor: not-allowed;
+    background-color: #878a6dd4;
+    box-shadow: inset 0 1px 1px #656D4A;
 }
 .input_modal:hover{
     border-radius: 5px;
@@ -79,34 +90,31 @@ dialog:modal{
     box-shadow: 1px 1px 1px #73765d ;
 }
 .input_modal:active{
-    background-color: #656D4A;
     border-radius: 4px;
+    background-color: #656D4A;
     border: solid 0.1px #656D4A;
-    height: 2.4rem;
 }
+
 .input_submit{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding:  0;
+    gap: 5px;
+    padding: 0;
+    margin: 10px 0;
 }
-.modal_footer{
-    margin-top: 1.5rem;
-    height: 3px;
-    border: #656D4A solid 3px;
-    border-radius: 5px 5px 0 0;
-}
+
 .container_input_submit_horario{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 2rem;
+    margin-top: 0.5rem;
 }
+
 .input_submit{
-    border: dotted 1.5px;
-    height: 2.78rem;
-    width: 80%;
-    padding: 3px;
+    width: 90%;
+    height: 2rem;
+    border: 1px solid #656D4A;
 }
 .input_submit:hover{
     color: aliceblue;

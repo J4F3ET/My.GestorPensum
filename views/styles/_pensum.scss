@@ -55,20 +55,24 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
-
     margin: 10px;
+    padding: 8px;
+    background-color: $primario;
     border: 1px solid $secundario;
-
-    span {
-        font-size: 1.2rem;
-    }
-
-    .bi {
-        font-size: 1.2em;
-    }
+    border-radius: 5px;
+    font-family: $font-content;
+    color: black;
+    font-size: 1.1rem;
 }
 
 .btn:hover {
     background-color: $secundario;
     color: white;
+    cursor: pointer;
+}
+
+.container {
+    display: flex;
+    align-content: center;
+
 }
