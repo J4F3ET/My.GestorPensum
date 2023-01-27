@@ -23,6 +23,7 @@ body {
   text-shadow: 1px 1px 10px #656D4A, 0 0 1em #B6AD90, 0 0 0.2em #B6AD90;
 }
 
+<<<<<<< HEAD
 .seccion_centrada {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -31,6 +32,8 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
 }
+=======
+>>>>>>> 211fdeca81d154feac5e99895ba97a70f3e1e5f8
 .nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -91,10 +94,15 @@ body {
 .materia_opcion1 {
   display: inline-block;
   padding: 10px;
+<<<<<<< HEAD
 
   width: 100px;
   height: 60px;
   
+=======
+  width: 120px;
+  height: 72px;
+>>>>>>> 211fdeca81d154feac5e99895ba97a70f3e1e5f8
   text-align: center;
   background-color: #B6AD90;
   border: 1px solid #827C69;
@@ -104,9 +112,14 @@ body {
 .materia_opcion2 {
   display: inline-block;
   padding: 10px;
+<<<<<<< HEAD
 
   width: 100px;
   height: 60px;
+=======
+  width: 120px;
+  height: 72px;
+>>>>>>> 211fdeca81d154feac5e99895ba97a70f3e1e5f8
   text-align: center;
   background-color: #936639;
   border: 1px solid #582F0E;
@@ -116,8 +129,13 @@ body {
 .materia_opcion3 {
   display: inline-block;
   padding: 10px;
+<<<<<<< HEAD
   width: 100px;
   height: 60px;
+=======
+  width: 120px;
+  height: 72px;
+>>>>>>> 211fdeca81d154feac5e99895ba97a70f3e1e5f8
   text-align: center;
   background-color: #656D4A;
   border: 1px solid #333D29;
@@ -127,8 +145,13 @@ body {
 .materia_opcion4 {
   display: inline-block;
   padding: 10px;
+<<<<<<< HEAD
   width: 100px;
   height: 60px;
+=======
+  width: 120px;
+  height: 72px;
+>>>>>>> 211fdeca81d154feac5e99895ba97a70f3e1e5f8
   text-align: center;
   background-color: #A4AC86;
   border: 1px solid #656D4A;
@@ -156,6 +179,7 @@ body {
           align-items: center;
   gap: 10px;
   margin: 10px;
+<<<<<<< HEAD
   padding: 8px;
   background-color: #C2C5AA;
   border: 1px solid #656D4A;
@@ -163,11 +187,21 @@ body {
   font-family: "Inconsolata", monospace;
   color: black;
   font-size: 1.1rem;
+=======
+  border: 1px solid #656D4A;
+}
+.btn span {
+  font-size: 1.2rem;
+}
+.btn .bi {
+  font-size: 1.2em;
+>>>>>>> 211fdeca81d154feac5e99895ba97a70f3e1e5f8
 }
 
 .btn:hover {
   background-color: #656D4A;
   color: white;
+<<<<<<< HEAD
   cursor: pointer;
 }
 .container {
@@ -176,6 +210,8 @@ body {
   display: flex;
   -ms-flex-line-pack: center;
       align-content: center;
+=======
+>>>>>>> 211fdeca81d154feac5e99895ba97a70f3e1e5f8
 }
 
 .container_tabla {
@@ -191,11 +227,18 @@ body {
   table-layout: fixed;
   border-collapse: separate;
   overflow-y: scroll;
+<<<<<<< HEAD
   border-spacing: 10px;
 }
 
 th {
   width: 20%;
+=======
+}
+
+th {
+  min-width: 140px;
+>>>>>>> 211fdeca81d154feac5e99895ba97a70f3e1e5f8
   text-align: center;
 }
 
@@ -206,9 +249,14 @@ tbody td {
 .contenido {
   display: inline-block;
   padding: 10px;
+<<<<<<< HEAD
   width: 100px;
   height: 60px;
 
+=======
+  width: 120px;
+  height: 72px;
+>>>>>>> 211fdeca81d154feac5e99895ba97a70f3e1e5f8
   text-align: center;
   background-color: #A4AC86;
   border: 1px solid #656D4A;
@@ -225,6 +273,7 @@ tr:nth-child(even) {
   display: none;
 }
 
+<<<<<<< HEAD
 
 .extremos_tabla {
   position: sticky;
@@ -234,6 +283,12 @@ th span {
   display: inline-block;
   padding: 10px;
   width: 100px;
+=======
+th span {
+  display: inline-block;
+  padding: 10px;
+  width: 120px;
+>>>>>>> 211fdeca81d154feac5e99895ba97a70f3e1e5f8
   text-align: center;
   border: 1px solid #656D4A;
   background-color: #808a5f;
@@ -241,7 +296,11 @@ th span {
 }
 
 tbody th span {
+<<<<<<< HEAD
   height: 60px;
+=======
+  height: 72px;
+>>>>>>> 211fdeca81d154feac5e99895ba97a70f3e1e5f8
 }
 
 .creditos {
@@ -253,17 +312,26 @@ tbody th span {
           justify-content: center;
 }
 .creditos input {
+<<<<<<< HEAD
   background-color: #C2C5AA;
   border: none;
   width: 150px;
   height: 30px;
+=======
+  background-color: none;
+  border: none;
+  width: 120px;
+>>>>>>> 211fdeca81d154feac5e99895ba97a70f3e1e5f8
 }
 .creditos .extremos {
   background-color: #808a5f;
   border-radius: 5px;
   padding: 6px;
+<<<<<<< HEAD
 
   width: 150px;
+=======
+>>>>>>> 211fdeca81d154feac5e99895ba97a70f3e1e5f8
 }
 .creditos .tabla_horario {
   border-spacing: 5px;
@@ -277,11 +345,17 @@ tbody th span {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   color: black;
+<<<<<<< HEAD
   font-size: 1.1rem;
   background-color: #656D4A;
   margin-top: 20px;
   padding: 20px;
 
+=======
+  background-color: #656D4A;
+  margin-top: 20px;
+  padding-top: 20px;
+>>>>>>> 211fdeca81d154feac5e99895ba97a70f3e1e5f8
 }
 .footer a {
   color: black;

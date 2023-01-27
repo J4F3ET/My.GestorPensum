@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const { Router } = require('express');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
@@ -36,3 +37,10 @@ router.post('/login',async(req, res) => {
 
 
 module.exports = router;
+=======
+import { Router } from "express";
+import { get_login_user } from "../controllers_router/login_controllers.js";
+const router = Router();
+router.get('/',get_login_user);
+export default router;
+>>>>>>> 211fdeca81d154feac5e99895ba97a70f3e1e5f8

@@ -55,6 +55,7 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
+<<<<<<< HEAD
     margin: 10px;
     padding: 8px;
     background-color: $primario;
@@ -63,11 +64,25 @@
     font-family: $font-content;
     color: black;
     font-size: 1.1rem;
+=======
+
+    margin: 10px;
+    border: 1px solid $secundario;
+
+    span {
+        font-size: 1.2rem;
+    }
+
+    .bi {
+        font-size: 1.2em;
+    }
+>>>>>>> 211fdeca81d154feac5e99895ba97a70f3e1e5f8
 }
 
 .btn:hover {
     background-color: $secundario;
     color: white;
+<<<<<<< HEAD
     cursor: pointer;
 }
 
@@ -75,4 +90,6 @@
     display: flex;
     align-content: center;
 
+=======
+>>>>>>> 211fdeca81d154feac5e99895ba97a70f3e1e5f8
 }

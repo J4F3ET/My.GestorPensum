@@ -11,12 +11,19 @@
     table-layout: fixed;
     border-collapse: separate;
     overflow-y: scroll;
+<<<<<<< HEAD
     border-spacing: 10px;
 }
 
 th {
     width: 20%;
 
+=======
+}
+
+th {
+    min-width: 140px;
+>>>>>>> 211fdeca81d154feac5e99895ba97a70f3e1e5f8
     text-align: center;
 }
 
@@ -39,15 +46,23 @@ tr:nth-child(even){
     display: none;
 }
 
+<<<<<<< HEAD
 .extremos_tabla {
     position: sticky;
 }
 
+=======
+>>>>>>> 211fdeca81d154feac5e99895ba97a70f3e1e5f8
 th {
     span {
         display: inline-block; 
         padding: 10px; 
+<<<<<<< HEAD
         width: 100px; 
+=======
+        width: 120px; 
+
+>>>>>>> 211fdeca81d154feac5e99895ba97a70f3e1e5f8
         text-align: center;
         border: 1px solid $secundario;
         background-color: #808a5f;
@@ -58,7 +73,11 @@ th {
 tbody {
     th {
         span {
+<<<<<<< HEAD
             height: 60px;
+=======
+            height: 72px;
+>>>>>>> 211fdeca81d154feac5e99895ba97a70f3e1e5f8
         }
     }
 }
