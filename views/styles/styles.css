@@ -31,7 +31,6 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
 }
-
 .nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -92,8 +91,10 @@ body {
 .materia_opcion1 {
   display: inline-block;
   padding: 10px;
+
   width: 100px;
   height: 60px;
+  
   text-align: center;
   background-color: #B6AD90;
   border: 1px solid #827C69;
@@ -103,6 +104,7 @@ body {
 .materia_opcion2 {
   display: inline-block;
   padding: 10px;
+
   width: 100px;
   height: 60px;
   text-align: center;
@@ -168,7 +170,6 @@ body {
   color: white;
   cursor: pointer;
 }
-
 .container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -207,6 +208,7 @@ tbody td {
   padding: 10px;
   width: 100px;
   height: 60px;
+
   text-align: center;
   background-color: #A4AC86;
   border: 1px solid #656D4A;
@@ -222,6 +224,7 @@ tr:nth-child(even) {
 .contenido::-webkit-scrollbar {
   display: none;
 }
+
 
 .extremos_tabla {
   position: sticky;
@@ -259,6 +262,7 @@ tbody th span {
   background-color: #808a5f;
   border-radius: 5px;
   padding: 6px;
+
   width: 150px;
 }
 .creditos .tabla_horario {
@@ -277,6 +281,7 @@ tbody th span {
   background-color: #656D4A;
   margin-top: 20px;
   padding: 20px;
+
 }
 .footer a {
   color: black;

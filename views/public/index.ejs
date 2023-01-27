@@ -19,13 +19,14 @@
         <section class="seccio nav">
             <a href="#seccion_pensum">Pensum</a>
             <a href="#seccion_horario">Horario</a>
-            <a href="#seccion_creditos">Creditos</a>
-            <a href="./modal_materia.html">MODAL</a>    
+            <a href="#seccion_creditos">Creditos</a>   
         </section>
 
         <section  id="seccion_pensum" class="seccion pensum">
             <h2 class="titulo_Seccion">Pensum</h2>
+            
             <div class="seccion_centrada">
+
             <div class="container container_pensum">
                 <!-- ESTRUCTURA DEL SEMESTRE -->
                     <div class="semestre">
@@ -66,6 +67,7 @@
         <section id="seccion_horario" class="seccion horario">
             <h2 class="titulo_Seccion">Horario</h2>
             <div class="seccion_centrada">
+
             <div class="container container_tabla">
                 <table class="tabla_horario">
                     <thead>
@@ -405,13 +407,14 @@
                 </table>
             </div>
             </div>
+
             <div class="btn_container">
             <button onclick="openModalHorario()" class="btn " id="boton_open_modal_horario"><i class= "bi bi-person-gear"></i>Modificar horario </button>
             <!-- MODAL -->
             <dialog class="dialog_modal" id="modal_horario">
                 <div class="container_modal">
                     <section class="modal_titulo modal_nav">
-                        <h2 class="modal_titulo">Agregando materia al horario</>
+                        <h2 class="modal_titulo">Agregando materia al horario</h2>
                         <button class="btn_cerrar_modal" onclick="cerrarModalHorario()" id="cerrar_moda_horario"><i class="bi bi-x-lg"></i></button>
                     </section>
                     <section class="modal_body">
@@ -576,6 +579,7 @@
                 </table>
             </div>
             </div>
+
         </section>
         
         <section id="seccion_footer" class="footer">
