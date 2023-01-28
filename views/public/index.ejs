@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.min.css">
     <link rel="stylesheet" href="../styles/styles.css">
     <link rel="stylesheet" href="../styles/modal.css">
+    <link rel="icon" type="image/png" href="../styles/imgs/icono.png"/>
     <title>Pensum</title>
 
 </head>
@@ -20,7 +21,7 @@
             <a href="#seccion_pensum">Pensum</a>
             <a href="#seccion_horario">Horario</a>
             <a href="#seccion_creditos">Creditos</a> 
-            <a href="seccion_close.ejs">Cerrar sesión</a>
+            <a href="/seccion_close">Cerrar sesión</a>
         </section>
 
         <section  id="seccion_pensum" class="seccion pensum">
@@ -437,6 +438,7 @@
                                 <label for="dia_horario_input">Dia:</label>
                                 <input
                                     disabled
+                                    required
                                     class="input_modal input_bloqueado" 
                                     list="lista_dias"  
                                     type="datetime" 
@@ -458,6 +460,7 @@
                                 <label for="hora_horario_input">Hora:</label>
                                 <input
                                     disabled
+                                    required
                                     class="input_modal input_bloqueado"
                                     pattern="[0-9]{2}:00"
                                     list="lista_horas"  
@@ -610,7 +613,7 @@
             </div>
         </section>
     </main>
+    <script src="../lib/Sweetalert2/sweetalert2.js"></script>  
     <script type="text/javascript" src="../components/modal.js"></script>
-    <script type="text/javascript" src="../components/alertas.js"></script>
 </body>
 </html>
