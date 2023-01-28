@@ -1,4 +1,5 @@
 const formulario_login = document.querySelector('[data-form-login]');
+localStorage.clear();
 const nombre = document.querySelector('[data-input-login-name]');
 formulario_login.addEventListener('submit',async (event) => {
     event.preventDefault();
