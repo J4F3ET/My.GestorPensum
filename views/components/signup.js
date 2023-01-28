@@ -1,12 +1,12 @@
-const formulario_login = document.querySelector('[data-form-login]');
-const nombre = document.querySelector('[data-input-login-name]');
+const formulario_login = document.querySelector('[data-form-signup]');
+
 formulario_login.addEventListener('submit',async (event) => {
     event.preventDefault();
-    const nombre = document.querySelector('[data-input-login-name]');
-    const pass = document.querySelector('[data-input-login-password]');
+    const nombre = document.querySelector('[data-input-signup-name]');
+    const pass = document.querySelector('[data-input-signup-password]');
     const body_contens = `user=${nombre.value}&password=${pass.value}`;
     let currentUrl = new URL(window.location.href);
-    const respuesta = await fetch(currentUrl.origin + '/login',{
+    const respuesta = await fetch(currentUrl.origin + '/register',{
                 method: 'POST',
                 headers: {
                     "Accept": "*/*",
@@ -25,9 +25,9 @@ formulario_login.addEventListener('submit',async (event) => {
             timer: 2000,
             text: data.message,
           }).then(()=>{
-            window.location.href ='/login';
+            window.location.href ='/signup';
           });     
-    }else {
+    }else{
         window.location.href = '/index';
     }
 });
