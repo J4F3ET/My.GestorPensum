@@ -5,24 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;600;700&display=swap">
     <link rel="stylesheet" href="../styles/login.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="../lib/Sweetalert2/sweetalert2.css">
+    <link rel="icon" type="image/png" href="../styles/imgs/icono.png"/>
     <title>Registrate</title>
 </head>
 <body>
     <main>
-        <form method="post" action="/register"  class="form">
+        <form data-form-signup  method="post" enctype="application/x-www-form-urlencoded" action="/register"  class="form">
             <h1>Registrate</h1>
             <div class="container">
                 <label for="name">Usuario</label>
-                <input data-input-login-name  type="text" name="name" id="name" class="input_modal">
+                <input data-input-signup-name  type="text" name="user" id="signup_name" class="input_modal">
             </div>
             <div class="container">
                 <label for="password">Contraseña</label>
-                <input data-input-login-password  type="password" name="password" id="password" class="input_modal">
+                <input data-input-signup-password  type="password" name="password" id="signup_password" class="input_modal">
             </div>
-            <input data-form-login-btn type="submit" value="Enviar" class="input_submit">
+            <input data-form-signup-btn type="submit" value="Enviar" class="input_submit">
         </form>
     </main>
+    <script src="../lib/Sweetalert2/sweetalert2.js"></script>  
+    <script type="text/javascript" src="../components/signup.js"></script>
 </body>
 </html>
