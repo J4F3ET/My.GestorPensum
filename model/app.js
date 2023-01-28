@@ -20,5 +20,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(login);
 app.use(signup)
 app.use(index);
+app.use(logout);
 
 app.listen(port,()=> console.log('Server listening on port '+ port));
