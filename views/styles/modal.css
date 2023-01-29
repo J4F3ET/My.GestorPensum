@@ -1,24 +1,25 @@
 dialog::backdrop {
-	position: fixed;
-	top: 0px;
-	right: 0px;
-	bottom: 0px;
-	left: 0px;
-	background: #4f504594;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background: #4f504594;
 }
-dialog:modal {
-	position: absolute;
-	left: 35%;
-	right: 35%;
-	inset-block-start: 30%;
-	inset-block-end: 30%;
-	max-width: calc(100% - 6px);
-	max-height: calc((100% - 6px) - 2em);
-	user-select: text;
-	visibility: visible;
-	overflow: auto;
-	border: 1px solid #656d4a;
-	box-shadow: 2px 3px 3px #656d4a;
+
+dialog:modal{
+    position: absolute;
+    left: 35%;
+    right: 35%;
+    inset-block-start: 30%;
+    inset-block-end: 30%;
+    max-width: calc(100% - 6px);
+    max-height: calc((100% - 6px) - 2em);
+    user-select: text;
+    visibility: visible;
+    overflow: hidden;
+    border: 1px solid #656D4A;
+    box-shadow: 2px 3px 3px #656D4A;
 }
 
 .dialog_modal {
@@ -30,29 +31,31 @@ dialog:modal {
 .modal_nav {
 	display: inline-block;
 }
+.modal_titulo{
+    position: relative;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    width: 100%;
 
-.modal_titulo {
-	position: relative;
-	top: 0px;
-	left: 0px;
-	right: 0px;
-
-	color: aliceblue;
-	font-size: x-large;
-	font-weight: 525;
-
-	background: #656d4a;
-	padding: 8px;
+    color: aliceblue;
+    font-size: x-large;
+    font-weight: 525;
+    
+    background: #656D4A;
+    padding: 8px;
 }
-.btn_cerrar_modal {
-	border: none;
-	background: none;
-	margin-right: 3px;
-	color: #333d29;
-	outline: #656d4a;
+
+.btn_cerrar_modal{
+    border: none;
+    background: none;
+    margin-right: 3px;
+    color: #333D29;
+    outline: #656D4A;
 }
-.btn_cerrar_modal:hover {
-	color: aliceblue;
+
+.btn_cerrar_modal:hover{
+    color: aliceblue;
 }
 
 .modal_body {
@@ -84,15 +87,16 @@ dialog:modal {
 	background-color: #878a6dd4;
 	box-shadow: inset 0 1px 1px #656d4a;
 }
-.input_modal:hover {
-	border-radius: 5px;
-	border: solid 1px #656d4a;
-	box-shadow: 1px 1px 1px #73765d;
+.input_modal:hover{
+    border-radius: 5px;
+    border: solid 1px #656D4A;
+    box-shadow: 1px 1px 1px #73765d ;
 }
-.input_modal:active {
-	border-radius: 4px;
-	background-color: #656d4a;
-	border: solid 0.1px #656d4a;
+
+.input_modal:active{
+    border-radius: 4px;
+    background-color: #656D4A;
+    border: solid 0.1px #656D4A;
 }
 
 .input_submit {

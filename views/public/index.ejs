@@ -17,12 +17,14 @@
 </head>
 <body>
     <main>
-        <section class="seccio nav">
-            <a href="#seccion_pensum">Pensum</a>
-            <a href="#seccion_horario">Horario</a>
-            <a href="#seccion_creditos">Creditos</a> 
-            <a href="/seccion_close">Cerrar sesión</a>
-        </section>
+        <nav class="nav">
+            <div class="contenedor_secciones">
+                <a href="#seccion_pensum">Pensum</a>
+                <a href="#seccion_horario">Horario</a>
+                <a href="#seccion_creditos">Creditos</a> 
+                <a href="/seccion_close">Cerrar sesión</a>
+            </div>
+        </nav>
 
         <section  id="seccion_pensum" class="seccion pensum">
             <h2 class="titulo_Seccion">Pensum</h2>
@@ -61,7 +63,7 @@
             </div>
             <div class="btn_container">
                 <a href="./add_course.ejs" class="btn_pensum">
-                    <button class="btn"><i class="bi bi-folder-plus"></i>Agregar materia</button>
+                    <button class="btn"><i class="bi bi-folder-plus"></i><span>Agregar materia</span></button>
                 </a>
             </div>
         </section>
@@ -87,7 +89,7 @@
                                 <span>Miercoles</span>
                             </th>
                             <th scope="col" class="head_horario_tabla columna_horario extremos_tabla">
-                                <span>Miercoles</span>
+                                <span>Jueves</span>
                             </th>
                             <th scope="col" class="head_horario_tabla columna_horario extremos_tabla">
                                 <span>Viernes</span>
@@ -416,7 +418,7 @@
             <dialog class="dialog_modal" id="modal_horario">
                 <div class="container_modal">
                     <section class="modal_titulo modal_nav">
-                        <h2 class="modal_titulo">Agregando materia al horario</h2>
+                        <span class="modal_titulo">Agregando materia al horario</span>
                         <button class="btn_cerrar_modal" onclick="cerrarModalHorario()" id="cerrar_moda_horario"><i class="bi bi-x-lg"></i></button>
                     </section>
                     <section class="modal_body">

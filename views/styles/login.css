@@ -21,9 +21,8 @@ main {
 		#414833
 	);
 }
-
-i {
-	font-size: 4rem;
+.icon {
+    font-size: 4rem;
 }
 
 h1 {
@@ -50,21 +49,39 @@ h1 {
 }
 
 .container {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: 20px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    padding: 10px;
+    border-radius: 6px;
+
+    background-color: #8a9270;
+    border: 0.5px solid #414833;
 }
 
 .input_modal {
 	padding: 5px 5px;
+    border-radius: 5px;
 
-	border: 0.5px solid #414833;
-	border-radius: 5px;
+    color: #414833;
+    background-color: #8a9270;
+    border: none;
+    font-family: 'Inconsolata', monospace;
+    font-weight: bold;
+}
 
-	color: #414833;
-	background-color: #c2c5aa;
-	font-family: "Inconsolata", monospace;
+.input_modal:focus-visible {
+    outline-style: none;
+}
+
+.input_modal:-webkit-autofill,
+.input_modal:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
+}
+
+label i {
+    font-size: 1.5rem;
 }
 
 .input_submit {
@@ -84,7 +101,8 @@ h1 {
 }
 
 a {
-	color: #414833;
+    color: #414833;
+    text-decoration: none;
 }
 
 a:hover {

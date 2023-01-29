@@ -17,21 +17,14 @@ $b-opcion4: #656d4a;
 }
 
 body {
-	margin: 0;
-	background-image: linear-gradient(
-		to right bottom,
-		#c2c5aa,
-		#bdc2a2,
-		#b8be9b,
-		#b3bb93,
-		#aeb88c
-	);
-	font-family: $font-content;
+    object-fit: contain;
+    font-family: $font-content;
+    background-image: linear-gradient(to right bottom, #c2c5aa, #bdc2a2, #b8be9b, #b3bb93, #aeb88c);
 }
 
 .seccion {
-	margin-top: 50px;
-	margin-bottom: 50px;
+    margin-top: 60px;
+    margin-bottom: 50px;
 }
 
 .titulo_Seccion {
@@ -41,14 +34,15 @@ body {
 	text-align: center;
 	text-shadow: 1px 1px 10px #656d4a, 0 0 1em #b6ad90, 0 0 0.2em #b6ad90;
 }
+
 .seccion_centrada {
 	display: flex;
 	justify-content: center;
 }
-@mixin materia($back, $bord) {
-	background-color: $back;
-	border: 1px solid $bord;
-	border-radius: 5px;
+@mixin materia($back, $bord){
+    background-color: $back; 
+    border: 1px solid $bord; 
+    border-radius: 5px; 
 }
 
 @mixin caja {
