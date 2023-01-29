@@ -15,10 +15,6 @@
     }
 }
 
-.container_pensum::-webkit-scrollbar {
-    display: none;
-}
-
 .semestre {
     display: flex; 
     flex-direction: column; 
@@ -55,20 +51,32 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
+
     margin: 10px;
     padding: 8px;
+
     background-color: $primario;
     border: 1px solid $secundario;
     border-radius: 5px;
+
     font-family: $font-content;
-    color: black;
+    color: $secundario;
     font-size: 1.1rem;
+    font-weight: 600;
+}
+
+a {
+    text-decoration: none;
 }
 
 .btn:hover {
     background-color: $secundario;
     color: white;
     cursor: pointer;
+}
+
+.btn:active {
+    color: white;
 }
 
 .container {

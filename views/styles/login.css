@@ -15,7 +15,7 @@ main {
     background-image: linear-gradient(to right bottom, #a4ac86, #8a9270, #70785b, #586047, #414833);
 }
 
-i {
+.icon {
     font-size: 4rem;
 }
 
@@ -44,20 +44,39 @@ h1 {
 
 .container {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 5px;
+
+    padding: 10px;
+    border-radius: 6px;
+
+    background-color: #8a9270;
+    border: 0.5px solid #414833;
 }
 
 .input_modal {
     padding: 5px 5px;
 
-    border: 0.5px solid #414833;
     border-radius: 5px;
 
     color: #414833;
-    background-color: #C2C5AA;
+    background-color: #8a9270;
+    border: none;
     font-family: 'Inconsolata', monospace;
+    font-weight: bold;
+}
+
+.input_modal:focus-visible {
+    outline-style: none;
+}
+
+.input_modal:-webkit-autofill,
+.input_modal:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
+}
+
+label i {
+    font-size: 1.5rem;
 }
 
 .input_submit {
@@ -78,6 +97,7 @@ h1 {
 
 a {
     color: #414833;
+    text-decoration: none;
 }
 
 a:hover {
