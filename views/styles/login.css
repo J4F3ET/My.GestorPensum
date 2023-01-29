@@ -70,7 +70,6 @@ h1 {
 	font-family: "Inconsolata", monospace;
 	font-weight: bold;
 }
-
 .input_modal:focus-visible {
 	outline-style: none;
 }
