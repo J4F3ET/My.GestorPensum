@@ -1,22 +1,22 @@
 .creditos {
-    display: flex;
-    justify-content: center;
+	display: flex;
+	justify-content: center;
 
-    input {
-        background-color: $primario;
-        border: none;
-        width: 150px;
-        height: 30px;
-    }
+	input {
+		background-color: $primario;
+		border: none;
+		width: 150px;
+		height: 30px;
+	}
 
-    .extremos {
-        background-color: #808a5f;
-        border-radius: 5px;
-        padding: 6px;
-        width: 150px;
-    }
+	.extremos {
+		background-color: #808a5f;
+		border-radius: 5px;
+		padding: 6px;
+		width: 150px;
+	}
 
-    .tabla_horario {
-        border-spacing: 5px;
-    }
+	.tabla_horario {
+		border-spacing: 5px;
+	}
 }

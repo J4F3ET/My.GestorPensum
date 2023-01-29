@@ -1,58 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.min.css">
-    <link rel="stylesheet" href="../styles/styles.css">
-    <link rel="stylesheet" href="../styles/modal.css">
-    <link rel="icon" type="image/png" href="../styles/imgs/icono.png"/>
-    <title>Agregando materia</title>
-</head>
-<body>
-    <main>
-        <form action="">
-            <h1>Agregando materia</h1>
-            <p>Ingrese los datos correspondientes</p>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;600;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.min.css"
+		/>
+		<link rel="stylesheet" href="../styles/styles.css" />
+		<link rel="stylesheet" href="../styles/modal.css" />
+		<link rel="icon" type="image/png" href="../styles/imgs/icono.png" />
+		<title>Agregando materia</title>
+	</head>
+	<body>
+		<main>
+			<form action="">
+				<h1>Agregando materia</h1>
+				<p>Ingrese los datos correspondientes</p>
 
-            <div>
-                <label for="name">Nombre de la materia</label>
-                <input type="text" name="data-add-course-name" id="name" data-add-course-name>
+				<div>
+					<label for="name">Nombre de la materia</label>
+					<input
+						type="text"
+						name="data-add-course-name"
+						id="name"
+						data-add-course-name
+					/>
 
-                <label for="htd">Horas de trabajo directo</label>
-                <input type="number" name="data-add-course-htd" id="htd">
+					<label for="htd">Horas de trabajo directo</label>
+					<input type="number" name="data-add-course-htd" id="htd" />
 
-                <label for="hta">Horas de trabajo autonomo</label>
-                <input type="number" name="data-add-course-htd" id="hta">
+					<label for="hta">Horas de trabajo autonomo</label>
+					<input type="number" name="data-add-course-htd" id="hta" />
 
-                <label for="htc">Horas de trabajo cooperativo</label>
-                <input type="number" name="data-add-course-htd" id="htc">
+					<label for="htc">Horas de trabajo cooperativo</label>
+					<input type="number" name="data-add-course-htd" id="htc" />
 
-                <label for="requerimientos"></label>
-                <!--Agregar el data list y las opciones vienen del servidor-->
+					<label for="requerimientos"></label>
+					<!--Agregar el data list y las opciones vienen del servidor-->
+				</div>
 
-            </div>
+				<div>
+					<label for="tipe">Tipo</label>
+					<input type="select" name="data-add-course-tipe" id="tipe" />
 
-            <div>
-                <label for="tipe">Tipo</label>
-                <input type="select" name="data-add-course-tipe" id="tipe">
+					<label for="credits">Cantidad de creditos</label>
+					<input type="number" name="data-add-course-credits" id="credits" />
 
-                <label for="credits">Cantidad de creditos</label>
-                <input type="number" name="data-add-course-credits" id="credits">
+					<label for="semester"></label>
+					<input type="number" name="data-add-course-semester" id="semester" />
 
-                <label for="semester"></label>
-                <input type="number" name="data-add-course-semester" id="semester">
-
-                <label for="">Color</label>
-                <!--Agregar input con colores -->
-            </div>
-        </form>
-    </main>
-    <script src="../lib/Sweetalert2/sweetalert2.js"></script>  
-</body>
+					<label for="">Color</label>
+					<!--Agregar input con colores -->
+				</div>
+			</form>
+		</main>
+		<script src="../lib/Sweetalert2/sweetalert2.js"></script>
+	</body>
 </html>

@@ -1,78 +1,77 @@
 .container_pensum {
-    display: flex; 
-    flex-direction: row; 
-    gap: 10px; 
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
 
-    width: 1140px;
-    overflow: auto;
+	width: 1140px;
+	overflow: auto;
 
-    button {
-        overflow: auto;
-    }
+	button {
+		overflow: auto;
+	}
 
-    button::-webkit-scrollbar {
-        display: none;
-    }
+	button::-webkit-scrollbar {
+		display: none;
+	}
 }
 
 .container_pensum::-webkit-scrollbar {
-    display: none;
+	display: none;
 }
 
 .semestre {
-    display: flex; 
-    flex-direction: column; 
-    gap: 10px; 
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
 }
 
 .materia_opcion1 {
-    @include caja; 
-    @include materia($opcion1, $b-opcion1); 
+	@include caja;
+	@include materia($opcion1, $b-opcion1);
 }
 
 .materia_opcion2 {
-    @include caja;
-    @include materia($opcion2, $b-opcion2); 
+	@include caja;
+	@include materia($opcion2, $b-opcion2);
 }
 
 .materia_opcion3 {
-    @include caja;
-    @include materia($opcion3, $b-opcion3); 
+	@include caja;
+	@include materia($opcion3, $b-opcion3);
 }
 
 .materia_opcion4 {
-    @include caja;
-    @include materia($opcion4, $b-opcion4); 
+	@include caja;
+	@include materia($opcion4, $b-opcion4);
 }
 
 .btn_container {
-    display: flex;
-    justify-content: center;
+	display: flex;
+	justify-content: center;
 }
 
 .btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    margin: 10px;
-    padding: 8px;
-    background-color: $primario;
-    border: 1px solid $secundario;
-    border-radius: 5px;
-    font-family: $font-content;
-    color: black;
-    font-size: 1.1rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	margin: 10px;
+	padding: 8px;
+	background-color: $primario;
+	border: 1px solid $secundario;
+	border-radius: 5px;
+	font-family: $font-content;
+	color: black;
+	font-size: 1.1rem;
 }
 
 .btn:hover {
-    background-color: $secundario;
-    color: white;
-    cursor: pointer;
+	background-color: $secundario;
+	color: white;
+	cursor: pointer;
 }
 
 .container {
-    display: flex;
-    align-content: center;
-
+	display: flex;
+	align-content: center;
 }
