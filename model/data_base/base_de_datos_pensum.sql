@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-01-2023 a las 03:19:10
+-- Tiempo de generación: 29-01-2023 a las 23:45:17
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.1.12
 
@@ -134,8 +134,24 @@ INSERT INTO `tipo_materia` (`id`, `nombre`) VALUES
 CREATE TABLE `usuario` (
   `id` int(11) NOT NULL,
   `nombre` varchar(30) NOT NULL,
-  `password` varchar(30) NOT NULL
+  `password` char(60) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `usuario`
+--
+
+INSERT INTO `usuario` (`id`, `nombre`, `password`) VALUES
+(6, 'admin', '$2b$10$MFC3jsgd0UpMTy5HBdocy.ofcHpl9UW6iPjc/RC8QsH5JgmC5igyO'),
+(14, 'mauricio', '$2b$10$EX46PzT.JzcuiUuQuPjymOm1J0FNo2q6V91CePNFaZy48qgsCAFO2'),
+(15, 'lau', '$2b$10$APdYYyuvEuYly.9mArZspO1DsAEs0rZGnrsNv8CBdq0JL0ueM37Ci'),
+(16, 'lau1', '$2b$10$rhD4TawMaNTxpfc1caQJAuDEZovFxpp5Xm.mmI0dXVmu0oGBbQ3Wi'),
+(18, 'lau2', '$2b$10$qKP0/IPb2yXLDvYZnxEhw.GfTyAh.tM9pb/zf/Kj1ZbhV644I.KUG'),
+(19, 'ray', '$2b$10$Soso3VyXUEMgzqK7jZD/0uvpavSWhwus2BbaLT34pPrExkH7h.cQG'),
+(20, 'elpito', '$2b$10$f7gkeBtvaV5nD6xxOWq3OOkY9dzC3nUavjw5ogiW0As6yhageKHSS'),
+(21, '', '$2b$10$qchR7ZKY8qNQiHYNu3vFm.bwt2wO6pNAgDUlshvR5BP8jfUIS.Dq2'),
+(22, 'asd', '$2b$10$2at0UOA.XkC25uN91s.iyOP6gWrOiIwKRbHJoZGBU/kD0Fhp0Sur6'),
+(23, 'pepe', '$2b$10$jsrePGTyjdJWXdTjmKc7Y.ROB67OOU9avVoNshCYA1PnDjsNaitsm');
 
 -- --------------------------------------------------------
 
@@ -236,7 +252,7 @@ ALTER TABLE `tipo_materia`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- Restricciones para tablas volcadas

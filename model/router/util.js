@@ -1,18 +1,17 @@
-const jwt = require('jsonwebtoken');
+const jwt = require("jsonwebtoken");
 const secret = "s23d23fg34k2jb34";
-function step_back(req, res, next){
-    if(!req.cookies.DataLogin) next();
-    else return res.redirect('/index');
+function step_back(req, res, next) {
+	if (!req.cookies.DataLogin) next();
+	else return res.redirect("/index");
 }
-function auntenticando(req,res,next){
-    jwt.verify(req.cookies.DataLogin,secret,(err)=>{
-            if(!err) next()
-            else return res.redirect('/login');
-        }   
-    );
- }
+function auntenticando(req, res, next) {
+	jwt.verify(req.cookies.DataLogin, secret, (err) => {
+		if (!err) next();
+		else return res.redirect("/login");
+	});
+}
 module.exports = {
-    auntenticando,
-    secret,
-    step_back
+	auntenticando,
+	secret,
+	step_back,
 };
