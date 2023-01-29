@@ -5,14 +5,15 @@
 }
 
 body {
-  margin: 0;
+  -o-object-fit: contain;
+  object-fit: contain;
+  font-family: "Inconsolata", monospace;
   background-image: -webkit-gradient(linear, left top, right bottom, from(#c2c5aa), color-stop(#bdc2a2), color-stop(#b8be9b), color-stop(#b3bb93), to(#aeb88c));
   background-image: linear-gradient(to right bottom, #c2c5aa, #bdc2a2, #b8be9b, #b3bb93, #aeb88c);
-  font-family: "Inconsolata", monospace;
 }
 
 .seccion {
-  margin-top: 50px;
+  margin-top: 60px;
   margin-bottom: 50px;
 }
 
@@ -31,7 +32,15 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
 }
+
 .nav {
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  z-index: 1;
+}
+
+.contenedor_secciones {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -41,17 +50,21 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 50px;
+  gap: 5px;
+  height: 35px;
   margin-bottom: 10px;
   font-size: 1.2rem;
+  text-decoration: none;
+  letter-spacing: 2px;
   background-color: #656D4A;
 }
-.nav a:hover {
+.contenedor_secciones a:hover {
   color: white;
 }
 
 .nav a {
   color: black;
+  text-decoration: none;
 }
 
 .container_pensum {
@@ -73,10 +86,6 @@ body {
   display: none;
 }
 
-.container_pensum::-webkit-scrollbar {
-  display: none;
-}
-
 .semestre {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -91,10 +100,8 @@ body {
 .materia_opcion1 {
   display: inline-block;
   padding: 10px;
-
   width: 100px;
   height: 60px;
-  
   text-align: center;
   background-color: #B6AD90;
   border: 1px solid #827C69;
@@ -104,7 +111,6 @@ body {
 .materia_opcion2 {
   display: inline-block;
   padding: 10px;
-
   width: 100px;
   height: 60px;
   text-align: center;
@@ -161,8 +167,13 @@ body {
   border: 1px solid #656D4A;
   border-radius: 5px;
   font-family: "Inconsolata", monospace;
-  color: black;
+  color: #656D4A;
   font-size: 1.1rem;
+  font-weight: 600;
+}
+
+a {
+  text-decoration: none;
 }
 
 .btn:hover {
@@ -170,6 +181,11 @@ body {
   color: white;
   cursor: pointer;
 }
+
+.btn:active {
+  color: white;
+}
+
 .container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -208,7 +224,6 @@ tbody td {
   padding: 10px;
   width: 100px;
   height: 60px;
-
   text-align: center;
   background-color: #A4AC86;
   border: 1px solid #656D4A;
@@ -224,7 +239,6 @@ tr:nth-child(even) {
 .contenido::-webkit-scrollbar {
   display: none;
 }
-
 
 .extremos_tabla {
   position: sticky;
@@ -262,7 +276,6 @@ tbody th span {
   background-color: #808a5f;
   border-radius: 5px;
   padding: 6px;
-
   width: 150px;
 }
 .creditos .tabla_horario {
@@ -281,7 +294,6 @@ tbody th span {
   background-color: #656D4A;
   margin-top: 20px;
   padding: 20px;
-
 }
 .footer a {
   color: black;

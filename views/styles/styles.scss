@@ -17,13 +17,13 @@ $b-opcion4: #656D4A;
 }
 
 body {
-    margin: 0;
-    background-image: linear-gradient(to right bottom, #c2c5aa, #bdc2a2, #b8be9b, #b3bb93, #aeb88c);
+    object-fit: contain;
     font-family: $font-content;
+    background-image: linear-gradient(to right bottom, #c2c5aa, #bdc2a2, #b8be9b, #b3bb93, #aeb88c);
 }
 
 .seccion {
-    margin-top: 50px;
+    margin-top: 60px;
     margin-bottom: 50px;
 }
 
@@ -34,10 +34,12 @@ body {
     text-align: center;
     text-shadow: 1px 1px 10px #656D4A, 0 0 1em #B6AD90, 0 0 0.2em #B6AD90;
 }
+
 .seccion_centrada {
     display: flex;
     justify-content: center;
 }
+
 @mixin materia($back, $bord){
     background-color: $back; 
     border: 1px solid $bord; 
