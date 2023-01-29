@@ -1,45 +1,51 @@
 body {
-    margin: 0;
-    font-family: 'Inconsolata', monospace;
-    color: #414833;
+	margin: 0;
+	font-family: "Inconsolata", monospace;
+	color: #414833;
 }
 
 main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    margin: 0;
-    height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
-    background-image: linear-gradient(to right bottom, #a4ac86, #8a9270, #70785b, #586047, #414833);
+	margin: 0;
+	height: 100vh;
+
+	background-image: linear-gradient(
+		to right bottom,
+		#a4ac86,
+		#8a9270,
+		#70785b,
+		#586047,
+		#414833
+	);
 }
-
 .icon {
     font-size: 4rem;
 }
 
 h1 {
-    font-size: 1.5rem;
-    margin: 0;
+	font-size: 1.5rem;
+	margin: 0;
 }
 
 .form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    gap: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+	gap: 10px;
 
-    width: 300px;
-    height: 400px;
-    padding: 20px;
+	width: 300px;
+	height: 400px;
+	padding: 20px;
 
-    background-color: #A4AC86;
-    border: 2px solid #414833;
-    border-radius: 10px;
+	background-color: #a4ac86;
+	border: 2px solid #414833;
+	border-radius: 10px;
 
-    font-size: 1rem;
+	font-size: 1rem;
 }
 
 .container {
@@ -55,8 +61,7 @@ h1 {
 }
 
 .input_modal {
-    padding: 5px 5px;
-
+	padding: 5px 5px;
     border-radius: 5px;
 
     color: #414833;
@@ -80,19 +85,19 @@ label i {
 }
 
 .input_submit {
-    width: 120px;
-    padding: 8px;
+	width: 120px;
+	padding: 8px;
 
-    border: none;
-    border-radius: 8px;
+	border: none;
+	border-radius: 8px;
 
-    color: white;
-    background-color: #414833;
+	color: white;
+	background-color: #414833;
 }
 
 .input_submit:hover {
-    cursor: pointer;
-    background-color: #5a6348;
+	cursor: pointer;
+	background-color: #5a6348;
 }
 
 a {
@@ -101,5 +106,5 @@ a {
 }
 
 a:hover {
-    color: white;
+	color: white;
 }

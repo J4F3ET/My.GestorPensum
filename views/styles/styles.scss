@@ -1,19 +1,19 @@
-$primario: #C2C5AA; 
-$secundario: #656D4A;
-$font-content: 'Inconsolata', monospace;  
+$primario: #c2c5aa;
+$secundario: #656d4a;
+$font-content: "Inconsolata", monospace;
 
 /*Teniendo en cuenta que se filtra segun la opción del usuario*/
-$opcion1: #B6AD90; 
-$b-opcion1: #827C69; 
-$opcion2: #936639; 
-$b-opcion2: #582F0E; 
-$opcion3: #656D4A; 
-$b-opcion3: #333D29; 
-$opcion4: #A4AC86; 
-$b-opcion4: #656D4A; 
+$opcion1: #b6ad90;
+$b-opcion1: #827c69;
+$opcion2: #936639;
+$b-opcion2: #582f0e;
+$opcion3: #656d4a;
+$b-opcion3: #333d29;
+$opcion4: #a4ac86;
+$b-opcion4: #656d4a;
 
 * {
-	margin: 0; 
+	margin: 0;
 }
 
 body {
@@ -28,18 +28,17 @@ body {
 }
 
 .titulo_Seccion {
-    margin-bottom: 10px;
+	margin-bottom: 10px;
 
-    font-size: 2rem;
-    text-align: center;
-    text-shadow: 1px 1px 10px #656D4A, 0 0 1em #B6AD90, 0 0 0.2em #B6AD90;
+	font-size: 2rem;
+	text-align: center;
+	text-shadow: 1px 1px 10px #656d4a, 0 0 1em #b6ad90, 0 0 0.2em #b6ad90;
 }
 
 .seccion_centrada {
-    display: flex;
-    justify-content: center;
+	display: flex;
+	justify-content: center;
 }
-
 @mixin materia($back, $bord){
     background-color: $back; 
     border: 1px solid $bord; 
@@ -47,15 +46,15 @@ body {
 }
 
 @mixin caja {
-    display: inline-block; 
-    padding: 10px; 
-    width: 100px; 
-    height: 60px;
-    text-align: center;
+	display: inline-block;
+	padding: 10px;
+	width: 100px;
+	height: 60px;
+	text-align: center;
 }
 
-@import "header.scss"; 
-@import "pensum.scss"; 
-@import "horario.scss"; 
+@import "header.scss";
+@import "pensum.scss";
+@import "horario.scss";
 @import "creditos.scss";
-@import "footer.scss"; 
+@import "footer.scss";
