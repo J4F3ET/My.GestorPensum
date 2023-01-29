@@ -46,26 +46,26 @@
 }
 
 .btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
 
-    margin: 10px;
-    padding: 8px;
+	margin: 10px;
+	padding: 8px;
 
-    background-color: $primario;
-    border: 1px solid $secundario;
-    border-radius: 5px;
+	background-color: $primario;
+	border: 1px solid $secundario;
+	border-radius: 5px;
 
-    font-family: $font-content;
-    color: $secundario;
-    font-size: 1.1rem;
-    font-weight: 600;
+	font-family: $font-content;
+	color: $secundario;
+	font-size: 1.1rem;
+	font-weight: 600;
 }
 
 a {
-    text-decoration: none;
+	text-decoration: none;
 }
 
 .btn:hover {
@@ -75,7 +75,7 @@ a {
 }
 
 .btn:active {
-    color: white;
+	color: white;
 }
 
 .container {
