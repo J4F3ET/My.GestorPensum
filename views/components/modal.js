@@ -2,11 +2,11 @@ const modal = document.querySelector("#modal_horario");
 const horario_nombre_materia = document.querySelector("#buscador_input");
 function openModalHorario() {
 	let lista = localStorage.getItem("materias");
-	lista = JSON.parse(lista);
-	if (!lista[0].Materia) {
+	if (lista.message) {
 		Swal.fire({
 			icon: "error",
-			title: "No se encontraron materias registradas",
+			title: lista.message,
+			text: 'Revisé posea materias registradas con el estado "Cursando" activo. ',
 			footer:
 				'<a href="/add_course"> ¿Quieres inscribir una materia? Clik aquí</a>',
 		});
