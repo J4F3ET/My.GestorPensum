@@ -1,59 +1,49 @@
 const {Router} = require("express");
-const {serialize} = require("cookie");
 const jwt = require("jsonwebtoken");
-const step_back = require("./util").step_back;
 const secret = require("./util").secret;
 const conn = require("../data_base/db.js");
+const {auntenticando} = require("./util");
 const router = Router();
-// SENTENCIA SEL PARA INSERTAR MATERIA
-// INSERT INTO `materia`
-//(`nombre`,
-//	 `semestre`,
-//	 `tipo`,
-//	 `creditos`,
-//	 `HTD`,
-//	 `HTA`,
-//	 `HTC`,
-//	 `color`,
-//	 `requisitos`,
-//	 `estado`)
-//VALUES (
-// 	'[nombre]',
-// 	'[semestre INT]',
-// 	'[tipo INT]',
-// 	'[creditos INT]',
-// 	'[HTD INT]',
-// 	'[HTA INT]',
-// 	'[HTC INT]',
-// 	'[COLOR INT]',
-// 	'[REQUISITO INT POSIBLE-NULL]',
-// 	'[ESTADO INT]')
-// SENTENCIA PARA ENLAZAR MATERIA CON USUARIO
-/*
-LA MATERIA YA DEBE DE EXISTIR
-SE NECESITA EL ID DEL USUARIO
-
-*/
-
-//SENTENCIA PARA ESTABLECER MATERIAS "REQUISITO" Y MATERIAS "BENEFICIO"
-// ejemplos
 /* 
-		CREO VA TOCAR ELIMINAR UNA DE LAS TABLAS DE MATERIA BENEFICIO O MATERIA REQUISITO PORT QUE 
-		LAS DOS VAN A CONTENER LA MISMA INFORMACION POR ENDE ES MEJOR ESTABLECER LÑA RELACION DE LAS MATERIAS
-		Y ASI DEPENDIENDO QUE SE MESTRE ES MAYOR Y CUAL ES MENOR PUES SE CONOCE LA MATERIA QUE SON BENEFICIOS Y MATERIAS QUE SON REQUISITO
-
-			DADO QUE PUEDE AVER REDUNDANCIA VERTICAL Y HORIZONTAL, SE DEBE ESTABLECER UM METODO EN EL BACKEND QUE NO PERMITA ESO 
-			UN EJEMPLO DE ESTO SERIA LA RELACION ENTRE MATERI ID 2 Y MATERIA ID 3 , DONDE LA RELACION ES MATERIA ID 2 Y 3 ENTONCES LA RELACION 3 Y 2 SERIA 
-			EQUIVALENTE ASI QUE SE DEBE ESTABLECER UNA RELACION QUE PERMITE PREGUNTARLE A LA BASE DE DATOS SI YA EXISTE AL RELACION "INVERSA A LA QUE SE ESTA CREANDO"
-			UN EJEMPLO 
-			SI YA EXISTE LA RELACION 2 A 3 NO DEBERIAMOS PERMITIR LA RELACION 3 A 2
-			DEPENDIENDO QUIEN TIENE EL NUMERO DE SEMESTRE MAS ALTO SERIA O REQUISITO O BENEFICIO DE LA OTRA MATERIA
-			INSERT INTO `materia`(`nombre`, `semestre`, `tipo`, `creditos`, `HTD`, `HTA`, `HTC`, `color`, `requisitos`, `beneficio`, `estado`) 
-			VALUES ('CAL DIFERENCIAL',1,1,4,3,3,6,1,NULL,NULL,1), 
-			('CAL INTEGRAL',2,1,3,3,3,3,1,NULL,NULL,1);
-		*/
-router.get("/add_course", (req, res) => {
-	console.log("bandera");
+insertar materias rapido para probar INSERT INTO `materia`(`nombre`, `semestre`, `tipo`, `creditos`, `HTD`, `HTA`, `HTC`, `color`, `estado`) VALUES ('Fisica I Newtoniana',2,1,3,3,3,3,1,1),('Fisica II Newtoniana',3,1,3,3,3,3,1,1),('Introduccion Agoritmos',1,1,3,3,3,3,1,1),('POO',2,1,3,3,3,3,1,1);
+~~~~~~~~~SENTENCIA SEL PARA INSERTAR MATERIA
+INSERT INTO `materia`
+(nombre,semestre,tipo,creditos,HTD,HTA,HTC,color,estado)
+VALUES ('[nombre]','[semestre INT]','[tipo INT]','[creditos INT]','[HTD INT]','[HTA INT]','[HTC INT]','[COLOR INT]','[ESTADO INT]')
+~~~~~~~~~SENTENCIA PARA ENLAZAR MATERIA CON USUARIO.
+INSERT INTO usuario_materia VALUES (id usuario,id materia)
+~~~~~~~~~SENTENCIA PARA CONOCER LAS RELACIONES ENTRE MATERIA DE UN USUARIO EXACTO
+SELECT * FROM usuario 
+LEFT JOIN materia_relacion on(id_usuario=usuario.id) 
+LEFT JOIN materia on (id_materia= materia.id) 
+LEFT JOIN materia AS materia_requisito ON (materia_requisito.id=materia_relacion.id_relacion)
+WHERE usuario.id = ${};
+~~~~~~~~~SENTENCIA PARA CONOCER QUE MATERIA INSCRIBIO CADA USUARIO  AGREGE WHERE USUARIO ID PARA CONOCER EL DE UN USUARIO EN ESPECIFICO
+SELECT * FROM usuario 
+LEFT JOIN usuario_materia on(usuario.id=usuario_materia.id_usuario) 
+LEFT JOIN materia ON (materia.id = usuario_materia.id_materia) 
+WHERE usuario.id = ${};
+~~~~~~~~~SENTENCIA PARA ESTABLECER MATERIAS "REQUISITO" Y MATERIAS "BENEFICIO"
+ INSERT INTO materia relacion VALUES (ID DE USUARIO, ID MATERIA RAIZ, ID MATERIA RELACIONADA[BENEFICIO O REQUISITO]);
+ ¡!para definir si es una requisito o beneficio depende de semestre 
+~~~~~~~~~SENTENCIA PARA CONOCER LAS RELACIONES DE UN USUARIO Y MATERIAS
+SELECT * 
+FROM materia_relacion
+LEFT JOIN materia AS RAIZ ON ( id_materia = RAIZ.id) 
+LEFT JOIN materia ON( materia.id = id_relacion) WHERE id_usuario= ${};
+*/
+router.post("/return_materia_requisito", auntenticando, async (req, res) => {
+	if (!req.cookies.DataLogin) return res.json({message: "Error en cookies"});
+	const decode = jwt.verify(req.cookies.DataLogin, secret);
+	const [materia] = await conn.query(
+		`SELECT usuario.id AS usuario_id,materia.nombre AS materia,materia.semestre AS semestre,materia_requisito.nombre AS materia_relacion,materia_requisito.semestre AS semestre_relacion FROM usuario  LEFT JOIN materia_relacion on(id_usuario=usuario.id) LEFT JOIN materia on (id_materia= materia.id) LEFT JOIN materia AS materia_requisito ON (materia_requisito.id=materia_relacion.id_relacion)WHERE usuario.id = ${decode.userId};`
+	);
+	// [{"usuario_id":#,"materia":"CAL DIFERENCIAL","semestre":1,"materia_relacion":"CAL INTEGRAL","semestre_relacion":2}]
+	if (!materia) return res.json({message: "No posee materias"});
+	console.log(materia);
+	return res.json(materia);
+});
+router.get("/add_course", auntenticando, (req, res) => {
 	res.render("add_course");
 });
 

@@ -22,6 +22,8 @@ router.get("/seccion_close", (req, res) => {
 		});
 		res.setHeader("Set-Cookie", serialized);
 		res.redirect("index");
-	} catch (error) {}
+	} catch (error) {
+		throw error;
+	}
 });
 module.exports = router;
