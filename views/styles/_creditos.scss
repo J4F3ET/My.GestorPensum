@@ -1,22 +1,52 @@
 .creditos {
-	display: flex;
-	justify-content: center;
+    .container_tabla {
+        overflow: auto;
+    }
 
-	input {
-		background-color: $primario;
-		border: none;
-		width: 150px;
-		height: 30px;
-	}
+    .tabla_creditos {
+        width: 900px;
+        table-layout: fixed;
+		border-spacing: 10px;
+		border-collapse: separate;
+    }
 
-	.extremos {
-		background-color: #808a5f;
-		border-radius: 5px;
-		padding: 6px;
-		width: 150px;
-	}
+    .contenido, .input_creditosAcademicos {
+        @include caja(168px, 40px); 
+    }
 
-	.tabla_horario {
-		border-spacing: 5px;
-	}
+    .input_creditosAcademicos {
+        @include estilo($primario, $secundario); 
+    }
+
+    .extremos {
+        height: 40px; 
+        overflow: auto; 
+        @include estilo(#959e77, $secundario); 
+
+        .contenido {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            gap: 5px;
+        }
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 550px) {
+    .creditos {
+        .tabla_creditos {
+            font-size: 0.8rem;
+            width: 700px;
+            border-spacing: 10px;
+        }
+
+        .contenido, .input_creditosAcademicos {
+            @include caja(130px, 35px); 
+        }
+    }
 }

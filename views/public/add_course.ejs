@@ -29,41 +29,66 @@
 				<h1>Agregando materia</h1>
 				<p>Ingrese los datos correspondientes</p>
 
-				<div>
+				<section>
 					<label for="name">Nombre de la materia</label>
-					<input
-						type="text"
-						name="data-add-course-name"
-						id="name"
-						data-add-course-name
-					/>
+					<input type="text" name="data-add-course-name" id="name" data-add-course-name required />
 
 					<label for="htd">Horas de trabajo directo</label>
-					<input type="number" name="data-add-course-htd" id="htd" />
+					<input type="number" name="data-add-course-htd" id="htd" data-add-course-htd required />
 
 					<label for="hta">Horas de trabajo autonomo</label>
-					<input type="number" name="data-add-course-htd" id="hta" />
+					<input type="number" name="data-add-course-hta" id="hta" data-add-course-hta required />
 
 					<label for="htc">Horas de trabajo cooperativo</label>
-					<input type="number" name="data-add-course-htd" id="htc" />
+					<input type="number" name="data-add-course-htc" id="htc" data-add-course-htc required />
 
-					<label for="requerimientos"></label>
-					<!--Agregar el data list y las opciones vienen del servidor-->
-				</div>
+					<label for="requerimientos">Espacios que necesita</label>
+					<input list="requerimientos"/>
+					<datalist id="requerimientos"> 
+						<option value="Calculo diferencial">Calculo diferencial</option>
+						<option value="Fisica I">Fisica I: Mecanica newtoniana</option>
+					</datalist>
+				</section>
 
-				<div>
-					<label for="tipe">Tipo</label>
-					<input type="select" name="data-add-course-tipe" id="tipe" />
+				<section>
+					<label for="type">Tipo</label>
+					<input type="select" name="data-add-course-type" id="type" data-add-course-type required />
 
 					<label for="credits">Cantidad de creditos</label>
-					<input type="number" name="data-add-course-credits" id="credits" />
+					<input type="number" name="data-add-course-credits" id="credits" data-add-course-credits required/>
 
-					<label for="semester"></label>
-					<input type="number" name="data-add-course-semester" id="semester" />
+					<label for="semester">Semestre asignado</label>
+					<input type="number" name="data-add-course-semester" id="semester" data-add-course-semester required />
 
 					<label for="">Color</label>
-					<!--Agregar input con colores -->
-				</div>
+					<fieldset class="contenedor_colores">
+						<input type="radio" name="color" id="1" value="B6AD90" data-add-course-color>
+						<label for="1"></label>
+						<input type="radio" name="color" id="2" value="936639" data-add-course-color>
+						<label for="2"></label>
+						<input type="radio" name="color" id="3" value="656D4A" data-add-course-color>
+						<label for="3"></label>
+						<input type="radio" name="color" id="4" value="A4AC86" data-add-course-color>
+						<label for="4"></label>
+					</fieldset>
+
+					<label for="beneficios">Espacios que desbloquea</label>
+					<input list="beneficios"/>
+					<datalist id="beneficios"> 
+						<option value="Calculo diferencial">Calculo diferencial</option>
+						<option value="Fisica I">Fisica I: Mecanica newtoniana</option>
+					</datalist>
+				</section>
+
+				<button>
+					<span>Guardar</span>
+					<input type="submit">
+					<i class="bi bi-check-circle"></i>
+				</button>
+				<button>
+					<span>Descartar</span>
+					<i class="bi bi-x-circle"></i>
+				</button>
 			</form>
 		</main>
 		<script src="../lib/Sweetalert2/sweetalert2.js"></script>

@@ -1,64 +1,45 @@
-.container_tabla {
-	width: 1140px;
-	overflow: auto;
-}
+.horario {
+	.container_tabla {
+		overflow: auto;
+	}
 
-.container_tabla::-webkit-scrollbar {
-	display: none;
-}
+	.tabla_horario {
+		width: 1140px;
+		table-layout: fixed;
+		border-spacing: 10px;
+		border-collapse: separate;
+	}
 
-.tabla_horario {
-	table-layout: fixed;
-	border-collapse: separate;
-	overflow-y: scroll;
-	border-spacing: 10px;
-}
+	.contenido {
+		overflow: auto;
+		@include caja(130px, 60px); 
+	}
 
-th {
-	width: 20%;
+	.contenido::-webkit-scrollbar {
+		display: none;
+	}
 
-	text-align: center;
-}
+	.extremos_tabla {
+		@include estilo(#959e77, $secundario)
+	}
 
-tbody td {
-	text-align: center;
-}
+	.materia {
+		@include estilo($opcion1, $b-opcion1)
+	}
 
-.contenido {
-	@include caja;
-	@include materia($opcion4, $b-opcion4);
-	border-radius: 5px;
-	overflow: auto;
-}
-
-tr:nth-child(even) {
-	display: none;
-}
-
-.contenido::-webkit-scrollbar {
-	display: none;
-}
-
-.extremos_tabla {
-	position: sticky;
-}
-
-th {
-	span {
-		display: inline-block;
-		padding: 10px;
-		width: 100px;
-		text-align: center;
-		border: 1px solid $secundario;
-		background-color: #808a5f;
-		border-radius: 5px;
+	tr:nth-child(even) {
+		display: none;
 	}
 }
 
-tbody {
-	th {
-		span {
-			height: 60px;
+@media (max-width: 550px) {
+	.horario {
+		.tabla_horario {
+			font-size: 0.8rem;
+			width: 1010px;
+		}
+		.contenido {
+			@include caja(110px, 40px); 
 		}
 	}
 }
