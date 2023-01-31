@@ -4,6 +4,7 @@ const login = require("./router/login_router.js");
 const index = require("./router/index_router.js");
 const logout = require("./router/logout_router.js");
 const signup = require("./router/signup_router.js");
+const add_course = require("./router/add_course_router.js");
 const cookieParser = require("cookie-parser");
 const path = require("path");
 const app = express();
@@ -20,6 +21,7 @@ app.use(express.urlencoded({extended: true}));
 app.use(login);
 app.use(signup);
 app.use(index);
+app.use(add_course);
 app.use(logout);
 
 app.listen(port, () => console.log("Server listening on port " + port));

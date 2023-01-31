@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-01-2023 a las 23:45:17
+-- Tiempo de generación: 31-01-2023 a las 03:37:12
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.1.12
 
@@ -45,6 +45,26 @@ INSERT INTO `color` (`id`, `nombre`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `estado_materia`
+--
+
+CREATE TABLE `estado_materia` (
+  `id` int(11) NOT NULL,
+  `estado` varchar(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `estado_materia`
+--
+
+INSERT INTO `estado_materia` (`id`, `estado`) VALUES
+(1, 'No incrita'),
+(2, 'Cursando'),
+(3, 'Aprobada');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `horario`
 --
 
@@ -70,38 +90,43 @@ CREATE TABLE `materia` (
   `HTA` int(11) NOT NULL,
   `HTC` int(11) NOT NULL,
   `color` int(11) NOT NULL,
-  `requisitos` int(11) DEFAULT NULL,
-  `beneficio` int(11) DEFAULT NULL
+  `estado` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `materia`
 --
 
-INSERT INTO `materia` (`id`, `nombre`, `semestre`, `tipo`, `creditos`, `HTD`, `HTA`, `HTC`, `color`, `requisitos`, `beneficio`) VALUES
-(1, 'Cálculo Diferencial', 1, 1, 4, 4, 6, 2, 1, NULL, NULL);
+INSERT INTO `materia` (`id`, `nombre`, `semestre`, `tipo`, `creditos`, `HTD`, `HTA`, `HTC`, `color`, `estado`) VALUES
+(2, 'CAL DIFERENCIAL', 1, 1, 4, 3, 3, 6, 1, 1),
+(3, 'CAL INTEGRAL', 2, 1, 3, 3, 3, 3, 1, 1),
+(4, 'Fisica I Newtoniana', 2, 1, 3, 3, 3, 3, 1, 1),
+(5, 'Fisica II Newtoniana', 3, 1, 3, 3, 3, 3, 1, 1),
+(6, 'Introduccion Agoritmos', 1, 1, 3, 3, 3, 3, 1, 1),
+(7, 'POO', 2, 1, 3, 3, 3, 3, 1, 1);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `materia_beneficio`
+-- Estructura de tabla para la tabla `materia_relacion`
 --
 
-CREATE TABLE `materia_beneficio` (
-  `id` int(11) NOT NULL,
-  `id_requisito` int(11) NOT NULL
+CREATE TABLE `materia_relacion` (
+  `id_usuario` int(11) NOT NULL,
+  `id_materia` int(11) NOT NULL,
+  `id_relacion` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- --------------------------------------------------------
-
 --
--- Estructura de tabla para la tabla `materia_requisito`
+-- Volcado de datos para la tabla `materia_relacion`
 --
 
-CREATE TABLE `materia_requisito` (
-  `id` int(11) NOT NULL,
-  `id_requisito` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+INSERT INTO `materia_relacion` (`id_usuario`, `id_materia`, `id_relacion`) VALUES
+(6, 2, 3),
+(6, 2, 4),
+(6, 3, 5),
+(6, 4, 5),
+(6, 6, 7);
 
 -- --------------------------------------------------------
 
@@ -165,6 +190,18 @@ CREATE TABLE `usuario_materia` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Volcado de datos para la tabla `usuario_materia`
+--
+
+INSERT INTO `usuario_materia` (`id_usuario`, `id_materia`) VALUES
+(6, 2),
+(6, 3),
+(6, 4),
+(6, 5),
+(6, 6),
+(6, 7);
+
+--
 -- Índices para tablas volcadas
 --
 
@@ -172,6 +209,12 @@ CREATE TABLE `usuario_materia` (
 -- Indices de la tabla `color`
 --
 ALTER TABLE `color`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `estado_materia`
+--
+ALTER TABLE `estado_materia`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -187,19 +230,16 @@ ALTER TABLE `horario`
 ALTER TABLE `materia`
   ADD PRIMARY KEY (`id`),
   ADD KEY `tipo` (`tipo`),
-  ADD KEY `color` (`color`);
+  ADD KEY `color` (`color`),
+  ADD KEY `estado` (`estado`);
 
 --
--- Indices de la tabla `materia_beneficio`
+-- Indices de la tabla `materia_relacion`
 --
-ALTER TABLE `materia_beneficio`
-  ADD PRIMARY KEY (`id`,`id_requisito`);
-
---
--- Indices de la tabla `materia_requisito`
---
-ALTER TABLE `materia_requisito`
-  ADD PRIMARY KEY (`id`,`id_requisito`);
+ALTER TABLE `materia_relacion`
+  ADD PRIMARY KEY (`id_usuario`,`id_materia`,`id_relacion`),
+  ADD KEY `id_materia` (`id_materia`),
+  ADD KEY `id_relacion` (`id_relacion`);
 
 --
 -- Indices de la tabla `tipo_materia`
@@ -231,6 +271,12 @@ ALTER TABLE `color`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT de la tabla `estado_materia`
+--
+ALTER TABLE `estado_materia`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT de la tabla `horario`
 --
 ALTER TABLE `horario`
@@ -240,7 +286,7 @@ ALTER TABLE `horario`
 -- AUTO_INCREMENT de la tabla `materia`
 --
 ALTER TABLE `materia`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `tipo_materia`
@@ -269,19 +315,16 @@ ALTER TABLE `horario`
 --
 ALTER TABLE `materia`
   ADD CONSTRAINT `materia_ibfk_1` FOREIGN KEY (`tipo`) REFERENCES `tipo_materia` (`id`),
-  ADD CONSTRAINT `materia_ibfk_2` FOREIGN KEY (`color`) REFERENCES `color` (`id`);
+  ADD CONSTRAINT `materia_ibfk_2` FOREIGN KEY (`color`) REFERENCES `color` (`id`),
+  ADD CONSTRAINT `materia_ibfk_3` FOREIGN KEY (`estado`) REFERENCES `estado_materia` (`id`);
 
 --
--- Filtros para la tabla `materia_beneficio`
+-- Filtros para la tabla `materia_relacion`
 --
-ALTER TABLE `materia_beneficio`
-  ADD CONSTRAINT `materia_beneficio_ibfk_1` FOREIGN KEY (`id`) REFERENCES `materia` (`id`);
-
---
--- Filtros para la tabla `materia_requisito`
---
-ALTER TABLE `materia_requisito`
-  ADD CONSTRAINT `materia_requisito_ibfk_1` FOREIGN KEY (`id`) REFERENCES `materia` (`id`);
+ALTER TABLE `materia_relacion`
+  ADD CONSTRAINT `materia_relacion_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id`),
+  ADD CONSTRAINT `materia_relacion_ibfk_2` FOREIGN KEY (`id_materia`) REFERENCES `materia` (`id`),
+  ADD CONSTRAINT `materia_relacion_ibfk_3` FOREIGN KEY (`id_relacion`) REFERENCES `materia` (`id`);
 
 --
 -- Filtros para la tabla `usuario_materia`
