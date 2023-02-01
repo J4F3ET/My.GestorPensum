@@ -18,77 +18,117 @@
 			rel="stylesheet"
 			href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.min.css"
 		/>
-		<link rel="stylesheet" href="../styles/styles.css" />
-		<link rel="stylesheet" href="../styles/modal.css" />
 		<link rel="icon" type="image/png" href="../styles/imgs/icono.png" />
+		<link rel="stylesheet" href="../styles/add_course.css">
 		<title>Agregando materia</title>
 	</head>
 	<body>
 		<main>
-			<form action="">
+			<form action="" class="formulario">
 				<h1>Agregando materia</h1>
-				<p>Ingrese los datos correspondientes</p>
+				<p>Ingresa los datos correspondientes</p>
 
-				<section>
-					<label for="name">Nombre de la materia</label>
-					<input type="text" name="data-add-course-name" id="name" data-add-course-name required />
+				<section class="contenedor_general">
+					<section class="contenedor_mediano">
 
-					<label for="htd">Horas de trabajo directo</label>
-					<input type="number" name="data-add-course-htd" id="htd" data-add-course-htd required />
+						<fieldset class="contenedor_mediano">
+							<label for="name">Nombre de la materia</label>
+							<div class="contenedor_input">
+								<input type="text" name="data-add-course-name" id="name" data-add-course-name required class="input" placeholder="Calculo integral..."/>
+								<span class="validity"></span>
+							</div>
+						</fieldset>
 
-					<label for="hta">Horas de trabajo autonomo</label>
-					<input type="number" name="data-add-course-hta" id="hta" data-add-course-hta required />
+						<fieldset class="contenedor_mediano">
+							<label for="htd">Horas de trabajo directo</label>
+							<div class="contenedor_input">
+								<input type="number" name="data-add-course-htd" id="htd" data-add-course-htd required class="input" min="1" max="10" placeholder="4"/>
+								<span class="validity"></span>
+							</div>
+						</fieldset>
 
-					<label for="htc">Horas de trabajo cooperativo</label>
-					<input type="number" name="data-add-course-htc" id="htc" data-add-course-htc required />
+						<fieldset class="contenedor_mediano">
+							<label for="hta">Horas de trabajo autonomo</label>
+							<div class="contenedor_input">
+								<input type="number" name="data-add-course-hta" id="hta" data-add-course-hta required class="input" min="1" max="10" placeholder="3"/>
+								<span class="validity"></span>
+							</div>
+						</fieldset>
 
-					<label for="requerimientos">Espacios que necesita</label>
-					<input list="requerimientos"/>
-					<datalist id="requerimientos"> 
-						<option value="Calculo diferencial">Calculo diferencial</option>
-						<option value="Fisica I">Fisica I: Mecanica newtoniana</option>
-					</datalist>
+						<fieldset class="contenedor_mediano">
+							<label for="htc">Horas de trabajo cooperativo</label>
+							<div class="contenedor_input">
+								<input type="number" name="data-add-course-htc" id="htc" data-add-course-htc required class="input" min="1" max="10" placeholder="2"/>
+								<span class="validity"></span>
+							</div>
+						</fieldset>
+
+						<label for="requerimientos">Espacios que necesita</label>
+						<input list="requerimientos" class="espacios_especiales" placeholder="Calculo diferencial..."/>
+						<datalist id="requerimientos"> 
+							<option value="Calculo diferencial">Calculo diferencial</option>
+							<option value="Fisica I">Fisica I: Mecanica newtoniana</option>
+						</datalist>
+					</section>
+
+					<section class="contenedor_mediano">
+						<fieldset class="contenedor_mediano">
+							<label for="type">Clasificación</label>
+							<div class="contenedor_input">
+								<input type="select" name="data-add-course-type" id="type" data-add-course-type required class="input" placeholder="Obligatorio basico..."/>
+								<span class="validity"></span>
+							</div>
+						</fieldset>
+
+						<fieldset class="contenedor_mediano">
+							<label for="credits">Cantidad de creditos</label>
+							<div class="contenedor_input">
+								<input type="number" name="data-add-course-credits" id="credits" data-add-course-credits required class="input" min="1" max="5" placeholder="3"/>
+								<span class="validity"></span>
+							</div>
+						</fieldset>
+
+						<fieldset class="contenedor_mediano">
+						<label for="semester">Semestre asignado</label>
+							<div class="contenedor_input">
+								<input type="number" name="data-add-course-semester" id="semester" data-add-course-semester required class="input" min="1" max="10" placeholder="2"/>
+								<span class="validity"></span>
+							</div>
+						</fieldset>
+
+						<label for="">Color</label>
+						<div class="contenedor_input">
+							<fieldset class="contenedor_colores">
+								<input type="radio" name="color" id="1" value="B6AD90" data-add-course-color class="input_color">
+								<label for="1" class="color color_1"></label>
+								<input type="radio" name="color" id="2" value="936639" data-add-course-color class="input_color">
+								<label for="2" class="color color_2"></label>
+								<input type="radio" name="color" id="3" value="656D4A" data-add-course-color class="input_color">
+								<label for="3" class="color color_3"></label>
+								<input type="radio" name="color" id="4" value="A4AC86" data-add-course-color class="input_color">
+								<label for="4" class="color color_4"></label>
+							</fieldset>
+							<span class="validity"></span>
+						</div>
+
+						<label for="beneficios">Espacios que desbloquea</label>
+						<input list="beneficios" class="espacios_especiales" placeholder="Ecuaciones diferenciales..."/>
+						<datalist id="beneficios"> 
+							<option value="Calculo diferencial">Calculo diferencial</option>
+							<option value="Fisica I">Fisica I: Mecanica newtoniana</option>
+						</datalist>
+					</section>
 				</section>
-
-				<section>
-					<label for="type">Tipo</label>
-					<input type="select" name="data-add-course-type" id="type" data-add-course-type required />
-
-					<label for="credits">Cantidad de creditos</label>
-					<input type="number" name="data-add-course-credits" id="credits" data-add-course-credits required/>
-
-					<label for="semester">Semestre asignado</label>
-					<input type="number" name="data-add-course-semester" id="semester" data-add-course-semester required />
-
-					<label for="">Color</label>
-					<fieldset class="contenedor_colores">
-						<input type="radio" name="color" id="1" value="B6AD90" data-add-course-color>
-						<label for="1"></label>
-						<input type="radio" name="color" id="2" value="936639" data-add-course-color>
-						<label for="2"></label>
-						<input type="radio" name="color" id="3" value="656D4A" data-add-course-color>
-						<label for="3"></label>
-						<input type="radio" name="color" id="4" value="A4AC86" data-add-course-color>
-						<label for="4"></label>
-					</fieldset>
-
-					<label for="beneficios">Espacios que desbloquea</label>
-					<input list="beneficios"/>
-					<datalist id="beneficios"> 
-						<option value="Calculo diferencial">Calculo diferencial</option>
-						<option value="Fisica I">Fisica I: Mecanica newtoniana</option>
-					</datalist>
-				</section>
-
-				<button>
-					<span>Guardar</span>
-					<input type="submit">
-					<i class="bi bi-check-circle"></i>
-				</button>
-				<button>
-					<span>Descartar</span>
-					<i class="bi bi-x-circle"></i>
-				</button>
+        <div class="contenedor_botones">
+          <button>
+            <span>Guardar</span>
+            <i class="bi bi-check-circle"></i>
+          </button>
+          <button>
+            <span>Descartar</span>
+            <i class="bi bi-x-circle"></i>
+          </button>
+        </div>
 			</form>
 		</main>
 		<script src="../lib/Sweetalert2/sweetalert2.js"></script>
