@@ -2,7 +2,6 @@ $primario: #c2c5aa;
 $secundario: #656d4a;
 $font-content: "Inconsolata", monospace;
 
-/*Teniendo en cuenta que se filtra segun la opción del usuario*/
 $opcion1: #b6ad90;
 $b-opcion1: #827c69;
 $opcion2: #936639;
@@ -14,24 +13,16 @@ $b-opcion4: #656d4a;
 
 * {
 	margin: 0;
+	box-sizing: border-box;
 }
 
 body {
-	object-fit: contain;
-	font-family: $font-content;
-	background-image: linear-gradient(
-		to right bottom,
-		#c2c5aa,
-		#bdc2a2,
-		#b8be9b,
-		#b3bb93,
-		#aeb88c
-	);
+    font-family: $font-content;
+    background-image: linear-gradient(to right bottom, #c2c5aa, #bdc2a2, #b8be9b, #b3bb93, #aeb88c);
 }
 
-.seccion {
-	margin-top: 60px;
-	margin-bottom: 50px;
+a {
+    text-decoration: none;
 }
 
 .titulo_Seccion {
@@ -42,22 +33,64 @@ body {
 	text-shadow: 1px 1px 10px #656d4a, 0 0 1em #b6ad90, 0 0 0.2em #b6ad90;
 }
 
-.seccion_centrada {
-	display: flex;
-	justify-content: center;
-}
-@mixin materia($back, $bord) {
-	background-color: $back;
-	border: 1px solid $bord;
-	border-radius: 5px;
+.seccion {
+    margin-top: 60px;
+    margin-bottom: 50px;
 }
 
-@mixin caja {
+.seccion_centrada {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.btn {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+
+    margin: 10px;
+    padding: 8px;
+
+    border-radius: 5px;
+    border: 1px solid $secundario;
+    background-color: $primario;
+
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: $secundario;
+    font-family: $font-content;
+}
+
+.btn:hover {
+	background-color: $secundario;
+	color: white;
+	cursor: pointer;
+}
+
+.btn:active {
+    color: white;
+}
+
+@mixin estilo($back, $bord){
+	border-radius: 5px; 
+    background-color: $back; 
+    border: 1px solid $bord; 
+}
+
+@mixin caja($w, $h) {
 	display: inline-block;
+	width: $w;
+	height: $h;
 	padding: 10px;
-	width: 100px;
-	height: 60px;
 	text-align: center;
+}
+
+@media (max-width: 550px) {
+    .titulo_Seccion {
+        font-size: 1.6rem; 
+    }
 }
 
 @import "header.scss";
