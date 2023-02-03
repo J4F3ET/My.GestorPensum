@@ -6,26 +6,33 @@
 }
 
 .contenedor_secciones {
-	display: flex;
-	justify-content: space-evenly;
-	align-items: center;
-	gap: 5px;
+    gap: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    
+    min-height: 35px;
+    margin-bottom: 10px;
 
-	height: 35px;
-	margin-bottom: 10px;
-
-	font-size: 1.2rem;
-	text-decoration: none;
-	letter-spacing: 2px;
-
-	background-color: $secundario;
-
-	a:hover {
-		color: white;
-	}
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    text-decoration: none;
+    
+    background-color: $secundario;
+    
+    a:hover {
+        color: white;
+    }
 }
 
 .nav a {
 	color: black;
 	text-decoration: none;
+}
+
+@media (max-width: 580px) {
+    .contenedor_secciones {
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+    }
 }

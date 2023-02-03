@@ -4,11 +4,12 @@
 
 	color: black;
 	font-size: 1.1rem;
-	background-color: $secundario;
-
+	
 	margin-top: 20px;
 	padding: 20px;
-
+	
+	background-color: $secundario;
+	
 	a {
 		color: black;
 	}
@@ -18,9 +19,20 @@
 	}
 }
 
+.lista_footer {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
 .item_lista_footer:hover {
-	color: white;
 	a {
 		color: white;
+	}
+}
+
+@media (max-width: 550px) {
+	.footer {
+		font-size: 1rem;
 	}
 }
