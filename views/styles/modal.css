@@ -22,6 +22,7 @@ dialog:modal{
     overflow: hidden;
     border: 1px solid #656D4A;
     box-shadow: 2px 3px 3px #656D4A;
+
 }
 
 .dialog_modal {
@@ -41,24 +42,24 @@ dialog:modal{
     right: 0px;
     width: 100%;
 
-    color: aliceblue;
-    font-size: x-large;
-    font-weight: 525;
-    
-    background: #656D4A;
-    padding: 8px;
+	color: aliceblue;
+	font-size: x-large;
+	font-weight: 525;
+
+	background: #656d4a;
+	padding: 8px;
 }
 
-.btn_cerrar_modal{
-    border: none;
-    background: none;
-    margin-right: 3px;
-    color: #333D29;
-    outline: #656D4A;
+.btn_cerrar_modal {
+	border: none;
+	background: none;
+	margin-right: 3px;
+	color: #333d29;
+	outline: #656d4a;
 }
 
-.btn_cerrar_modal:hover{
-    color: aliceblue;
+.btn_cerrar_modal:hover {
+	color: aliceblue;
 }
 
 .modal_body {
@@ -97,10 +98,10 @@ dialog:modal{
     box-shadow: 1px 1px 1px #73765d ;
 }
 
-.input_modal:active{
-    border-radius: 4px;
-    background-color: #656D4A;
-    border: solid 0.1px #656D4A;
+.input_modal:active {
+	border-radius: 4px;
+	background-color: #656d4a;
+	border: solid 0.1px #656d4a;
 }
 
 .input_submit {

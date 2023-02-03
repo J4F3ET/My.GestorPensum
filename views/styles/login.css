@@ -23,7 +23,7 @@ main {
 }
 
 .icon {
-    font-size: 4rem;
+	font-size: 4rem;
 }
 
 h1 {
@@ -54,11 +54,11 @@ h1 {
     display: flex;
     align-items: center;
 
-    padding: 10px;
-    border-radius: 6px;
+	padding: 10px;
+	border-radius: 6px;
 
-    background-color: #8a9270;
-    border: 0.5px solid #414833;
+	background-color: #8a9270;
+	border: 0.5px solid #414833;
 }
 
 .input_modal {
@@ -72,18 +72,17 @@ h1 {
     font-family: 'Inconsolata', monospace;
     font-weight: bold;
 }
-
 .input_modal:focus-visible {
-    outline-style: none;
+	outline-style: none;
 }
 
 .input_modal:-webkit-autofill,
 .input_modal:-webkit-autofill:focus {
-    transition: background-color 600000s 0s, color 600000s 0s;
+	transition: background-color 600000s 0s, color 600000s 0s;
 }
 
 label i {
-    font-size: 1.5rem;
+	font-size: 1.5rem;
 }
 
 .input_submit {
@@ -103,8 +102,8 @@ label i {
 }
 
 a {
-    color: #414833;
-    text-decoration: none;
+	color: #414833;
+	text-decoration: none;
 }
 
 a:hover {

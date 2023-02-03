@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async() => {
 	if (localStorage.getItem("notificacion")) return;
 	const Toast = Swal.mixin({
 		toast: true,
@@ -16,4 +16,16 @@ document.addEventListener("DOMContentLoaded", () => {
 		title: "Iniciado sesión con éxito",
 	});
 	localStorage.setItem("notificacion", "logined");
+	let currentUrl = new URL(window.location.href);
+	const respuesta = await fetch(currentUrl.origin + "/horario_materias", {
+		method: "POST",
+		headers: {
+			accept: "*/*",
+			cokkies: getCookie("DataLogin"),
+		},
+		body: "",
+	});
+	if (!respuesta) console.log("error");
+	const data = await respuesta.json();
+	localStorage.setItem("materias", JSON.stringify(data));
 });

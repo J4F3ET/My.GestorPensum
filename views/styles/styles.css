@@ -22,8 +22,8 @@ a {
 }
 
 .seccion {
-  margin-top: 60px;
-  margin-bottom: 50px;
+	margin-top: 60px;
+	margin-bottom: 50px;
 }
 
 .seccion_centrada {
@@ -76,10 +76,10 @@ a {
   }
 }
 .nav {
-  position: fixed;
-  width: 100vw;
-  top: 0;
-  z-index: 1;
+	position: fixed;
+	width: 100vw;
+	top: 0;
+	z-index: 1;
 }
 
 .contenedor_secciones {
@@ -101,12 +101,12 @@ a {
   background-color: #656d4a;
 }
 .contenedor_secciones a:hover {
-  color: white;
+	color: white;
 }
 
 .nav a {
-  color: black;
-  text-decoration: none;
+	color: black;
+	text-decoration: none;
 }
 
 @media (max-width: 580px) {
@@ -238,6 +238,7 @@ a {
 }
 .horario .container_tabla {
   overflow: auto;
+
 }
 .horario .tabla_horario {
   width: 1140px;
@@ -245,6 +246,7 @@ a {
   border-spacing: 10px;
   border-collapse: separate;
 }
+
 .horario .contenido {
   overflow: auto;
   display: inline-block;
