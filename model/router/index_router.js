@@ -45,10 +45,10 @@ router.post("/horario_materias", auntenticando, async (req, res) => {
 	if (materias[0]) return res.json(materias);
 	else res.json({message: "No se encontraron materias"});
 });
-router.get("/pensum_materias", auntenticando, async (req, res) => {
+router.post("/pensum_materias", auntenticando, async (req, res) => {
 	const decode = jwt.verify(req.cookies.DataLogin, secret);
 	const [materias] = await conn.query(
-		`SELECT materia.*,materia_requisito.* FROM usuario 
+		`SELECT materia_requisito.id AS id_relacion , materia.* FROM usuario 
 		LEFT JOIN materia_relacion on(id_usuario=usuario.id) 
 		LEFT JOIN materia on (id_materia= materia.id) 
 		LEFT JOIN materia AS materia_requisito ON (materia_requisito.id=materia_relacion.id_relacion)
