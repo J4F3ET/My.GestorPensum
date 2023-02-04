@@ -2,6 +2,7 @@ const modal = document.querySelector("#modal_horario");
 const horario_nombre_materia = document.querySelector("#buscador_input");
 function openModalHorario() {
 	let lista = localStorage.getItem("materias");
+	lista = JSON.parse(lista);
 	if (lista.message) {
 		Swal.fire({
 			icon: "error",
