@@ -65,7 +65,7 @@
 
 						<label for="requerimientos">Espacios que necesita</label>
 						<input list="requerimientos" class="espacios_especiales" placeholder="Calculo diferencial..."/>
-						<datalist id="requerimientos"> 
+						<datalist id="requerimientos">
 							<option value="Calculo diferencial">Calculo diferencial</option>
 							<option value="Fisica I">Fisica I: Mecanica newtoniana</option>
 						</datalist>
@@ -75,7 +75,14 @@
 						<fieldset class="contenedor_mediano">
 							<label for="type">Clasificación</label>
 							<div class="contenedor_input">
-								<input type="select" name="data-add-course-type" id="type" data-add-course-type required class="input" placeholder="Obligatorio basico..."/>
+								<input list="clasificacion" type="select" name="data-add-course-type" id="type" data-add-course-type required class="espacios_especiales" placeholder="Obligatorio basico..."/>
+								<datalist id="clasificacion">
+									<option value="Obligatorio basico">Obligatorio basico</option>
+									<option value="Obligatorio complementario">Obligatorio complementario</option>
+									<option value="Electivo intrínsico">Electivo intrínsico</option>
+									<option value="Electivo extrinsico">Electivo extrínsico</option>
+									<option value="Componente propedeutico">Componente propedeutico</option>
+								</datalist>
 								<span class="validity"></span>
 							</div>
 						</fieldset>
@@ -113,21 +120,21 @@
 
 						<label for="beneficios">Espacios que desbloquea</label>
 						<input list="beneficios" class="espacios_especiales" placeholder="Ecuaciones diferenciales..."/>
-						<datalist id="beneficios"> 
+						<datalist id="beneficios">
 							<option value="Calculo diferencial">Calculo diferencial</option>
 							<option value="Fisica I">Fisica I: Mecanica newtoniana</option>
 						</datalist>
 					</section>
 				</section>
         <div class="contenedor_botones">
-          <button>
+        <button>
             <span>Guardar</span>
             <i class="bi bi-check-circle"></i>
-          </button>
-          <button>
-            <span>Descartar</span>
+        </button>
+        <button>
+            <a href="index.ejs">Descartar</a>
             <i class="bi bi-x-circle"></i>
-          </button>
+        </button>
         </div>
 			</form>
 		</main>
