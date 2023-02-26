@@ -72,13 +72,13 @@ document.addEventListener("DOMContentLoaded", async () => {
 				const materia_html = document.createElement("div");
 				materia_html.classList.add("materia");
 				const button_html = document.createElement("button");
-				button_html.classList.add("materia_opcion1");
+				button_html.classList.add(`materia_opcion${datos[i].color}`);
 				button_html.innerHTML = datos[i].nombre;
 				button_html.id = datos[i].id;
 				materia_html.appendChild(button_html);
 				semestre_html.appendChild(materia_html);
+				pensum_container.appendChild(semestre_html);
 			}
-			pensum_container.appendChild(semestre_html);
 		}
 	});
 });

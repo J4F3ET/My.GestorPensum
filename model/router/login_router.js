@@ -9,8 +9,11 @@ const router = Router();
 router.get("/", step_back, (req, res) => res.render("login"));
 router.get("/login", step_back, (req, res) => res.render("login"));
 router.post("/login", async (req, res) => {
-	const [rows] = await conn.query(
-		`SELECT usuario.nombre, usuario.password, usuario.id FROM usuario WHERE usuario.nombre= '${req.body.user}'`
+	const [rows] = await conn.execute(
+		`SELECT usuario.nombre, usuario.password, usuario.id 
+			FROM usuario
+			WHERE usuario.nombre= ?`,
+			[req.body.user]
 	);
 	if (!rows[0]) return res.json({message: "Usuario no existe."});
 	if (!(await bcrypt.compare(req.body.password, rows[0].password)))
