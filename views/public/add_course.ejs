@@ -24,21 +24,26 @@
 	</head>
 	<body>
 		<main>
-			<form action="" class="formulario">
+			<form action="/add_course_pensum" method="post" class="formulario">
 				<h1>Agregando materia</h1>
 				<p>Ingresa los datos correspondientes</p>
-
 				<section class="contenedor_general">
 					<section class="contenedor_mediano">
-
 						<fieldset class="contenedor_mediano">
 							<label for="name">Nombre de la materia</label>
 							<div class="contenedor_input">
-								<input type="text" name="data-add-course-name" id="name" data-add-course-name required class="input" placeholder="Calculo integral..."/>
+								<input 
+									type="text" 
+									name="data-add-course-name" 
+									id="name" 
+									data-add-course-name 
+									required 
+									class="input" 
+									placeholder="Calculo integral..."
+								/>
 								<span class="validity"></span>
 							</div>
 						</fieldset>
-
 						<fieldset class="contenedor_mediano">
 							<label for="htd">Horas de trabajo directo</label>
 							<div class="contenedor_input">
@@ -46,7 +51,6 @@
 								<span class="validity"></span>
 							</div>
 						</fieldset>
-
 						<fieldset class="contenedor_mediano">
 							<label for="hta">Horas de trabajo autonomo</label>
 							<div class="contenedor_input">
@@ -54,7 +58,6 @@
 								<span class="validity"></span>
 							</div>
 						</fieldset>
-
 						<fieldset class="contenedor_mediano">
 							<label for="htc">Horas de trabajo cooperativo</label>
 							<div class="contenedor_input">
@@ -62,60 +65,90 @@
 								<span class="validity"></span>
 							</div>
 						</fieldset>
-
 						<label for="requerimientos">Espacios que necesita</label>
-						<input list="requerimientos" class="espacios_especiales" placeholder="Calculo diferencial..."/>
+						<input 
+							type="text"
+							list="requerimientos" 
+							class="espacios_especiales"
+							name="data-add-course-requeriments"
+						/>
 						<datalist id="requerimientos"> 
-							<option value="Calculo diferencial">Calculo diferencial</option>
-							<option value="Fisica I">Fisica I: Mecanica newtoniana</option>
+							<option value="Calculo diferencial"></option>
+							<option value="Fisica I"></option>
 						</datalist>
 					</section>
-
 					<section class="contenedor_mediano">
 						<fieldset class="contenedor_mediano">
 							<label for="type">Clasificación</label>
 							<div class="contenedor_input">
-								<input type="select" name="data-add-course-type" id="type" data-add-course-type required class="input" placeholder="Obligatorio basico..."/>
+								<select class="input" name="data-add-course-type" id="type">
+									<option select value="1">Obligatorios Básicos</option>
+									<option value="2">Obligatorios Complementarios</option>
+									<option value="3">Electivos Intrínsecos</option>
+									<option value="4">Electivos Extrínsecos</option>
+									<option value="5">Componente Propedéutico</option>
+								</select>
 								<span class="validity"></span>
 							</div>
 						</fieldset>
-
 						<fieldset class="contenedor_mediano">
 							<label for="credits">Cantidad de creditos</label>
 							<div class="contenedor_input">
-								<input type="number" name="data-add-course-credits" id="credits" data-add-course-credits required class="input" min="1" max="5" placeholder="3"/>
+								<input 
+									type="number" 
+									name="data-add-course-credits" 
+									id="credits" 
+									data-add-course-credits 
+									required 
+									class="input" 
+									min="1" 
+									max="5"
+									maxlength="1"
+									placeholder="3"
+								/>
 								<span class="validity"></span>
 							</div>
 						</fieldset>
-
 						<fieldset class="contenedor_mediano">
 						<label for="semester">Semestre asignado</label>
 							<div class="contenedor_input">
-								<input type="number" name="data-add-course-semester" id="semester" data-add-course-semester required class="input" min="1" max="10" placeholder="2"/>
+								<input 
+									type="number" 
+									name="data-add-course-semester" 
+									id="semester" 
+									data-add-course-semester 
+									required 
+									class="input" 
+									min="1" max="20" 
+									placeholder="2"
+								/>
 								<span class="validity"></span>
 							</div>
 						</fieldset>
-
 						<label for="">Color</label>
 						<div class="contenedor_input">
 							<fieldset class="contenedor_colores">
-								<input type="radio" name="color" id="1" value="B6AD90" data-add-course-color class="input_color">
+								<input type="radio" name="data-add-course-color" id="1" value="B6AD90" data-add-course-color class="input_color">
 								<label for="1" class="color color_1"></label>
-								<input type="radio" name="color" id="2" value="936639" data-add-course-color class="input_color">
+								<input type="radio" name="data-add-course-color" id="2" value="936639" data-add-course-color class="input_color">
 								<label for="2" class="color color_2"></label>
-								<input type="radio" name="color" id="3" value="656D4A" data-add-course-color class="input_color">
+								<input type="radio" name="data-add-course-color" id="3" value="656D4A" data-add-course-color class="input_color">
 								<label for="3" class="color color_3"></label>
-								<input type="radio" name="color" id="4" value="A4AC86" data-add-course-color class="input_color">
+								<input type="radio" name="data-add-course-color" id="4" value="A4AC86" data-add-course-color class="input_color">
 								<label for="4" class="color color_4"></label>
 							</fieldset>
 							<span class="validity"></span>
 						</div>
-
 						<label for="beneficios">Espacios que desbloquea</label>
-						<input list="beneficios" class="espacios_especiales" placeholder="Ecuaciones diferenciales..."/>
+						<input
+							type="text"
+							list="beneficios" 
+							class="espacios_especiales"
+							name="data-add-course-benefits"
+						/>
 						<datalist id="beneficios"> 
-							<option value="Calculo diferencial">Calculo diferencial</option>
-							<option value="Fisica I">Fisica I: Mecanica newtoniana</option>
+							<option value="Calculo diferencial"></option>
+							<option value="Fisica I"></option>
 						</datalist>
 					</section>
 				</section>
