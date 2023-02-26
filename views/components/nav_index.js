@@ -60,7 +60,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 <!-- FIN DE ESTRUCTURA DEL SEMESTRE -->
 	 */
 	const pensum_container = document.querySelector("[data-container-pensum]");
-	console.log(datos);
 	semestres.forEach((element) => {
 		let semestre_html = document.createElement("div");
 		semestre_html.classList.add("semestre");
@@ -73,7 +72,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 				materia_html.classList.add("materia");
 				const button_html = document.createElement("button");
 				button_html.classList.add(`materia_opcion${datos[i].color}`);
-				button_html.innerHTML = datos[i].nombre;
+				button_html.innerHTML = datos[i].materia;
 				button_html.id = datos[i].id;
 				materia_html.appendChild(button_html);
 				semestre_html.appendChild(materia_html);

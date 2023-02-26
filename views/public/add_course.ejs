@@ -34,7 +34,7 @@
 							<div class="contenedor_input">
 								<input 
 									type="text" 
-									name="data-add-course-name" 
+									name="nombre" 
 									id="name" 
 									data-add-course-name 
 									required 
@@ -47,41 +47,34 @@
 						<fieldset class="contenedor_mediano">
 							<label for="htd">Horas de trabajo directo</label>
 							<div class="contenedor_input">
-								<input type="number" name="data-add-course-htd" id="htd" data-add-course-htd required class="input" min="1" max="10" placeholder="4"/>
+								<input type="number" name="HTD" id="htd" data-add-course-htd required class="input" min="1" max="10" placeholder="4"/>
 								<span class="validity"></span>
 							</div>
 						</fieldset>
 						<fieldset class="contenedor_mediano">
 							<label for="hta">Horas de trabajo autonomo</label>
 							<div class="contenedor_input">
-								<input type="number" name="data-add-course-hta" id="hta" data-add-course-hta required class="input" min="1" max="10" placeholder="3"/>
+								<input type="number" name="HTA" id="hta" data-add-course-hta required class="input" min="1" max="10" placeholder="3"/>
 								<span class="validity"></span>
 							</div>
 						</fieldset>
 						<fieldset class="contenedor_mediano">
 							<label for="htc">Horas de trabajo cooperativo</label>
 							<div class="contenedor_input">
-								<input type="number" name="data-add-course-htc" id="htc" data-add-course-htc required class="input" min="1" max="10" placeholder="2"/>
+								<input type="number" name="HTC" id="htc" data-add-course-htc required class="input" min="1" max="10" placeholder="2"/>
 								<span class="validity"></span>
 							</div>
 						</fieldset>
 						<label for="requerimientos">Espacios que necesita</label>
-						<input 
-							type="text"
-							list="requerimientos" 
-							class="espacios_especiales"
-							name="data-add-course-requeriments"
-						/>
-						<datalist id="requerimientos"> 
-							<option value="Calculo diferencial"></option>
-							<option value="Fisica I"></option>
-						</datalist>
+						<select data-add-course-requirements name="requerimientos" class="espacios_especiales input" id="requerimientos">
+							<option selected value="">Ninguno</option>
+						</select>
 					</section>
 					<section class="contenedor_mediano">
 						<fieldset class="contenedor_mediano">
 							<label for="type">Clasificación</label>
 							<div class="contenedor_input">
-								<select class="input" name="data-add-course-type" id="type">
+								<select class="input" name="tipo" id="type">
 									<option select value="1">Obligatorios Básicos</option>
 									<option value="2">Obligatorios Complementarios</option>
 									<option value="3">Electivos Intrínsecos</option>
@@ -96,7 +89,7 @@
 							<div class="contenedor_input">
 								<input 
 									type="number" 
-									name="data-add-course-credits" 
+									name="creditos" 
 									id="credits" 
 									data-add-course-credits 
 									required 
@@ -114,7 +107,7 @@
 							<div class="contenedor_input">
 								<input 
 									type="number" 
-									name="data-add-course-semester" 
+									name="semestre" 
 									id="semester" 
 									data-add-course-semester 
 									required 
@@ -125,31 +118,24 @@
 								<span class="validity"></span>
 							</div>
 						</fieldset>
-						<label for="">Color</label>
+						<label for="contenedor_colores">Color</label>
 						<div class="contenedor_input">
 							<fieldset class="contenedor_colores">
-								<input type="radio" name="data-add-course-color" id="1" value="B6AD90" data-add-course-color class="input_color">
+								<input type="radio" name="color" id="1" value="1" data-add-course-color class="input_color">
 								<label for="1" class="color color_1"></label>
-								<input type="radio" name="data-add-course-color" id="2" value="936639" data-add-course-color class="input_color">
+								<input type="radio" name="color" id="2" value="2" data-add-course-color class="input_color">
 								<label for="2" class="color color_2"></label>
-								<input type="radio" name="data-add-course-color" id="3" value="656D4A" data-add-course-color class="input_color">
+								<input type="radio" name="color" id="3" value="3" data-add-course-color class="input_color">
 								<label for="3" class="color color_3"></label>
-								<input type="radio" name="data-add-course-color" id="4" value="A4AC86" data-add-course-color class="input_color">
+								<input type="radio" name="color" id="4" value="4" data-add-course-color class="input_color">
 								<label for="4" class="color color_4"></label>
 							</fieldset>
 							<span class="validity"></span>
 						</div>
 						<label for="beneficios">Espacios que desbloquea</label>
-						<input
-							type="text"
-							list="beneficios" 
-							class="espacios_especiales"
-							name="data-add-course-benefits"
-						/>
-						<datalist id="beneficios"> 
-							<option value="Calculo diferencial"></option>
-							<option value="Fisica I"></option>
-						</datalist>
+						<select data-add-course-beneficts class="input espacios_especiales" id="beneficios" name="beneficios"> 
+							<option selected value="">Ninguno</option>
+						</select>
 					</section>
 				</section>
         <div class="contenedor_botones">
@@ -165,5 +151,6 @@
 			</form>
 		</main>
 		<script src="../lib/Sweetalert2/sweetalert2.js"></script>
+		<script src="../components/add_course_relation.js"></script>
 	</body>
 </html>
