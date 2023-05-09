@@ -10,7 +10,7 @@ router.post("/register", async (req, res) => {
 	const [exists] = await conn.execute(
 		`SELECT usuario.nombre, usuario.password, usuario.id 
 		FROM usuario 
-		WHERE usuario.nombre= '?'`,
+		WHERE usuario.nombre= ?`,
 		[req.body.user]
 	);
 	if (exists[0]) {
@@ -20,7 +20,7 @@ router.post("/register", async (req, res) => {
 	}
 	const password = await bcrypt.hash(req.body.password, 10);
 	const [response] = await conn.execute(
-		`INSERT INTO usuario (nombre, password) VALUES ('?','?')`,
+		`INSERT INTO usuario (nombre, password) VALUES (?,?)`,
 		[req.body.user,password]
 	);
 	if (!response.insertId) {
@@ -29,9 +29,10 @@ router.post("/register", async (req, res) => {
 		});
 	}
 	const [rows] = await conn.execute(
-		`SELECT usuario.nombre, usuario.password, usuario.id FROM usuario WHERE usuario.nombre= '?'`,
+		`SELECT usuario.nombre, usuario.password, usuario.id FROM usuario WHERE usuario.nombre= ?`,
 		[req.body.user]
 	);
+	console.log(rows);
 	const token = jwt.sign(
 		{
 			userId: rows[0].id,

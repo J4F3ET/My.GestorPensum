@@ -9,8 +9,7 @@ router.post("/horario_materias", auntenticando, async (req, res) => {
 	const decode = jwt.verify(req.cookies.DataLogin, secret);
 	const [materias] = await conn.execute(
 		`SELECT materia.nombre AS Materia, (materia.HTD+materia.HTC) AS Horas 
-		FROM usuario LEFT JOIN usuario_materia on(usuario.id=usuario_materia.id_usuario) 
-		LEFT JOIN materia ON (materia.id = usuario_materia.id_materia) 
+		FROM usuario INNER JOIN materia on (usuario.id=materia.usuario)  
 		WHERE usuario.id = ? AND materia.estado = 2`,
 		[decode.userId]
 	);
@@ -20,11 +19,7 @@ router.post("/horario_materias", auntenticando, async (req, res) => {
 router.post("/pensum_materias", auntenticando, async (req, res) => {
 	const decode = jwt.verify(req.cookies.DataLogin, secret);
 	const [materias] = await conn.execute(
-		`SELECT materia_requisito.id AS id_relacion , materia.* FROM usuario 
-		LEFT JOIN materia_relacion on(id_usuario=usuario.id) 
-		LEFT JOIN materia on (id_materia= materia.id) 
-		LEFT JOIN materia AS materia_requisito ON (materia_requisito.id=materia_relacion.id_relacion)
-		WHERE usuario.id = ?`,
+		`SELECT materia.id as id,materia.color as color,materia.nombre as materia, materia.semestre as semestre FROM materia WHERE materia.usuario = ?`,
 		[decode.userId]
 	);
 	return res.json(materias);
