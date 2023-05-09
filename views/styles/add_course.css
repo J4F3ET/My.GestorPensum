@@ -4,7 +4,6 @@ body {
 	color: #414833;
     font-size: 1.2rem;
 }
-
 main {
     display: flex;
 	justify-content: center;
@@ -181,6 +180,10 @@ button:hover {
     background-color: #9faa82;
 }
 
+.btn_select_remove:hover{
+    background-color: rgb(161, 76, 76);
+    box-shadow: 1px 1px 1px 0 ;
+}
 @media (max-width: 700px) {
     .contenedor_general {
         flex-direction: column;

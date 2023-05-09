@@ -7,8 +7,11 @@ const step_back = require("./util").step_back;
 const secret = require("./util").secret;
 const router = Router();
 router.post("/register", async (req, res) => {
-	const [exists] = await conn.query(
-		`SELECT usuario.nombre, usuario.password, usuario.id FROM usuario WHERE usuario.nombre= '${req.body.user}'`
+	const [exists] = await conn.execute(
+		`SELECT usuario.nombre, usuario.password, usuario.id 
+		FROM usuario 
+		WHERE usuario.nombre= ?`,
+		[req.body.user]
 	);
 	if (exists[0]) {
 		return res.json({
@@ -16,17 +19,20 @@ router.post("/register", async (req, res) => {
 		});
 	}
 	const password = await bcrypt.hash(req.body.password, 10);
-	const [response] = await conn.query(
-		`INSERT INTO usuario (nombre, password) VALUES ('${req.body.user}','${password}')`
+	const [response] = await conn.execute(
+		`INSERT INTO usuario (nombre, password) VALUES (?,?)`,
+		[req.body.user,password]
 	);
 	if (!response.insertId) {
 		return res.json({
 			message: `Se presento un error ,${req.body.user} disculpanos.`,
 		});
 	}
-	const [rows] = await conn.query(
-		`SELECT usuario.nombre, usuario.password, usuario.id FROM usuario WHERE usuario.nombre= '${req.body.user}'`
+	const [rows] = await conn.execute(
+		`SELECT usuario.nombre, usuario.password, usuario.id FROM usuario WHERE usuario.nombre= ?`,
+		[req.body.user]
 	);
+	console.log(rows);
 	const token = jwt.sign(
 		{
 			userId: rows[0].id,

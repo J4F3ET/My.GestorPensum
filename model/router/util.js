@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken");
-const secret = "s23d23fg34k2jb34";
+const secret = "s23d23fg34k2jb34";//Un aes
 function step_back(req, res, next) {
 	if (!req.cookies.DataLogin) next();
 	else return res.redirect("/index");
