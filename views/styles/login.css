@@ -64,14 +64,15 @@ h1 {
 .input_modal {
 	padding: 5px 5px;
     background-color: #8a9270;
-	
+
     border-radius: 5px;
     border: none;
-	
+
     color: #414833;
     font-family: 'Inconsolata', monospace;
     font-weight: bold;
 }
+
 .input_modal:focus-visible {
 	outline-style: none;
 }

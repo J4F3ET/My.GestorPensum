@@ -1,25 +1,31 @@
-.nav {
+nav {
 	position: fixed;
-	width: 100vw;
+	width: 85vw;
+    height: 100vh;
 	top: 0;
+    bottom: 0;
 	z-index: 1;
 }
 
+nav .icono_nav {
+    font-size: 2rem;
+}
+
 .contenedor_secciones {
-    gap: 5px;
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: space-evenly;
-    
-    min-height: 35px;
+    flex-direction: column;
+    gap: 5px;
+
     margin-bottom: 10px;
 
     font-size: 1.2rem;
     letter-spacing: 2px;
     text-decoration: none;
-    
+
     background-color: $secundario;
-    
+
     a:hover {
         color: white;
     }
@@ -28,11 +34,5 @@
 .nav a {
 	color: black;
 	text-decoration: none;
-}
-
-@media (max-width: 580px) {
-    .contenedor_secciones {
-        font-size: 0.9rem;
-        letter-spacing: 1px;
-    }
+    font-size: 1.6rem;
 }

@@ -1,9 +1,17 @@
+@import "transition-style";
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 1.1rem;
+}
+
 body {
-	margin: 0;
 	font-family: "Inconsolata", monospace;
 	color: #414833;
-    font-size: 1.2rem;
 }
+
 main {
     display: flex;
 	justify-content: center;
@@ -23,6 +31,18 @@ main {
 	);
 }
 
+.titulo {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.descripcion {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
 fieldset {
     border: none;
 }
@@ -32,8 +52,8 @@ fieldset {
     flex-direction: column;
     align-items: center;
 
-    width: 80vw;
-    padding: 20px;
+    width: 90vw;
+    padding: 10px;
     height: auto;
 
     background-color: #a4ac86;
@@ -55,21 +75,30 @@ fieldset {
     flex-direction: column;
     align-items: center;
     gap: 5px;
+    width: 100%;
+    margin: 8px 4px;
 }
 
 .contenedor_pequeño {
     display: flex;
     flex-direction: row;
+    align-items: center;
+}
+
+label {
+    text-align: center;
 }
 
 input {
-    padding: 5px;
+    padding: 5px 8px;
     font-size: 0.9rem;
 }
 
 .input {
-    width: 260px;
+    min-width: 80%;
+    max-width: 200px;
     height: 30px;
+    border-radius: 10px;
 
     background-color: #8a9270;
     border: 0.5px solid #586047;
@@ -90,8 +119,6 @@ input[type=number] {
 }
 
 .espacios_especiales {
-    width: 275px;
-    height: 30px;
     background-color: #8a9270;
     border: 0.5px solid #586047;
 }
@@ -160,7 +187,8 @@ input[type=number] {
 
 button {
     margin-top: 20px;
-    width: 120px;
+    width: 40%;
+    max-width: 120px;
     padding: 6px;
 
     border-radius: 8px;
@@ -184,6 +212,7 @@ button:hover {
     background-color: rgb(161, 76, 76);
     box-shadow: 1px 1px 1px 0 ;
 }
+
 @media (max-width: 700px) {
     .contenedor_general {
         flex-direction: column;

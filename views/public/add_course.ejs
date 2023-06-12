@@ -18,6 +18,10 @@
 			rel="stylesheet"
 			href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.min.css"
 		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+		/>
 		<link rel="icon" type="image/png" href="../styles/imgs/icono.png" />
 		<link rel="stylesheet" href="../styles/add_course.css" />
 		<title>Agregando materia</title>
@@ -25,10 +29,10 @@
 	<body>
 		<main>
 			<form action="/add_course_pensum" method="post" class="formulario">
-				<h1>Agregando materia</h1>
-				<p>Ingresa los datos correspondientes</p>
+				<h1 class="titulo animate__animated animate__bounce">Agregando materia</h1>
+				<p class="descripcion">Ingresa los datos correspondientes</p>
 				<section class="contenedor_general">
-					<section class="contenedor_mediano">
+					<section class="contenedor_mediano"> <!--Separa -->
 						<fieldset class="contenedor_mediano">
 							<label for="name">Nombre de la materia</label>
 							<div class="contenedor_input">
@@ -95,16 +99,15 @@
 								<span class="validity"></span>
 							</div>
 						</fieldset>
-						<div class="div_form_requisito contenedor_botones"></div>
 						<label for="requerimientos_0">Espacios que necesita</label>
 						<select
 							data-add-course-requirements
 							name="requerimientos_0"
-							class="select_input_requisito espacios_especiales input"
+							class="input"
 							id="requerimientos_0"
 							disabled
 						>
-							<option selected value="0">Ninguno</option>
+						<option class="input" selected value="0">Ninguno</option>
 						</select>
 					</section>
 					<section class="contenedor_mediano">
@@ -118,7 +121,7 @@
 									<option value="4">Electivos Extrínsecos</option>
 									<option value="5">Componente Propedéutico</option>
 								</select>
-								<span class="validity"></span>
+							<span class="validity"></span>
 							</div>
 						</fieldset>
 						<fieldset class="contenedor_mediano">
@@ -203,7 +206,7 @@
 						<select
 							disabled
 							data-add-course-beneficts
-							class="select_input_beneficio input espacios_especiales"
+							class="select_input_beneficio espacios_especiales input"
 							id="beneficios_0"
 							name="beneficios_0"
 						>

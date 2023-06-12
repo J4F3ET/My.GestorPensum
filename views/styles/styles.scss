@@ -17,7 +17,7 @@ $b-opcion4: #656d4a;
 }
 
 body {
-    font-family: $font-content;
+    font-family: rgb(243, 252, 251);
     background-image: linear-gradient(to right bottom, #c2c5aa, #bdc2a2, #b8be9b, #b3bb93, #aeb88c);
 }
 
@@ -74,9 +74,9 @@ a {
 }
 
 @mixin estilo($back, $bord){
-	border-radius: 5px; 
-    background-color: $back; 
-    border: 1px solid $bord; 
+	border-radius: 5px;
+    background-color: $back;
+    border: 1px solid $bord;
 }
 
 @mixin caja($w, $h) {
@@ -89,7 +89,7 @@ a {
 
 @media (max-width: 550px) {
     .titulo_Seccion {
-        font-size: 1.6rem; 
+        font-size: 1.6rem;
     }
 }
 

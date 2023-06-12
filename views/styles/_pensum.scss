@@ -28,17 +28,17 @@
 }
 
 .materia_opcion2 {
-	@include caja(100px, 60px); 
+	@include caja(100px, 60px);
 	@include estilo($opcion2, $b-opcion2);
 }
 
 .materia_opcion3 {
-	@include caja(100px, 60px); 
+	@include caja(100px, 60px);
 	@include estilo($opcion3, $b-opcion3);
 }
 
 .materia_opcion4 {
-	@include caja(100px, 60px); 
+	@include caja(100px, 60px);
 	@include estilo($opcion4, $b-opcion4);
 }
 
@@ -63,14 +63,14 @@
 
 
 	.materia_opcion2 {
-		@include caja(70px, 40px); 
+		@include caja(70px, 40px);
 	}
 
 	.materia_opcion3 {
-		@include caja(70px, 40px); 
+		@include caja(70px, 40px);
 	}
 
 	.materia_opcion4 {
-		@include caja(70px, 40px); 
+		@include caja(70px, 40px);
 	}
 }

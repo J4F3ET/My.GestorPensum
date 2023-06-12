@@ -11,7 +11,7 @@ dialog:modal{
     position: absolute;
     left: 35%;
     right: 35%;
-    
+
     inset-block-start: 30%;
     inset-block-end: 30%;
     max-width: calc(100% - 6px);

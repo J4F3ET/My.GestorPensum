@@ -11,17 +11,17 @@
     }
 
     .contenido, .input_creditosAcademicos {
-        @include caja(168px, 40px); 
+        @include caja(168px, 40px);
     }
 
     .input_creditosAcademicos {
-        @include estilo($primario, $secundario); 
+        @include estilo($primario, $secundario);
     }
 
     .extremos {
-        height: 40px; 
-        overflow: auto; 
-        @include estilo(#959e77, $secundario); 
+        height: 40px;
+        overflow: auto;
+        @include estilo(#959e77, $secundario);
 
         .contenido {
             display: flex;
@@ -46,7 +46,7 @@
         }
 
         .contenido, .input_creditosAcademicos {
-            @include caja(130px, 35px); 
+            @include caja(130px, 35px);
         }
     }
 }
