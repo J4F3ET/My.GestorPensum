@@ -25,7 +25,11 @@ a {
     text-decoration: none;
 }
 
-.titulo_Seccion {
+.invisible {
+    display: none;
+}
+
+.titulo_seccion {
 	margin-bottom: 10px;
 
 	font-size: 2rem;
@@ -88,12 +92,12 @@ a {
 }
 
 @media (max-width: 550px) {
-    .titulo_Seccion {
+    .titulo_seccion {
         font-size: 1.6rem;
     }
 }
 
-@import "header.scss";
+@import "nav_bar.scss";
 @import "pensum.scss";
 @import "horario.scss";
 @import "creditos.scss";

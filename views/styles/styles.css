@@ -14,12 +14,11 @@ a {
   text-decoration: none;
 }
 
-.icono_nav i {
-  font-size: 2rem;
-  text-align: center;
+.invisible {
+  display: none;
 }
 
-.titulo_Seccion {
+.titulo_seccion {
   margin-bottom: 10px;
   font-size: 2rem;
   text-align: center;
@@ -76,62 +75,97 @@ a {
 }
 
 @media (max-width: 550px) {
-  .titulo_Seccion {
+  .titulo_seccion {
     font-size: 1.6rem;
   }
 }
-.nav {
+nav {
   position: fixed;
-  width: 80vw;
+  min-width: 100px;
+  width: auto;
+  max-width: 200px;
+  height: 100vh;
   top: 0;
   bottom: 0;
   z-index: 1;
-  height: 100vh;
 }
-
-.contenedor_secciones {
-  gap: 5px;
+nav i {
+  margin-right: 8px;
+}
+nav a:not(:first-child) {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  display: inline-block;
+  width: 80%;
+  height: auto;
+  padding: 10px;
+  text-align: center;
+  margin-left: 10px;
+  text-align: start;
+  border-radius: 10px;
+  border: 1px solid #656d4a;
+}
+
+.contenedor_secciones {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  height: 100%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  min-height: 35px;
+  gap: 5px;
+  border-right: 1.5px solid #333d29;
   margin-bottom: 10px;
-  font-size: 1.2rem;
+  height: 100vh;
+  width: calc(50vh - 10px);
+  font-size: 1rem;
   letter-spacing: 2px;
   text-decoration: none;
   background-color: #656d4a;
-  align-items: start;
-  padding-left: 30px;
 }
 
-i {
-  margin-right: 8px;
-}
-
-.contenedor_secciones a:hover {
-  color: white;
+nav .icono_nav {
+  font-size: 3rem;
 }
 
 .nav a {
   color: black;
   text-decoration: none;
+  margin-left: 20px;
+  -webkit-transition: color 0.5s ease;
+  transition: color 0.5s ease;
 }
 
-@media (max-width: 580px) {
+.nav a:hover:not(:first-child) {
+  background-color: #c2c5aa;
+  text-decoration: none;
+  border: 1px solid #333d29;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.nav a:active:not(:first-child) {
+  background-color: #c2c5aa;
+  color: white;
+}
+
+.clicked {
+  background-color: #333d29;
+  color: white !important;
+  border: 1px solid #656d4a;
+}
+
+@media (min-width: 1000px) {
   .contenedor_secciones {
-    font-size: 0.9rem;
-    letter-spacing: 1px;
+    width: calc(50vh - 90px);
   }
 }
 .container_pensum {

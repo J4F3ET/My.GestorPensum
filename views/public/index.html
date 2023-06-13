@@ -17,8 +17,10 @@
 <body>
     <nav class="nav">
         <div class="contenedor_secciones">
+            <div><i class="bi bi-chevron-double-left"></i></div>
+            <!-- <i class="bi bi-chevron-double-right"></i> para el otro lado -->
             <a href="#seccion_pensum" class="icono_nav"><i class="bi bi-balloon-fill"></i></a>
-            <a href="#seccion_pensum"><i class="bi bi-journals"></i>Materias</a>
+            <a href="#seccion_pensum" class="clicked"><i class="bi bi-journals"></i>Materias</a>
             <a href="#seccion_horario"><i class="bi bi-calendar-event"></i>Horario</a>
             <a href="#seccion_creditos"><i class="bi bi-calculator"></i>Estadisticas</a>
             <a href="/seccion_close"><i class="bi bi-box-arrow-in-right"></i>Cerrar sesión</a>
@@ -27,7 +29,7 @@
 
     <main>
         <section id="seccion_pensum" class="seccion pensum">
-            <h2 class="titulo_Seccion">Pensum</h2>
+            <h2 class="titulo_seccion">Pensum</h2>
             <div class="seccion_centrada">
                 <div class="container_pensum" data-container-pensum>
                 </div>
@@ -40,7 +42,7 @@
         </section>
 
         <section id="seccion_horario" class="seccion horario">
-            <h2 class="titulo_Seccion">Horario</h2>
+            <h2 class="titulo_seccion">Horario</h2>
             <div class="seccion_centrada">
             <div class="container_tabla">
                 <table class="tabla_horario">
@@ -595,7 +597,7 @@
         </section>
 
         <section id="seccion_creditos" class="seccion creditos">
-            <h2 class="titulo_Seccion">Creditos academicos</h2>
+            <h2 class="titulo_seccion">Creditos academicos</h2>
             <div class="seccion_centrada">
                 <div class="container_tabla">
                     <table class="tabla_creditos">
@@ -684,6 +686,8 @@
     </footer> -->
 
     <script src="../lib/Sweetalert2/sweetalert2.js"></script>
+    <script src="../lib/js/nodes.js"></script>
+    <script src="../lib/js/navigation.js"></script>
     <script type="text/javascript" src="../components/modal.js"></script>
     <script type="text/javascript" src="../components/nav_index.js"></script>
     <script type="text/javascript" src="../components/pensum.js"></script>
