@@ -1,0 +1,53 @@
+//Estilos para el nav ampliado tanto para mobile como desktop
+.nav_completo {
+    display: flex;
+    align-items: start;
+    justify-content: space-around;
+    flex-direction: column;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    min-width: 200px;
+    width: auto;
+    max-width: 700px;
+    height: 100vh;
+
+    background-color: $secundario;
+
+    a:first-child {
+        font-size: 2rem;
+    }
+
+    a {
+        @include texto_normal(1rem);
+        margin-left: 12px;
+        @include bloque(80%, auto, 10px, $secundario, $secundario, 5px);
+        transition: all 0.3s ease-in-out;
+    }
+
+    i {
+        margin-right: 8px;
+    }
+
+    // Ahora con Pseudo-clases
+    .unclicked:hover {
+        background-color: $primario;
+        color: $secundario;
+        border: 1px solid $secundario;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .unclicked:active {
+        color: white;
+        border: 1px solid white;
+    }
+}
+
+// Estilos aplicados al elemento seleccionado
+.clicked {
+    background-color: $b-opcion3;
+    color: $primario;
+    border: 1px solid $primario;
+}

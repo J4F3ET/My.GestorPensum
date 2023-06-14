@@ -4,31 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;600;700&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../styles/styles.css">
     <link rel="stylesheet" href="../styles/modal.css">
     <link rel="icon" type="image/png" href="../styles/imgs/icono.png"/>
-    <title>Pensum</title>
+    <title>Gestor UD</title>
 </head>
 <body>
-    <nav class="nav">
-        <div class="contenedor_secciones">
-            <div><i class="bi bi-chevron-double-left"></i></div>
-            <!-- <i class="bi bi-chevron-double-right"></i> para el otro lado -->
-            <a href="#seccion_pensum" class="icono_nav"><i class="bi bi-balloon-fill"></i></a>
-            <a href="#seccion_pensum" class="clicked"><i class="bi bi-journals"></i>Materias</a>
-            <a href="#seccion_horario"><i class="bi bi-calendar-event"></i>Horario</a>
-            <a href="#seccion_creditos"><i class="bi bi-calculator"></i>Estadisticas</a>
-            <a href="/seccion_close"><i class="bi bi-box-arrow-in-right"></i>Cerrar sesión</a>
-        </div>
+    <nav id="nav_completo" class="nav_completo">
+        <a href="#seccion_materias" class="nav__icono"><i class="bi bi-balloon-fill"></i></a>
+        <a href="#seccion_materias" class="nav__materias unclicked"><i class="bi bi-journals"></i>Materias</a>
+        <a href="#seccion_horario" class="nav__horario unclicked"><i class="bi bi-calendar-event"></i>Horario</a>
+        <a href="#seccion_estadisticas" class="nav_estadisticas unclicked"><i class="bi bi-calculator"></i>Estadisticas</a>
+        <a href="/seccion_close" class="nav_cerrar unclicked"><i class="bi bi-box-arrow-in-right"></i>Cerrar sesión</a>
     </nav>
 
     <main>
-        <section id="seccion_pensum" class="seccion pensum">
+        <section id="seccion_pensum" class="seccion pensum invisible">
             <h2 class="titulo_seccion">Pensum</h2>
             <div class="seccion_centrada">
                 <div class="container_pensum" data-container-pensum>
@@ -41,7 +37,7 @@
             </div>
         </section>
 
-        <section id="seccion_horario" class="seccion horario">
+        <section id="seccion_horario" class="seccion horario invisible">
             <h2 class="titulo_seccion">Horario</h2>
             <div class="seccion_centrada">
             <div class="container_tabla">
@@ -596,7 +592,7 @@
         </div>
         </section>
 
-        <section id="seccion_creditos" class="seccion creditos">
+        <section id="seccion_creditos" class="seccion creditos invisible">
             <h2 class="titulo_seccion">Creditos academicos</h2>
             <div class="seccion_centrada">
                 <div class="container_tabla">
@@ -653,40 +649,14 @@
 
         </section>
 
-        <section id="seccion_add_materia" class="seccion add_materia">
+        <section id="seccion_add_materia" class="seccion add_materia invisible">
 
         </section>
     </main>
 
-    <!-- <footer id="seccion_footer" class="footer">
-        <div class="div_footer">
-            <ul class="lista_footer">
-                <li class="item_lista_footer">
-                    <i class="bi bi-code-slash"></i>
-                    <span>Jafet Lopez</span>
-                </li>
-                <li class="item_lista_footer">
-                    <i class="bi bi-github"></i>
-                    <a href="https://github.com/J4F3ET">J4F3ET</a>
-                </li>
-            </ul>
-        </div>
-        <div class="div_footer">
-            <ul class="lista_footer">
-                <li class="item_lista_footer">
-                    <i class="bi bi-code-slash"></i>
-                    <span>Laura Aponte</span>
-                </li>
-                <li class="item_lista_footer">
-                    <i class="bi bi-github"></i>
-                    <a href="https://github.com/aldanielago">aldanielago</a>
-                </li>
-            </ul>
-        </div>
-    </footer> -->
-
     <script src="../lib/Sweetalert2/sweetalert2.js"></script>
     <script src="../lib/js/nodes.js"></script>
+    <script src="../lib/js/cositas.js"></script>
     <script src="../lib/js/navigation.js"></script>
     <script type="text/javascript" src="../components/modal.js"></script>
     <script type="text/javascript" src="../components/nav_index.js"></script>

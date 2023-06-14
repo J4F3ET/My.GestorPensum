@@ -1,5 +1,6 @@
 $primario: #c2c5aa;
 $secundario: #656d4a;
+$terciario: #333d29;
 $font-content: "Inconsolata", monospace;
 
 $opcion1: #b6ad90;
@@ -12,93 +13,33 @@ $opcion4: #a4ac86;
 $b-opcion4: #656d4a;
 
 * {
-	margin: 0;
-	box-sizing: border-box;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 body {
-    font-family: rgb(243, 252, 251);
+    font-family: $font-content;
     background-image: linear-gradient(to right bottom, #c2c5aa, #bdc2a2, #b8be9b, #b3bb93, #aeb88c);
-}
-
-a {
-    text-decoration: none;
 }
 
 .invisible {
     display: none;
 }
 
-.titulo_seccion {
-	margin-bottom: 10px;
-
-	font-size: 2rem;
-	text-align: center;
-	text-shadow: 1px 1px 10px #656d4a, 0 0 1em #b6ad90, 0 0 0.2em #b6ad90;
+@mixin texto_normal($w) {
+    color: black;
+    text-decoration: none;
+    font-size: $w;
 }
 
-.seccion {
-    margin-top: 60px;
-    margin-bottom: 50px;
+@mixin bloque($w, $h, $p, $bac, $bor, $r){
+    width: $w;
+    height: $h;
+    padding: $p;
+
+    background-color: $bac;
+    border: 1px solid $bor;
+    border-radius: $r;
 }
 
-.seccion_centrada {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.btn {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    justify-content: center;
-
-    margin: 10px;
-    padding: 8px;
-
-    border-radius: 5px;
-    border: 1px solid $secundario;
-    background-color: $primario;
-
-    font-weight: 600;
-    font-size: 1.1rem;
-    color: $secundario;
-    font-family: $font-content;
-}
-
-.btn:hover {
-	background-color: $secundario;
-	color: white;
-	cursor: pointer;
-}
-
-.btn:active {
-    color: white;
-}
-
-@mixin estilo($back, $bord){
-	border-radius: 5px;
-    background-color: $back;
-    border: 1px solid $bord;
-}
-
-@mixin caja($w, $h) {
-	display: inline-block;
-	width: $w;
-	height: $h;
-	padding: 10px;
-	text-align: center;
-}
-
-@media (max-width: 550px) {
-    .titulo_seccion {
-        font-size: 1.6rem;
-    }
-}
-
-@import "nav_bar.scss";
-@import "pensum.scss";
-@import "horario.scss";
-@import "creditos.scss";
-@import "footer.scss";
+@import "./nav";
