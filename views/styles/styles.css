@@ -10,11 +10,7 @@ body {
   background-image: linear-gradient(to right bottom, #c2c5aa, #bdc2a2, #b8be9b, #b3bb93, #aeb88c);
 }
 
-.invisible {
-  display: none;
-}
-
-.nav_completo {
+.nav_completo, .nav_desktop {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -36,10 +32,10 @@ body {
   height: 100vh;
   background-color: #656d4a;
 }
-.nav_completo a:first-child {
+.nav_completo a:first-child, .nav_desktop a:first-child {
   font-size: 2rem;
 }
-.nav_completo a {
+.nav_completo a, .nav_desktop a {
   color: black;
   text-decoration: none;
   font-size: 1rem;
@@ -53,17 +49,17 @@ body {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
-.nav_completo i {
+.nav_completo i, .nav_desktop i {
   margin-right: 8px;
 }
-.nav_completo .unclicked:hover {
+.nav_completo .unclicked:hover, .nav_desktop .unclicked:hover {
   background-color: #c2c5aa;
   color: #656d4a;
   border: 1px solid #656d4a;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
-.nav_completo .unclicked:active {
+.nav_completo .unclicked:active, .nav_desktop .unclicked:active {
   color: white;
   border: 1px solid white;
 }
@@ -72,4 +68,50 @@ body {
   background-color: #333d29;
   color: #c2c5aa;
   border: 1px solid #c2c5aa;
+}
+
+.nav_desktop {
+  min-width: 60px;
+}
+.nav_desktop a {
+  margin-left: 8px;
+  margin-right: 8px;
+  text-align: center;
+}
+
+.nav_mobile {
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100vw;
+  height: 50px;
+  padding: 5px 20px;
+  background-color: #656d4a;
+}
+.nav_mobile a {
+  color: black;
+  text-decoration: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+@media (max-width: 425px) {
+  .nav_desktop {
+    display: none;
+  }
+}
+@media (min-width: 426px) {
+  .nav_mobile {
+    display: none;
+  }
+}
+.invisible {
+  display: none;
 }
