@@ -1,18 +1,15 @@
 // No olvides poner los puntitos para evitar dolores de cabeza por fa
 const $ = (id) => document.querySelector(id);
 
+const body_html = document.querySelector('body')
+
 // nav completo
-const section_nav_completo = $('.nav_completo');
-
-// se crea un array porque se realiza la misma accion en los 3 casos
-const a_nav_icono = document.querySelectorAll('.nav_icono');
-const a_nav_materias = document.querySelectorAll('.nav__materias');
-const a_nav_horario = document.querySelectorAll('nav__horario');
-const a_nav_estadisticas = document.querySelectorAll('nav_estadisticas');
-const a_nav_cerrar = document.querySelectorAll('nav_cerrar');
-
-// nav desktop
 const section_nav_desktop = $('.nav_desktop');
+const a_nav_icono = $('.nav_icono');
+const a_nav_materias = $('.nav__materias');
+const a_nav_horario = $('nav__horario');
+const a_nav_estadisticas = $('nav_estadisticas');
+const a_nav_cerrar = $('nav_cerrar');
 
 // nav mobile
 const section_nav_mobile = $('.nav_mobile');

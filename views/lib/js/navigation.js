@@ -1,14 +1,13 @@
-a_nav_icono.forEach(() => {
-    addEventListener('click', () => {
-
-    });
-});
-
 a_nav_mobile_menu.addEventListener('click', () => {
-    section_nav_completo.classList.remove('invisible');
     section_nav_mobile.classList.add('invisible');
+    section_nav_desktop.style.display = 'flex';
+    openSideBar();
 });
 
-// header_general_section.classList.remove('header-container--long')
-//     header_general_section.style.background = '';
-//     header_arrow.classList.add('inactive');
+function openSideBar(){
+    section_nav_desktop.style.width = "280px";
+}
+
+function closeSideBar(){
+    section_nav_desktop.style.width = "80px";
+}

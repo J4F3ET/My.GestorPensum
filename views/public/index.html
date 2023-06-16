@@ -15,20 +15,28 @@
     <title>Gestor UD</title>
 </head>
 <body>
-    <nav id="nav_completo" class="nav_completo invisible">
-        <a href="" class="nav__icono"><i class="bi bi-balloon-fill"></i></a>
-        <a href="" class="nav__materias unclicked"><i class="bi bi-journals"></i>Materias</a>
-        <a href="" class="nav__horario unclicked"><i class="bi bi-calendar-event"></i>Horario</a>
-        <a href="" class="nav_estadisticas unclicked"><i class="bi bi-calculator"></i>Estadisticas</a>
-        <a href="/seccion_close" class="nav_cerrar unclicked"><i class="bi bi-box-arrow-in-right"></i>Cerrar sesión</a>
-    </nav>
-
-    <nav id="nav_desktop" class="nav_desktop">
-        <a href="" class="nav__icono"><i class="bi bi-balloon-fill"></i></a>
-        <a href="" class="nav__materias unclicked"><i class="bi bi-journals"></i></a>
-        <a href="" class="nav__horario unclicked"><i class="bi bi-calendar-event"></i></a>
-        <a href="" class="nav_estadisticas unclicked"><i class="bi bi-calculator"></i></a>
-        <a href="/seccion_close" class="nav_cerrar unclicked"><i class="bi bi-box-arrow-in-right"></i></a>
+    <nav id="nav_desktop" class="nav_desktop" onmouseenter="openSideBar()" onmouseleave="closeSideBar()">
+        <div class="nav_inner_desktop">
+            <a class="nav__icono">
+                <i class="bi bi-balloon-fill"></i>
+            </a>
+            <a class="nav__materias unclicked">
+                <i class="bi bi-journals"></i>
+                <span>Materias</span>
+            </a>
+            <a class="nav__horario unclicked">
+                <i class="bi bi-calendar-event"></i>
+                <span>Horario</span>
+            </a>
+            <a class="nav_estadisticas unclicked">
+                <i class="bi bi-calculator"></i>
+                <span>Estadisticas</span>
+            </a>
+            <a class="nav_cerrar unclicked">
+                <i class="bi bi-box-arrow-in-right"></i>
+                <span>Cerrar sesión</span>
+            </a>
+        </div>
     </nav>
 
     <nav id="nav_mobile" class="nav_mobile">
