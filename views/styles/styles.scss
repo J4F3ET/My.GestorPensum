@@ -17,9 +17,24 @@ $b-opcion4: #656d4a;
     box-sizing: border-box;
 }
 
+html {
+    background-color: $terciario;
+}
+
 body {
     font-family: $font-content;
+    width: 100%;
+    height: 100vh;
     background-image: linear-gradient(to right bottom, #c2c5aa, #bdc2a2, #b8be9b, #b3bb93, #aeb88c);
+}
+
+.titulo_seccion {
+    font-size: 2rem;
+    font-weight: 400;
+    text-align: center;
+    margin: 10px;
+    letter-spacing: 5px;
+    font-family: 'Concert One', cursive;
 }
 
 @mixin texto_normal($w) {
@@ -39,8 +54,16 @@ body {
 }
 
 @import "./nav";
+@import "./pensum";
 
 // Por temas del concepto de cascada de css, se deja aquí, no la muevas
 .invisible {
     display: none;
+}
+
+// Detalles para mobile
+@media (max-width: 425px) {
+    main {
+        padding-top: 70px;
+    }
 }

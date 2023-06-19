@@ -4,10 +4,25 @@
           box-sizing: border-box;
 }
 
+html {
+  background-color: #333d29;
+}
+
 body {
   font-family: "Inconsolata", monospace;
+  width: 100%;
+  height: 100vh;
   background-image: -webkit-gradient(linear, left top, right bottom, from(#c2c5aa), color-stop(#bdc2a2), color-stop(#b8be9b), color-stop(#b3bb93), to(#aeb88c));
   background-image: linear-gradient(to right bottom, #c2c5aa, #bdc2a2, #b8be9b, #b3bb93, #aeb88c);
+}
+
+.titulo_seccion {
+  font-size: 2rem;
+  font-weight: 400;
+  text-align: center;
+  margin: 10px;
+  letter-spacing: 5px;
+  font-family: "Concert One", cursive;
 }
 
 .nav_completo, .nav_desktop {
@@ -23,6 +38,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  border-right: 1.5px solid #333d29;
   position: fixed;
   top: 0;
   left: 0;
@@ -112,7 +128,6 @@ body {
   color: black;
   text-decoration: none;
   font-size: 1.4rem;
-  cursor: pointer;
 }
 
 @media (max-width: 425px) {
@@ -125,6 +140,97 @@ body {
     display: none;
   }
 }
+.container_pensum {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 10px;
+  width: 100%;
+  height: auto;
+}
+.container_pensum .container_semestres {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  width: 90vw;
+  overflow-x: auto;
+}
+.container_pensum .container_materias {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+  max-width: 300px;
+}
+
+.materia_opcion1 {
+  width: 100%;
+  height: auto;
+  padding: 5px;
+  background-color: #b6ad90;
+  border: 1px solid #827c69;
+  border-radius: 5px;
+}
+
+.materia_opcion2 {
+  width: 100%;
+  height: auto;
+  padding: 5px;
+  background-color: #936639;
+  border: 1px solid #582f0e;
+  border-radius: 5px;
+}
+
+.materia_opcion3 {
+  width: 100%;
+  height: auto;
+  padding: 5px;
+  background-color: #656d4a;
+  border: 1px solid #333d29;
+  border-radius: 5px;
+}
+
+.materia_opcion4 {
+  width: 100%;
+  height: auto;
+  padding: 5px;
+  background-color: #a4ac86;
+  border: 1px solid #656d4a;
+  border-radius: 5px;
+}
+
 .invisible {
   display: none;
+}
+
+@media (max-width: 425px) {
+  main {
+    padding-top: 70px;
+  }
 }
