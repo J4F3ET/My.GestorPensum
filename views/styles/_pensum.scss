@@ -1,12 +1,5 @@
 .container_pensum {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    gap: 10px;
-
-    width: 100%;
-    height: auto;
+    @include seccion(10px);
 
     .container_semestres {
         display: flex;

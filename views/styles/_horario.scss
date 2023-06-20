@@ -1,0 +1,55 @@
+.container_horario {
+    @include seccion(10px);
+    overflow: visible;
+
+    .container_tabla {
+        display: flex;
+        justify-content: center;
+
+        min-width: 900px;
+        width: 100%;
+        max-width: 1000px;
+        padding: 20px;
+
+        overflow-x: auto;
+    }
+
+    .tabla_horario {
+        table-layout: fixed;
+        border-collapse: collapse;
+
+        width: 100%;
+        padding: 5px;
+
+        border: 0.5px solid $secundario;
+
+        thead {
+            background-color: $secundario;
+            border: 0.5 solid $terciario;
+
+            color: white;
+            font-size: 1rem;
+            text-align: center;
+            letter-spacing: 2px;
+            font-family: $font-content;
+        }
+
+        tbody {
+            background-color: $primario;
+            border: 0.5 solid $terciario;
+        }
+
+        th {
+            padding: 12px;
+        }
+
+        tr {
+            padding: 10px;
+            border-bottom: 0.5px solid $secundario;
+        }
+
+        tr:nth-child(even) {
+            display: none;
+        }
+    }
+}

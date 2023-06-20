@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;600;700&display=swap" rel="stylesheet"> <!--Letra normal-->
@@ -46,7 +46,7 @@
     </nav>
 
     <main>
-        <section id="seccion_pensum" class="container_pensum">
+        <section id="seccion_pensum" class="container_pensum invisible">
             <h2 class="titulo_seccion">Pensum</h2>
             <div class="container_semestres" data-container-pensum>
                 <!--Content by js with the next struct-->
@@ -65,64 +65,63 @@
             <button class="btn"><i class="bi bi-folder-plus"></i><span>Agregar materia</span></button>
         </section>
 
-        <section id="seccion_horario" class="invisible">
+        <section id="seccion_horario" class="container_horario">
             <h2 class="titulo_seccion">Horario</h2>
-            <div class="seccion_centrada">
             <div class="container_tabla">
                 <table class="tabla_horario">
                     <thead>
                         <tr class="fila_horario">
-                            <th scope="col" class="extremos_tabla">
+                            <th scope="col" class="header_tabla">
                                 <span class="contenido">Horario</span>
                             </th>
-                            <th scope="col" class="extremos_tabla">
+                            <th scope="col" class="header_tabla">
                                 <span class="contenido">Lunes</span>
                             </th>
-                            <th scope="col" class="extremos_tabla">
+                            <th scope="col" class="header_tabla">
                                 <span class="contenido">Martes</span>
                             </th>
-                            <th scope="col" class="extremos_tabla">
+                            <th scope="col" class="header_tabla">
                                 <span class="contenido">Miercoles</span>
                             </th>
-                            <th scope="col" class="extremos_tabla">
+                            <th scope="col" class="header_tabla">
                                 <span class="contenido">Jueves</span>
                             </th>
-                            <th scope="col" class="extremos_tabla">
+                            <th scope="col" class="header_tabla">
                                 <span class="contenido">Viernes</span>
                             </th>
-                            <th scope="col" class="extremos_tabla">
+                            <th scope="col" class="header_tabla">
                                 <span class="contenido">Sabado</span>
                             </th>
-                            <th scope="col" class="extremos_tabla">
+                            <th scope="col" class="header_tabla">
                                 <span class="contenido">Domingo</span>
                             </th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr class="fila_horario">
-                            <th scope="row" class="columna_horario extremos_tabla">
+                            <th scope="row" class="columna_horario">
                                 <span class="contenido">6:00</span>
                             </th>
                             <td class="columna_horario">
-                                <span id="lunes_6" data-dia class="contenido materia"></span>
+                                <span id="lunes_6"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="martes_6" data-dia class="contenido materia"></span>
+                                <span  id="martes_6"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="miercoles_6" data-dia class="contenido materia"></span>
+                                <span  id="miercoles_6"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="jueves_6" data-dia class="contenido materia"></span>
+                                <span  id="jueves_6"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="viernes_6" data-dia class="contenido materia"></span>
+                                <span  id="viernes_6"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="sabado_6" data-dia class="contenido materia"></span>
+                                <span  id="sabado_6"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="domingo_6" data-dia class="contenido materia"></span>
+                                <span  id="domingo_6"></span>
                             </td>
                         </tr>
                         <tr class="fila_horario">
@@ -130,25 +129,25 @@
                                 <span class="contenido">7:00</span>
                             </th>
                             <td class="columna_horario">
-                                <span  id="lunes_7" data-dia class="contenido materia"></span>
+                                <span  id="lunes_7"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="martes_7" data-dia class="contenido materia"></span>
+                                <span  id="martes_7"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="miercoles_7" data-dia class="contenido materia"></span>
+                                <span  id="miercoles_7"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="jueves_7" data-dia class="contenido materia"></span>
+                                <span  id="jueves_7"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="viernes_7" data-dia class="contenido materia"></span>
+                                <span  id="viernes_7"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="sabado_7" data-dia class="contenido materia"></span>
+                                <span  id="sabado_7"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="domingo_7" data-dia class="contenido materia"></span>
+                                <span  id="domingo_7"></span>
                             </td>
                         </tr>
                         <tr class="fila_horario">
@@ -156,25 +155,25 @@
                                 <span class="contenido">8:00</span>
                             </th>
                             <td class="columna_horario">
-                                <span  id="lunes_8" data-dia class="contenido materia"></span>
+                                <span  id="lunes_8"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="martes_8" data-dia class="contenido materia"></span>
+                                <span  id="martes_8"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="miercoles_8" data-dia class="contenido materia"></span>
+                                <span  id="miercoles_8"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="jueves_8" data-dia class="contenido materia"></span>
+                                <span  id="jueves_8"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="viernes_8" data-dia class="contenido materia"></span>
+                                <span  id="viernes_8"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="sabado_8" data-dia class="contenido materia"></span>
+                                <span  id="sabado_8"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="domingo_8" data-dia class="contenido materia"></span>
+                                <span  id="domingo_8"></span>
                             </td>
                         </tr>
                         <tr class="fila_horario">
@@ -182,25 +181,25 @@
                                 <span class="contenido">9:00</span>
                             </th>
                             <td class="columna_horario">
-                                <span  id="lunes_9" data-dia class="contenido materia"></span>
+                                <span  id="lunes_9"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="martes_9" data-dia class="contenido materia"></span>
+                                <span  id="martes_9"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="miercoles_9" data-dia class="contenido materia"></span>
+                                <span  id="miercoles_9"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="jueves_9" data-dia class="contenido materia"></span>
+                                <span  id="jueves_9"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="viernes_9" data-dia class="contenido materia"></span>
+                                <span  id="viernes_9"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="sabado_9" data-dia class="contenido materia"></span>
+                                <span  id="sabado_9"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="domingo_9" data-dia class="contenido materia"></span>
+                                <span  id="domingo_9"></span>
                             </td>
                         </tr>
                         <tr class="fila_horario">
@@ -208,25 +207,25 @@
                                 <span class="contenido">10:00</span>
                             </th>
                             <td class="columna_horario">
-                                <span  id="lunes_10" data-dia class="contenido materia"></span>
+                                <span  id="lunes_10"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="martes_10" data-dia class="contenido materia"></span>
+                                <span  id="martes_10"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="miercoles_10" data-dia class="contenido materia"></span>
+                                <span  id="miercoles_10"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="jueves_10" data-dia class="contenido materia"></span>
+                                <span  id="jueves_10"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="viernes_10" data-dia class="contenido materia"></span>
+                                <span  id="viernes_10"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="sabado_10" data-dia class="contenido materia"></span>
+                                <span  id="sabado_10"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="domingo_10" data-dia class="contenido materia"></span>
+                                <span  id="domingo_10"></span>
                             </td>
                         </tr>
                         <tr class="fila_horario">
@@ -234,25 +233,25 @@
                                 <span class="contenido">11:00</span>
                             </th>
                             <td class="columna_horario">
-                                <span  id="lunes_11" data-dia class="contenido materia"></span>
+                                <span  id="lunes_11"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="martes_11" data-dia class="contenido materia"></span>
+                                <span  id="martes_11"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="miercoles_11" data-dia class="contenido materia"></span>
+                                <span  id="miercoles_11"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="jueves_11" data-dia class="contenido materia"></span>
+                                <span  id="jueves_11"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="viernes_11" data-dia class="contenido materia"></span>
+                                <span  id="viernes_11"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="sabado_11" data-dia class="contenido materia"></span>
+                                <span  id="sabado_11"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="domingo_11" data-dia class="contenido materia"></span>
+                                <span  id="domingo_11"></span>
                             </td>
                         </tr>
                         <tr class="fila_horario">
@@ -260,25 +259,25 @@
                                 <span class="contenido">12:00</span>
                             </th>
                             <td class="columna_horario">
-                                <span  id="lunes_12" data-dia class="contenido materia"></span>
+                                <span  id="lunes_12"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="martes_12" data-dia class="contenido materia"></span>
+                                <span  id="martes_12"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="miercoles_12" data-dia class="contenido materia"></span>
+                                <span  id="miercoles_12"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="jueves_12" data-dia class="contenido materia"></span>
+                                <span  id="jueves_12"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="viernes_12" data-dia class="contenido materia"></span>
+                                <span  id="viernes_12"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="sabado_12" data-dia class="contenido materia"></span>
+                                <span  id="sabado_12"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="domingo_12" data-dia class="contenido materia"></span>
+                                <span  id="domingo_12"></span>
                             </td>
                         </tr>
                         <tr class="fila_horario">
@@ -286,25 +285,25 @@
                                 <span class="contenido">13:00</span>
                             </th>
                             <td class="columna_horario">
-                                <span  id="lunes_13" data-dia class="contenido materia"></span>
+                                <span  id="lunes_13"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="martes_13" data-dia class="contenido materia"></span>
+                                <span  id="martes_13"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="miercoles_13" data-dia class="contenido materia"></span>
+                                <span  id="miercoles_13"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="jueves_13" data-dia class="contenido materia"></span>
+                                <span  id="jueves_13"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="viernes_13" data-dia class="contenido materia"></span>
+                                <span  id="viernes_13"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="sabado_13" data-dia class="contenido materia"></span>
+                                <span  id="sabado_13"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="domingo_13" data-dia class="contenido materia"></span>
+                                <span  id="domingo_13"></span>
                             </td>
                         </tr>
                         <tr class="fila_horario">
@@ -312,25 +311,25 @@
                                 <span class="contenido">14:00</span>
                             </th>
                             <td class="columna_horario">
-                                <span  id="lunes_14" data-dia class="contenido materia"></span>
+                                <span  id="lunes_14"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="martes_14" data-dia class="contenido materia"></span>
+                                <span  id="martes_14"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="miercoles_14" data-dia class="contenido materia"></span>
+                                <span  id="miercoles_14"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="jueves_14" data-dia class="contenido materia"></span>
+                                <span  id="jueves_14"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="viernes_14" data-dia class="contenido materia"></span>
+                                <span  id="viernes_14"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="sabado_14" data-dia class="contenido materia"></span>
+                                <span  id="sabado_14"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="domingo_14" data-dia class="contenido materia"></span>
+                                <span  id="domingo_14"></span>
                             </td>
                         </tr>
                         <tr class="fila_horario">
@@ -338,25 +337,25 @@
                                 <span class="contenido">15:00</span>
                             </th>
                             <td class="columna_horario">
-                                <span  id="lunes_15" data-dia class="contenido materia"></span>
+                                <span  id="lunes_15"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="martes_15" data-dia class="contenido materia"></span>
+                                <span  id="martes_15"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="miercoles_15" data-dia class="contenido materia"></span>
+                                <span  id="miercoles_15"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="jueves_15" data-dia class="contenido materia"></span>
+                                <span  id="jueves_15"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="viernes_15" data-dia class="contenido materia"></span>
+                                <span  id="viernes_15"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="sabado_15" data-dia class="contenido materia"></span>
+                                <span  id="sabado_15"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="domingo_15" data-dia class="contenido materia"></span>
+                                <span  id="domingo_15"></span>
                             </td>
                         </tr>
                         <tr class="fila_horario">
@@ -364,25 +363,25 @@
                                 <span class="contenido">16:00</span>
                             </th>
                             <td class="columna_horario">
-                                <span  id="lunes_16" data-dia class="contenido materia"></span>
+                                <span  id="lunes_16"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="martes_16" data-dia class="contenido materia"></span>
+                                <span  id="martes_16"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="miercoles_16" data-dia class="contenido materia"></span>
+                                <span  id="miercoles_16"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="jueves_16" data-dia class="contenido materia"></span>
+                                <span  id="jueves_16"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="viernes_16" data-dia class="contenido materia"></span>
+                                <span  id="viernes_16"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="sabado_16" data-dia class="contenido materia"></span>
+                                <span  id="sabado_16"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="domingo_16" data-dia class="contenido materia"></span>
+                                <span  id="domingo_16"></span>
                             </td>
                         </tr>
                         <tr class="fila_horario">
@@ -390,25 +389,25 @@
                                 <span class="contenido">17:00</span>
                             </th>
                             <td class="columna_horario">
-                                <span  id="lunes_17" data-dia class="contenido materia"></span>
+                                <span  id="lunes_17"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="martes_17" data-dia class="contenido materia"></span>
+                                <span  id="martes_17"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="miercoles_17" data-dia class="contenido materia"></span>
+                                <span  id="miercoles_17"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="jueves_17" data-dia class="contenido materia"></span>
+                                <span  id="jueves_17"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="viernes_17" data-dia class="contenido materia"></span>
+                                <span  id="viernes_17"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="sabado_17" data-dia class="contenido materia"></span>
+                                <span  id="sabado_17"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="domingo_17" data-dia class="contenido materia"></span>
+                                <span  id="domingo_17"></span>
                             </td>
                         </tr>
                         <tr class="fila_horario">
@@ -416,25 +415,25 @@
                                 <span class="contenido">18:00</span>
                             </th>
                             <td class="columna_horario">
-                                <span  id="lunes_18" data-dia class="contenido materia"></span>
+                                <span  id="lunes_18"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="martes_18" data-dia class="contenido materia"></span>
+                                <span  id="martes_18"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="miercoles_18" data-dia class="contenido materia"></span>
+                                <span  id="miercoles_18"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="jueves_18" data-dia class="contenido materia"></span>
+                                <span  id="jueves_18"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="viernes_18" data-dia class="contenido materia"></span>
+                                <span  id="viernes_18"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="sabado_18" data-dia class="contenido materia"></span>
+                                <span  id="sabado_18"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="domingo_18" data-dia class="contenido materia"></span>
+                                <span  id="domingo_18"></span>
                             </td>
                         </tr>
                         <tr class="fila_horario">
@@ -442,25 +441,25 @@
                                 <span class="contenido">19:00</span>
                             </th>
                             <td class="columna_horario">
-                                <span  id="lunes_19" data-dia class="contenido materia"></span>
+                                <span  id="lunes_19"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="martes_19" data-dia class="contenido materia"></span>
+                                <span  id="martes_19"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="miercoles_19" data-dia class="contenido materia"></span>
+                                <span  id="miercoles_19"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="jueves_19" data-dia class="contenido materia"></span>
+                                <span  id="jueves_19"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="viernes_19" data-dia class="contenido materia"></span>
+                                <span  id="viernes_19"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="sabado_19" data-dia class="contenido materia"></span>
+                                <span  id="sabado_19"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="domingo_19" data-dia class="contenido materia"></span>
+                                <span  id="domingo_19"></span>
                             </td>
                         </tr>
                         <tr class="fila_horario">
@@ -468,25 +467,25 @@
                                 <span class="contenido">20:00</span>
                             </th>
                             <td class="columna_horario">
-                                <span  id="lunes_20" data-dia class="contenido materia"></span>
+                                <span  id="lunes_20"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="martes_20" data-dia class="contenido materia"></span>
+                                <span  id="martes_20"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="miercoles_20" data-dia class="contenido materia"></span>
+                                <span  id="miercoles_20"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="jueves_20" data-dia class="contenido materia"></span>
+                                <span  id="jueves_20"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="viernes_20" data-dia class="contenido materia"></span>
+                                <span  id="viernes_20"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="sabado_20" data-dia class="contenido materia"></span>
+                                <span  id="sabado_20"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="domingo_20" data-dia class="contenido materia"></span>
+                                <span  id="domingo_20"></span>
                             </td>
                         </tr>
                         <tr class="fila_horario">
@@ -494,30 +493,29 @@
                                 <span class="contenido">21:00</span>
                             </th>
                             <td class="columna_horario">
-                                <span  id="lunes_21" data-dia class="contenido materia"></span>
+                                <span  id="lunes_21"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="martes_21" data-dia class="contenido materia"></span>
+                                <span  id="martes_21"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="miercoles_21" data-dia class="contenido materia"></span>
+                                <span  id="miercoles_21"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="jueves_21" data-dia class="contenido materia"></span>
+                                <span  id="jueves_21"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="viernes_21" data-dia class="contenido materia"></span>
+                                <span  id="viernes_21"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="sabado_21" data-dia class="contenido materia"></span>
+                                <span  id="sabado_21"></span>
                             </td>
                             <td class="columna_horario">
-                                <span  id="domingo_21" data-dia class="contenido materia"></span>
+                                <span  id="domingo_21"></span>
                             </td>
                         </tr>
                     </tbody>
                 </table>
-            </div>
             </div>
 
             <div class="btn_container">

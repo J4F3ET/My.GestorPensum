@@ -4,14 +4,15 @@
     align-items: start;
     justify-content: space-around;
     flex-direction: column;
-    border-right: 1.5px solid $terciario;
 
     position: fixed;
     top: 0;
     left: 0;
-    margin: 0;
 
-    height: 100vh;
+    margin: 0;
+    height: 100%;
+    border-right: 1.5px solid $terciario;
+
     background-color: $secundario;
     transition: all 0.5s ease-in-out;
 

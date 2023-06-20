@@ -26,11 +26,31 @@ html {
 body {
     font-family: $font-content;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background-image: linear-gradient(to right bottom, #c2c5aa, #bdc2a2, #b8be9b, #b3bb93, #aeb88c);
 }
 
+main {
+    width: 100%;
+    height: 100%;
+}
+
+h2 {
+    margin: 0;
+}
+
 // Mixins
+@mixin seccion($g){
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: $g;
+
+    width: 100%;
+    height: auto;
+}
+
 @mixin texto_normal($w) {
     color: black;
     text-decoration: none;
@@ -65,12 +85,13 @@ body {
     @include bloque(200px, auto, 12px, 8px);
     @include bloque_decorado($secundario, $primario);
     cursor: pointer;
-    color: $primario;
+    color: white;
     font-size: 1rem;
     overflow: visible;
     transition: all 0.4s ease-in-out;
     font-family: $font-content;
     font-weight: 600;
+    margin: 8px;
 
     i {
         margin-right: 8px;
@@ -93,6 +114,7 @@ body {
 
 @import "./nav";
 @import "./pensum";
+@import "./horario";
 
 // Por temas del concepto de cascada de css, se deja aquí, no la muevas
 .invisible {
@@ -103,5 +125,12 @@ body {
 @media (max-width: 425px) {
     main {
         padding-top: 70px;
+    }
+}
+
+// Detalles para desktop
+@media (min-width: 426px) {
+    main {
+        padding-left: 80px;
     }
 }
