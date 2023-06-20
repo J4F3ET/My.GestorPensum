@@ -18,11 +18,45 @@ body {
 
 .titulo_seccion {
   font-size: 2rem;
-  font-weight: 400;
+  font-weight: 300;
   text-align: center;
   margin: 10px;
   letter-spacing: 5px;
   font-family: "Concert One", cursive;
+}
+
+.btn {
+  width: 200px;
+  height: auto;
+  padding: 12px;
+  background-color: #656d4a;
+  border: 1px solid #c2c5aa;
+  border-radius: 8px;
+  overflow: auto;
+  cursor: pointer;
+  color: #c2c5aa;
+  font-size: 1rem;
+  overflow: visible;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  font-family: "Inconsolata", monospace;
+  font-weight: 400;
+}
+.btn i {
+  margin-right: 8px;
+}
+.btn:hover {
+  background-color: #c2c5aa;
+  color: #656d4a;
+  border: 1px solid #656d4a;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+.btn:active {
+  color: white;
+  border: 1px solid white;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 
 .nav_completo, .nav_desktop {
@@ -64,6 +98,7 @@ body {
   background-color: #656d4a;
   border: 1px solid #656d4a;
   border-radius: 5px;
+  overflow: auto;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
@@ -166,16 +201,17 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   gap: 10px;
-  padding: 10px 12px;
-  width: 90vw;
   overflow-x: auto;
+  padding: 10px 12px;
+  width: 100%;
+  max-width: 1000px;
 }
 .container_pensum .container_materias {
   display: -webkit-box;
@@ -186,7 +222,8 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 10px;
-  max-width: 300px;
+  max-width: 500px;
+  width: 100%;
 }
 
 .materia_opcion1 {
@@ -196,6 +233,7 @@ body {
   background-color: #b6ad90;
   border: 1px solid #827c69;
   border-radius: 5px;
+  overflow: auto;
 }
 
 .materia_opcion2 {
@@ -205,6 +243,7 @@ body {
   background-color: #936639;
   border: 1px solid #582f0e;
   border-radius: 5px;
+  overflow: auto;
 }
 
 .materia_opcion3 {
@@ -214,6 +253,7 @@ body {
   background-color: #656d4a;
   border: 1px solid #333d29;
   border-radius: 5px;
+  overflow: auto;
 }
 
 .materia_opcion4 {
@@ -223,6 +263,7 @@ body {
   background-color: #a4ac86;
   border: 1px solid #656d4a;
   border-radius: 5px;
+  overflow: auto;
 }
 
 .invisible {

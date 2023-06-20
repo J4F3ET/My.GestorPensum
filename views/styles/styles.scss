@@ -12,6 +12,8 @@ $b-opcion3: #333d29;
 $opcion4: #a4ac86;
 $b-opcion4: #656d4a;
 
+
+// Estilos generales
 * {
     margin: 0;
     box-sizing: border-box;
@@ -28,15 +30,7 @@ body {
     background-image: linear-gradient(to right bottom, #c2c5aa, #bdc2a2, #b8be9b, #b3bb93, #aeb88c);
 }
 
-.titulo_seccion {
-    font-size: 2rem;
-    font-weight: 400;
-    text-align: center;
-    margin: 10px;
-    letter-spacing: 5px;
-    font-family: 'Concert One', cursive;
-}
-
+// Mixins
 @mixin texto_normal($w) {
     color: black;
     text-decoration: none;
@@ -51,6 +45,46 @@ body {
     background-color: $bac;
     border: 1px solid $bor;
     border-radius: $r;
+
+    overflow: auto;
+}
+
+// Estilos a clases que se ven en varias secciones
+.titulo_seccion {
+    font-size: 2rem;
+    font-weight: 300;
+    text-align: center;
+    margin: 10px;
+    letter-spacing: 5px;
+    font-family: 'Concert One', cursive;
+}
+
+.btn {
+    @include bloque(200px, auto, 12px, $secundario, $primario, 8px);
+    cursor: pointer;
+    color: $primario;
+    font-size: 1rem;
+    overflow: visible;
+    transition: all 0.4s ease-in-out;
+    font-family: $font-content;
+    font-weight: 400;
+
+    i {
+        margin-right: 8px;
+    }
+
+    &:hover {
+        background-color: $primario;
+        color: $secundario;
+        border: 1px solid $secundario;
+        transition: all 0.4s ease-in-out;
+    }
+
+    &:active {
+        color: white;
+        border: 1px solid white;
+        transition: all 0.4s ease-in-out;
+    }
 }
 
 @import "./nav";
