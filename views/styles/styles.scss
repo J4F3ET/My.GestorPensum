@@ -37,16 +37,18 @@ body {
     font-size: $w;
 }
 
-@mixin bloque($w, $h, $p, $bac, $bor, $r){
+@mixin bloque($w, $h, $p, $r){
     width: $w;
     height: $h;
     padding: $p;
-
-    background-color: $bac;
-    border: 1px solid $bor;
     border-radius: $r;
 
     overflow: auto;
+}
+
+@mixin bloque_decorado($bac, $bor) {
+    background-color: $bac;
+    border: 1px solid $bor;
 }
 
 // Estilos a clases que se ven en varias secciones
@@ -60,14 +62,15 @@ body {
 }
 
 .btn {
-    @include bloque(200px, auto, 12px, $secundario, $primario, 8px);
+    @include bloque(200px, auto, 12px, 8px);
+    @include bloque_decorado($secundario, $primario);
     cursor: pointer;
     color: $primario;
     font-size: 1rem;
     overflow: visible;
     transition: all 0.4s ease-in-out;
     font-family: $font-content;
-    font-weight: 400;
+    font-weight: 600;
 
     i {
         margin-right: 8px;
@@ -78,6 +81,7 @@ body {
         color: $secundario;
         border: 1px solid $secundario;
         transition: all 0.4s ease-in-out;
+        font-weight: 800;
     }
 
     &:active {

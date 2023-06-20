@@ -25,7 +25,8 @@
     a {
         cursor: pointer;
         @include texto_normal(1rem);
-        @include bloque(80%, auto, 8px, $secundario, $secundario, 5px);
+        @include bloque(80%, auto, 8px, 5px);
+        @include bloque_decorado($secundario, $secundario);
         transition: all 0.3s ease-in-out;
     }
 

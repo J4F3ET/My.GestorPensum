@@ -29,10 +29,10 @@ body {
   width: 200px;
   height: auto;
   padding: 12px;
-  background-color: #656d4a;
-  border: 1px solid #c2c5aa;
   border-radius: 8px;
   overflow: auto;
+  background-color: #656d4a;
+  border: 1px solid #c2c5aa;
   cursor: pointer;
   color: #c2c5aa;
   font-size: 1rem;
@@ -40,7 +40,7 @@ body {
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
   font-family: "Inconsolata", monospace;
-  font-weight: 400;
+  font-weight: 600;
 }
 .btn i {
   margin-right: 8px;
@@ -51,6 +51,7 @@ body {
   border: 1px solid #656d4a;
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
+  font-weight: 800;
 }
 .btn:active {
   color: white;
@@ -95,10 +96,10 @@ body {
   width: 80%;
   height: auto;
   padding: 8px;
-  background-color: #656d4a;
-  border: 1px solid #656d4a;
   border-radius: 5px;
   overflow: auto;
+  background-color: #656d4a;
+  border: 1px solid #656d4a;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
@@ -222,48 +223,37 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 10px;
-  max-width: 500px;
+  max-width: 200px;
   width: 100%;
+}
+
+.materia {
+  width: 100%;
+  height: auto;
+  padding: 5px;
+  border-radius: 5px;
+  overflow: auto;
+  max-height: 50px;
 }
 
 .materia_opcion1 {
-  width: 100%;
-  height: auto;
-  padding: 5px;
   background-color: #b6ad90;
   border: 1px solid #827c69;
-  border-radius: 5px;
-  overflow: auto;
 }
 
 .materia_opcion2 {
-  width: 100%;
-  height: auto;
-  padding: 5px;
   background-color: #936639;
   border: 1px solid #582f0e;
-  border-radius: 5px;
-  overflow: auto;
 }
 
 .materia_opcion3 {
-  width: 100%;
-  height: auto;
-  padding: 5px;
   background-color: #656d4a;
   border: 1px solid #333d29;
-  border-radius: 5px;
-  overflow: auto;
 }
 
 .materia_opcion4 {
-  width: 100%;
-  height: auto;
-  padding: 5px;
   background-color: #a4ac86;
   border: 1px solid #656d4a;
-  border-radius: 5px;
-  overflow: auto;
 }
 
 .invisible {

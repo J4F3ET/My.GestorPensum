@@ -27,23 +27,28 @@
         flex-direction: column;
         gap: 10px;
 
-        max-width: 500px;
+        max-width: 200px;
         width: 100%;
     }
 }
 
+.materia {
+    @include bloque(100%, auto, 5px, 5px);
+    max-height: 50px;
+}
+
 .materia_opcion1 {
-    @include bloque(100%, auto, 5px, $opcion1, $b-opcion1, 5px);
+    @include bloque_decorado($opcion1, $b-opcion1);
 }
 
 .materia_opcion2 {
-    @include bloque(100%, auto, 5px, $opcion2, $b-opcion2, 5px);
+    @include bloque_decorado($opcion2, $b-opcion2);
 }
 
 .materia_opcion3 {
-    @include bloque(100%, auto, 5px, $opcion3, $b-opcion3, 5px);
+    @include bloque_decorado($opcion3, $b-opcion3);
 }
 
 .materia_opcion4 {
-    @include bloque(100%, auto, 5px, $opcion4, $b-opcion4, 5px);
+    @include bloque_decorado($opcion4, $b-opcion4);
 }
