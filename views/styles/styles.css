@@ -176,6 +176,18 @@ h2 {
   font-size: 1.4rem;
 }
 
+.nav-fade {
+  -webkit-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.nav-hidden {
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+}
+
 @media (max-width: 425px) {
   .nav_desktop {
     display: none;
@@ -266,42 +278,20 @@ h2 {
   border: 1px solid #656d4a;
 }
 
-.container_horario {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  gap: 10px;
-  width: 100%;
-  height: auto;
-  overflow: visible;
-}
 .container_horario .container_tabla {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  min-width: 900px;
-  width: 100%;
-  max-width: 1000px;
-  padding: 20px;
+  display: -ms-grid;
+  display: grid;
+  place-content: start;
   overflow-x: auto;
+  max-width: 100vh;
+  padding: 20px;
 }
 .container_horario .tabla_horario {
   table-layout: fixed;
   border-collapse: collapse;
+  min-width: 800px;
   width: 100%;
+  max-width: 1000px;
   padding: 5px;
   border: 0.5px solid #656d4a;
 }

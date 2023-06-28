@@ -1,24 +1,21 @@
 .container_horario {
-    @include seccion(10px);
-    overflow: visible;
 
     .container_tabla {
-        display: flex;
-        justify-content: center;
-
-        min-width: 900px;
-        width: 100%;
-        max-width: 1000px;
-        padding: 20px;
-
+        display: grid;
+        place-content: start;
         overflow-x: auto;
+
+        max-width: 100vh;
+        padding: 20px;
     }
 
     .tabla_horario {
         table-layout: fixed;
         border-collapse: collapse;
 
+        min-width: 800px;
         width: 100%;
+        max-width: 1000px;
         padding: 5px;
 
         border: 0.5px solid $secundario;

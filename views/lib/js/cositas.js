@@ -3,17 +3,20 @@ window.addEventListener('resize', () => {
     closeSideBar();
 });
 
-// Para ocultar el nav cuando se hace scroll
+let prev_scroll_pos = window.scrollY;
+
 window.addEventListener('scroll', () => {
-    let prev_scroll_pos = window.scrollY; // Posición del scroll anterior
-    const current_scroll_pos = window.scrollY; // Posición actual del scroll
-    if (prev_scroll_pos > current_scroll_pos) { // Si la posición anterior es mayor que la actual, se muestra el menú
+    let current_scroll_pos = window.scrollY;
+
+    if (prev_scroll_pos > current_scroll_pos) {
         openMenuMobile();
-    }
-    else { // Si la posición anterior es menor que la actual, se oculta el menú
+        section_nav_mobile.classList.add('nav-fade');
+    } else {
         closeMenuMobile();
+        section_nav_mobile.classList.remove('nav-fade');
     }
 
+    prev_scroll_pos = current_scroll_pos;
 });
 
 a_nav_mobile_menu.addEventListener('click', () => {
@@ -42,12 +45,12 @@ function closeSideBar(){
     }
 }
 
-// Se abre el nav mobile
-function openMenuMobile(){
-    section_nav_mobile.classList.remove('invisible');
+function openMenuMobile() {
+    // Muestra el menú y elimina la clase de ocultamiento
+    section_nav_mobile.classList.remove('nav-hidden');
 }
 
-// Se cierra el nav mobile
-function closeMenuMobile(){
-    section_nav_mobile.classList.add('invisible');
+function closeMenuMobile() {
+    // Oculta el menú añadiendo la clase de ocultamiento
+    section_nav_mobile.classList.add('nav-hidden');
 }

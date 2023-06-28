@@ -87,6 +87,16 @@
     }
 }
 
+.nav-fade {
+    transition: opacity 0.3s ease-in-out;
+}
+
+.nav-hidden {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out;
+}
+
 @media (max-width: 425px) {
     .nav_desktop {
         display: none;
