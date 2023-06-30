@@ -681,16 +681,89 @@
         </section>
 
         <section id="seccion_add_materia" class="invisible">
-
+            <form>
+                <h1>Nueva materia</h1>
+                <p>Ingresa los datos correspondientes:</p>
+                <label for="name">
+                    <span>Nombre: </span>
+                    <input type="text" name="nombre" id="name" data-add-course-name required>
+                </label>
+                <label for="htd">
+                    <span>Horas de trabajo directo: </span>
+                    <input type="number" name="thd" id="htd" data-add-course-htd required min="1" max="5">
+                </label>
+                <label for="hta">
+                    <span>Horas de trabajo autonomo: </span>
+                    <input type="number" name="tha" id="hta" data-add-course-hta required min="1" max="5">
+                </label>
+                <label for="">
+                    <span>Horas de trabajo cooperativo: </span>
+                    <input type="number" name="htc" id="thc" data-add-course-htc required min="1" max="5">
+                </label>
+                <label for="requerimientos">
+                    <span>Espacios que necesita: </span>
+                    <input list="requerimientos" required data-add-course-requirements id="requerimientos_0" name="requerimientos_0">
+                    <datalist>
+                        <!-- Inyectar desde js
+                        <option value=""></option> -->
+                    </datalist>
+                </label>
+                <label for="clasificacion">
+                    <span>Clasificación</span>
+                    <select name="clasificacion" id="clasificacion">
+                        <option value="1">Obligatorios Básicos</option>
+                        <option value="2">Obligatorios Complementarios</option>
+                        <option value="3">Electivos Intrínsecos</option>
+                        <option value="4">Electivos Extrínsecos</option>
+                        <option value="5">Componente Propedéutico</option>
+                    </select>
+                </label>
+                <label for="creditos">
+                    <span>Cantidad de creditos: </span>
+                    <input type="number" name="creditos" id="creditos" data-add-course-credits required min="1" max="5">
+                </label>
+                <label for="semestre">
+                    <span>Semestre: </span>
+                    <input type="number" name="semestre" id="semestre" data-add-course-semester required min="1" max="10">
+                </label>
+                <label>
+                    <span>Color: </span>
+                    <input type="radio" name="color" id="1" value="1" data-add-course-color required>
+                    <label for="1" class="color color_1"></label>
+                    <input type="radio" name="color" id="2" value="2" data-add-course-color required>
+                    <label for="2" class="color color_2"></label>
+                    <input type="radio" name="color" id="3" value="3" data-add-course-color required>
+                    <label for="3" class="color color_3"></label>
+                    <input type="radio" name="color" id="4" value="4" data-add-course-color required>
+                    <label for="4" class="color color_4"></label>
+                </label>
+                <label for="requerimientos">
+                    <span>Espacios que desbloquea: </span>
+                    <input list="requerimientos" required data-add-course-beneficts id="beneficios_0" name="beneficios_0">
+                    <datalist>
+                        <!-- Inyectar desde js
+                        <option value=""></option> -->
+                    </datalist>
+                </label>
+                <button type="button">
+                    <span>Guardar</span>
+                    <i class="bi bi-check-circle"></i>
+                </button>
+                <button type="button">
+                    <span>Descartar</span>
+					<i class="bi bi-x-circle"></i>
+                </button>
+            </form>
         </section>
     </main>
 
-    <script src="../lib/Sweetalert2/sweetalert2.js"></script>
     <script src="../lib/js/nodes.js"></script>
     <script src="../lib/js/cositas.js"></script>
     <script src="../lib/js/navigation.js"></script>
+    <script src="../lib/Sweetalert2/sweetalert2.js"></script>
     <script type="text/javascript" src="../components/modal.js"></script>
     <script type="text/javascript" src="../components/nav_index.js"></script>
     <script type="text/javascript" src="../components/pensum.js"></script>
+    <script type="text/javascript" src="../components/signup.js"></script>
 </body>
 </html>
