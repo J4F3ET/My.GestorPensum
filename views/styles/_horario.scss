@@ -1,11 +1,10 @@
 .container_horario {
-
     .container_tabla {
         display: grid;
         place-content: start;
         overflow-x: auto;
 
-        max-width: 100vh;
+        max-width: 100vw;
         padding: 20px;
     }
 
@@ -15,7 +14,7 @@
 
         min-width: 800px;
         width: 100%;
-        max-width: 1000px;
+        max-width: 80vw;
         padding: 5px;
 
         border: 0.5px solid $secundario;
@@ -48,5 +47,14 @@
         tr:nth-child(even) {
             display: none;
         }
+    }
+}
+
+@media (min-width: 450px) {
+    .container_horario {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 }

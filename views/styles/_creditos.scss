@@ -1,0 +1,64 @@
+.container_creditos {
+    .container_tabla {
+        display: flex;
+        justify-content: start;
+        width: 100%;
+        overflow: auto;
+        padding-bottom: 40px;
+    }
+
+    .tabla_creditos {
+        table-layout: fixed;
+		border-spacing: 10px;
+		border-collapse: separate;
+
+        min-width: 700px;
+        width: 100%;
+        max-width: 75vw;
+        padding: 5px;
+
+        th {
+            background-color: $secundario;
+            border: 0.5 solid $terciario;
+
+            color: white;
+            font-size: 1rem;
+            text-align: center;
+            letter-spacing: 2px;
+            font-family: $font-content;
+
+            padding: 12px;
+            min-width: 100px;
+            border-radius: 10px;
+            font-size: 80%;
+        }
+
+        tbody {
+            background-color: $primario;
+            border: 0.5 solid $terciario;
+        }
+
+        td {
+            border-radius: 10px;
+        }
+
+        tr {
+            padding: 10px;
+            border-bottom: 0.5px solid $secundario;
+            border-radius: 10px;
+        }
+
+        i {
+            margin-right: 8px;
+        }
+    }
+}
+
+@media (min-width: 450px) {
+    .container_creditos {
+        .container_tabla {
+            display: grid;
+            place-content: center;
+        }
+    }
+}

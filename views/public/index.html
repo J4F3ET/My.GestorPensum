@@ -65,7 +65,7 @@
             <button class="btn"><i class="bi bi-folder-plus"></i><span>Agregar materia</span></button>
         </section>
 
-        <section id="seccion_horario" class="container_horario">
+        <section id="seccion_horario" class="container_horario invisible">
             <h2 class="titulo_seccion">Horario</h2>
             <div class="container_tabla">
                 <table class="tabla_horario">
@@ -618,61 +618,66 @@
         </div>
         </section>
 
-        <section id="seccion_creditos" class="invisible">
+        <section id="seccion_creditos" class="container_creditos">
             <h2 class="titulo_seccion">Creditos academicos</h2>
-            <div class="seccion_centrada">
-                <div class="container_tabla">
-                    <table class="tabla_creditos">
-                        <thead>
-                            <th scope="col" class="extremos"><div class="contenido"><i class="bi bi-layers"></i><span>Clasificación</span></div></th>
-                            <th scope="col" class="extremos"><div class="contenido"><i class="bi bi-plus-slash-minus"></i><span>Total</span></div></th>
-                            <th scope="col" class="extremos"><div class="contenido"><i class="bi bi-card-checklist"></i><span>Aprobados</span></div></th>
-                            <th scope="col" class="extremos"><div class="contenido"><i class="bi bi-card-list"></i><span>Por cursar</span></div></th>
-                            <th scope="col" class="extremos"><div class="contenido"><i class="bi bi-bar-chart-line"></i><span>Cursado</span></div></th>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row" class="extremos"><span class="contenido">OB</span></th>
-                                <td><input disabled type="text" name="totalCreditos_1" id="totalCreditos_1" class="input_creditosAcademicos"></td>
-                                <td><input disabled type="text" name="creditosAprobados_1" id="creditosAprobados_1" class="input_creditosAcademicos"></td>
-                                <td><input disabled type="text" name="credditosPorAprobar_1" id="creditosPorAprobar_1" class="input_creditosAcademicos"></td>
-                                <td><input disabled type="text" name="grafica1" id="grafica1" class="input_creditosAcademicos"></td>
-                            </tr>
-                            <tr>
-                                <th scope="row" class="extremos"><span class="contenido">OC</span></th>
-                                <td><input disabled type="text" name="totalCreditos_2" id="totalCreditos_2" class="input_creditosAcademicos"></td>
-                                <td><input disabled type="text" name="creditosAprobados_2" id="creditosAprobados_2" class="input_creditosAcademicos"></td>
-                                <td><input disabled type="text" name="credditosPorAprobar_2" id="credditosPorAprobar_2" class="input_creditosAcademicos"></td>
-                                <td><input disabled type="text" name="grafica_2" id="grafica_2" class="input_creditosAcademicos"></td>
-                            </tr>
-                            <tr>
-                                <th scope="row" class="extremos"><span class="contenido">EI</span></th>
-                                <td><input disabled type="text" name="totalCreditos_3" id="totalCreditos_3" class="input_creditosAcademicos"></td>
-                                <td><input disabled type="text" name="creditosAprobados_3" id="creditosAprobados_3" class="input_creditosAcademicos"></td>
-                                <td><input disabled type="text" name="credditosPorAprobar_3" id="credditosPorAprobar_3" class="input_creditosAcademicos"></td>
-                                <td><input disabled type="text" name="grafica_3" id="grafica_3" class="input_creditosAcademicos"></td>
-                            </tr>
-                            <tr>
-                                <th scope="row" class="extremos"><span class="contenido">EE</span></th>
-                                <td><input disabled type="text" name="totalCreditos_4" id="totalCreditos_4" class="input_creditosAcademicos"></td>
-                                <td><input disabled type="text" name="creditosAprobados_4" id="creditosAprobados_4" class="input_creditosAcademicos"></td>
-                                <td><input disabled type="text" name="credditosPorAprobar_4" id="credditosPorAprobar_4" class="input_creditosAcademicos"></td>
-                                <td><input disabled type="text" name="grafica_4" id="grafica_4" class="input_creditosAcademicos"></td>
-                            </tr>
-                            <tr>
-                                <th scope="row" class="extremos">
-                                    <div class="contenido"><i class="bi bi-calculator"></i><span>Creditos</span></div>
-                                </th>
-                                <td><input disabled type="text" name="totalCreditos_5" id="totalCreditos_5" class="input_creditosAcademicos"></td>
-                                <td><input disabled type="text" name="creditosAprobados_5" id="creditosAprobados_5" class="input_creditosAcademicos"></td>
-                                <td><input disabled type="text" name="credditosPorAprobar_5" id="credditosPorAprobar_5" class="input_creditosAcademicos"></td>
-                                <td><input disabled type="text" name="grafica_5" id="grafica_5" class="input_creditosAcademicos"></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+            <div class="container_tabla">
+                <table class="tabla_creditos">
+                    <thead>
+                        <th scope="col">
+                            <div><i class="bi bi-layers"></i><span>Clasificación</span></div>
+                        </th>
+                        <th scope="col">
+                            <div><i class="bi bi-plus-slash-minus"></i><span>Total</span></div>
+                        </th>
+                        <th scope="col">
+                            <div><i class="bi bi-card-checklist"></i><span>Aprobados</span></div>
+                        </th>
+                        <th scope="col">
+                            <div><i class="bi bi-card-list"></i><span>Por cursar</span></div>
+                        </th>
+                        <th scope="col">
+                            <div><i class="bi bi-bar-chart-line"></i><span>Cursado</span></div>
+                        </th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row"><span>OB</span></th>
+                            <td id="total_creditos_1"></td>
+                            <td id="creditos_aprovados_1"></td>
+                            <td id="creditos_por_aprobar_1"></td>
+                            <td id="grafica_1"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><span>OC</span></th>
+                            <td id="total_creditos_2"></td>
+                            <td id="creditos_aprovados_2"></td>
+                            <td id="creditos_por_aprobar_2"></td>
+                            <td id="grafica_2"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><span>EI</span></th>
+                            <td id="total_creditos_3"></td>
+                            <td id="creditos_aprovados_3"></td>
+                            <td id="creditos_por_aprobar_3"></td>
+                            <td id="grafica_3"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><span>EE</span></th>
+                            <td id="total_creditos_4"></td>
+                            <td id="creditos_aprovados_4"></td>
+                            <td id="creditos_por_aprobar_4"></td>
+                            <td id="grafica_4"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><div><i class="bi bi-calculator"></i><span>Creditos</span></div></th>
+                            <td id="total_creditos_5"></td>
+                            <td id="creditos_aprovados_5"></td>
+                            <td id="creditos_por_aprobar_5"></td>
+                            <td id="grafica_5"></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-
         </section>
 
         <section id="seccion_add_materia" class="invisible">
