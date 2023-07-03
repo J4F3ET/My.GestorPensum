@@ -362,14 +362,14 @@ h2 {
   background-color: #656d4a;
   border: 0.5 solid #333d29;
   color: white;
-  font-size: 1rem;
   text-align: center;
   letter-spacing: 2px;
   font-family: "Inconsolata", monospace;
   padding: 12px;
   min-width: 100px;
   border-radius: 10px;
-  font-size: 80%;
+  font-size: 95%;
+  overflow: auto;
 }
 .container_creditos .tabla_creditos tbody {
   background-color: #c2c5aa;

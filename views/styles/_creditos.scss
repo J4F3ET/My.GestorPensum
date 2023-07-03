@@ -22,7 +22,6 @@
             border: 0.5 solid $terciario;
 
             color: white;
-            font-size: 1rem;
             text-align: center;
             letter-spacing: 2px;
             font-family: $font-content;
@@ -30,7 +29,8 @@
             padding: 12px;
             min-width: 100px;
             border-radius: 10px;
-            font-size: 80%;
+            font-size: 95%;
+            overflow: auto;
         }
 
         tbody {
