@@ -130,8 +130,15 @@ h2 {
 
 .nav_desktop {
   position: absolute;
-  width: 79px;
+  width: 80px;
   overflow: hidden;
+  -webkit-transition: width 0.5s ease-in-out;
+  transition: width 0.5s ease-in-out;
+}
+.nav_desktop:hover {
+  width: 280px;
+  -webkit-transition: width 0.5s ease-in-out;
+  transition: width 0.5s ease-in-out;
 }
 
 .nav_inner_desktop {
