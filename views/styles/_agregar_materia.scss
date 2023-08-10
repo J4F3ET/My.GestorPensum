@@ -1,0 +1,17 @@
+.formulario {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 30px;
+    
+    max-width: 90%;
+    width: auto;
+    margin: 0 auto;
+}
+
+.contenedor_botones {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    justify-self: center;
+}

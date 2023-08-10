@@ -21,13 +21,24 @@ a_nav_cerrar.addEventListener('click', () => {
     location.hash = '#cerrar';
 });
 
+btn_agregar_materia.addEventListener('click', () => {
+    location.hash = '#agregar_materia';
+});
+
+btn_modificar_horario.addEventListener('click', () => {
+    location.hash = '#modificar_horario';
+});
+
 function navegator(){
     document.body.scrollTop = 0;
-
     location.hash.startsWith('#materias') ?
     page_materias() :
+    location.hash.startsWith('#agregar_materia') ?
+    page_agregar_materia() :
     location.hash.startsWith('#horario') ?
     page_horario() :
+    location.hash.startsWith('#modificar_horario') ?
+    page_modificar_horario() :
     location.hash.startsWith('#estadisticas') ?
     page_estadisticas() :
     location.hash.startsWith('#cerrar') ?
@@ -40,6 +51,8 @@ function page_materias(){
     section_pensum.classList.remove('invisible');
     section_horario.classList.add('invisible');
     section_creditos.classList.add('invisible');
+    section_agregar_materia_horario.classList.add('invisible');
+    section_agregar_materia.classList.add('invisible');
 }
 
 function page_horario(){
@@ -47,6 +60,8 @@ function page_horario(){
     section_pensum.classList.add('invisible');
     section_horario.classList.remove('invisible');
     section_creditos.classList.add('invisible');
+    section_agregar_materia_horario.classList.add('invisible');
+    section_agregar_materia.classList.add('invisible');
 }
 
 function page_estadisticas(){
@@ -54,4 +69,22 @@ function page_estadisticas(){
     section_pensum.classList.add('invisible');
     section_horario.classList.add('invisible');
     section_creditos.classList.remove('invisible');
+    section_agregar_materia_horario.classList.add('invisible');
+    section_agregar_materia.classList.add('invisible');
+}
+
+function page_agregar_materia(){
+    section_pensum.classList.add('invisible');
+    section_horario.classList.add('invisible');
+    section_creditos.classList.add('invisible');
+    section_agregar_materia_horario.classList.add('invisible');
+    section_agregar_materia.classList.remove('invisible');
+}
+
+function page_modificar_horario(){
+    section_pensum.classList.add('invisible');
+    section_horario.classList.add('invisible');
+    section_creditos.classList.add('invisible');
+    section_agregar_materia_horario.classList.remove('invisible');
+    section_agregar_materia.classList.add('invisible');
 }

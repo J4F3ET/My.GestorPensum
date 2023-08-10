@@ -5,6 +5,7 @@ window.addEventListener('resize', () => {
 
 let prev_scroll_pos = window.scrollY;
 
+// Evento para el scroll en el nav de mobile
 window.addEventListener('scroll', () => {
     let current_scroll_pos = window.scrollY;
 
