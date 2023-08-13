@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;600;700&display=swap" rel="stylesheet"> <!--Letra normal-->
+    <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet"> <!--Letra titulo 'Concert One', cursive-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="icon" type="image/png" href=""/>
+    <title>Gestor UD</title>
+</head>
+<body>
+    <aside id="nav_desktop" class="nav_desktop">
+        <div class="nav_inner_desktop">
+            <a class="nav__icono">
+                <i class="bi bi-balloon-fill"></i>
+            </a>
+            <a class="nav__materias unclicked">
+                <i class="bi bi-journals"></i>
+                <span>Materias</span>
+            </a>
+            <a class="nav__horario unclicked">
+                <i class="bi bi-calendar-event"></i>
+                <span>Horario</span>
+            </a>
+            <a class="nav__estadisticas unclicked">
+                <i class="bi bi-calculator"></i>
+                <span>Estadisticas</span>
+            </a>
+            <a class="nav__cerrar unclicked" href="/seccion_close">
+                <i class="bi bi-box-arrow-in-right"></i>
+                <span>Cerrar sesión</span>
+            </a>
+        </div>
+    </aside>
+
+    <nav id="nav_mobile" class="nav_mobile">
+        <a href="#" class="nav_mobile__menu"><i class="bi bi-list"></i></a>
+        <a href="#" class="nav__icono"><i class="bi bi-balloon-fill"></i></a>
+    </nav>
+
+    <main>
+        <section id="seccion_pensum" class="container_pensum">
+            <h2 class="titulo_seccion">Pensum</h2>
+            <div class="container_semestres" data-container-pensum>
+                <!--Content by js with the next struct-->
+                <div class="container_materias">
+                    <div class="materia materia_opcion2">
+                        <span>Titulo materia</span>
+                    </div>
+                    <div class="materia materia_opcion1">
+                        <span>Titulo materia</span>
+                    </div>
+                    <div class="materia materia_opcion3">
+                        <span>Titulo materia</span>
+                    </div>
+                </div>
+            </div>
+            <button id="btn_agregar_materia" class="btn">
+                <i class="bi bi-plus-circle"></i>
+                <span>Añadir materia</span>
+            </button>
+        </section>
+
+        <section id="seccion_horario" class="container_horario invisible">
+            <h2 class="titulo_seccion">Horario</h2>
+            <div class="container_tabla">
+                <table class="tabla_horario">
+                    <thead>
+                        <tr class="fila_horario">
+                            <th scope="col" class="header_tabla">
+                                <span class="contenido">Horario</span>
+                            </th>
+                            <th scope="col" class="header_tabla">
+                                <span class="contenido">Lunes</span>
+                            </th>
+                            <th scope="col" class="header_tabla">
+                                <span class="contenido">Martes</span>
+                            </th>
+                            <th scope="col" class="header_tabla">
+                                <span class="contenido">Miercoles</span>
+                            </th>
+                            <th scope="col" class="header_tabla">
+                                <span class="contenido">Jueves</span>
+                            </th>
+                            <th scope="col" class="header_tabla">
+                                <span class="contenido">Viernes</span>
+                            </th>
+                            <th scope="col" class="header_tabla">
+                                <span class="contenido">Sabado</span>
+                            </th>
+                            <th scope="col" class="header_tabla">
+                                <span class="contenido">Domingo</span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="fila_horario">
+                            <th scope="row" class="columna_horario">
+                                <span class="contenido">6:00</span>
+                            </th>
+                            <td class="columna_horario">
+                                <span id="lunes_6"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="martes_6"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="miercoles_6"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="jueves_6"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="viernes_6"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="sabado_6"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="domingo_6"></span>
+                            </td>
+                        </tr>
+                        <tr class="fila_horario">
+                            <th scope="row" class="columna_horario extremos_tabla">
+                                <span class="contenido">7:00</span>
+                            </th>
+                            <td class="columna_horario">
+                                <span  id="lunes_7"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="martes_7"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="miercoles_7"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="jueves_7"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="viernes_7"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="sabado_7"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="domingo_7"></span>
+                            </td>
+                        </tr>
+                        <tr class="fila_horario">
+                            <th scope="row" class="columna_horario extremos_tabla">
+                                <span class="contenido">8:00</span>
+                            </th>
+                            <td class="columna_horario">
+                                <span  id="lunes_8"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="martes_8"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="miercoles_8"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="jueves_8"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="viernes_8"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="sabado_8"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="domingo_8"></span>
+                            </td>
+                        </tr>
+                        <tr class="fila_horario">
+                            <th scope="row" class="columna_horario extremos_tabla">
+                                <span class="contenido">9:00</span>
+                            </th>
+                            <td class="columna_horario">
+                                <span  id="lunes_9"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="martes_9"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="miercoles_9"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="jueves_9"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="viernes_9"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="sabado_9"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="domingo_9"></span>
+                            </td>
+                        </tr>
+                        <tr class="fila_horario">
+                            <th scope="row" class="columna_horario extremos_tabla">
+                                <span class="contenido">10:00</span>
+                            </th>
+                            <td class="columna_horario">
+                                <span  id="lunes_10"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="martes_10"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="miercoles_10"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="jueves_10"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="viernes_10"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="sabado_10"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="domingo_10"></span>
+                            </td>
+                        </tr>
+                        <tr class="fila_horario">
+                            <th scope="row" class="columna_horario extremos_tabla">
+                                <span class="contenido">11:00</span>
+                            </th>
+                            <td class="columna_horario">
+                                <span  id="lunes_11"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="martes_11"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="miercoles_11"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="jueves_11"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="viernes_11"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="sabado_11"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="domingo_11"></span>
+                            </td>
+                        </tr>
+                        <tr class="fila_horario">
+                            <th scope="row" class="columna_horario extremos_tabla">
+                                <span class="contenido">12:00</span>
+                            </th>
+                            <td class="columna_horario">
+                                <span  id="lunes_12"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="martes_12"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="miercoles_12"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="jueves_12"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="viernes_12"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="sabado_12"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="domingo_12"></span>
+                            </td>
+                        </tr>
+                        <tr class="fila_horario">
+                            <th scope="row" class="columna_horario extremos_tabla">
+                                <span class="contenido">13:00</span>
+                            </th>
+                            <td class="columna_horario">
+                                <span  id="lunes_13"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="martes_13"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="miercoles_13"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="jueves_13"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="viernes_13"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="sabado_13"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="domingo_13"></span>
+                            </td>
+                        </tr>
+                        <tr class="fila_horario">
+                            <th scope="row" class="columna_horario extremos_tabla">
+                                <span class="contenido">14:00</span>
+                            </th>
+                            <td class="columna_horario">
+                                <span  id="lunes_14"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="martes_14"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="miercoles_14"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="jueves_14"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="viernes_14"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="sabado_14"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="domingo_14"></span>
+                            </td>
+                        </tr>
+                        <tr class="fila_horario">
+                            <th scope="row" class="columna_horario extremos_tabla">
+                                <span class="contenido">15:00</span>
+                            </th>
+                            <td class="columna_horario">
+                                <span  id="lunes_15"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="martes_15"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="miercoles_15"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="jueves_15"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="viernes_15"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="sabado_15"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="domingo_15"></span>
+                            </td>
+                        </tr>
+                        <tr class="fila_horario">
+                            <th scope="row" class="columna_horario extremos_tabla">
+                                <span class="contenido">16:00</span>
+                            </th>
+                            <td class="columna_horario">
+                                <span  id="lunes_16"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="martes_16"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="miercoles_16"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="jueves_16"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="viernes_16"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="sabado_16"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="domingo_16"></span>
+                            </td>
+                        </tr>
+                        <tr class="fila_horario">
+                            <th scope="row" class="columna_horario extremos_tabla">
+                                <span class="contenido">17:00</span>
+                            </th>
+                            <td class="columna_horario">
+                                <span  id="lunes_17"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="martes_17"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="miercoles_17"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="jueves_17"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="viernes_17"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="sabado_17"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="domingo_17"></span>
+                            </td>
+                        </tr>
+                        <tr class="fila_horario">
+                            <th scope="row" class="columna_horario extremos_tabla">
+                                <span class="contenido">18:00</span>
+                            </th>
+                            <td class="columna_horario">
+                                <span  id="lunes_18"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="martes_18"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="miercoles_18"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="jueves_18"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="viernes_18"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="sabado_18"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="domingo_18"></span>
+                            </td>
+                        </tr>
+                        <tr class="fila_horario">
+                            <th scope="row" class="columna_horario extremos_tabla">
+                                <span class="contenido">19:00</span>
+                            </th>
+                            <td class="columna_horario">
+                                <span  id="lunes_19"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="martes_19"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="miercoles_19"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="jueves_19"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="viernes_19"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="sabado_19"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="domingo_19"></span>
+                            </td>
+                        </tr>
+                        <tr class="fila_horario">
+                            <th scope="row" class="columna_horario extremos_tabla">
+                                <span class="contenido">20:00</span>
+                            </th>
+                            <td class="columna_horario">
+                                <span  id="lunes_20"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="martes_20"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="miercoles_20"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="jueves_20"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="viernes_20"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="sabado_20"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="domingo_20"></span>
+                            </td>
+                        </tr>
+                        <tr class="fila_horario">
+                            <th scope="row" class="columna_horario extremos_tabla">
+                                <span class="contenido">21:00</span>
+                            </th>
+                            <td class="columna_horario">
+                                <span  id="lunes_21"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="martes_21"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="miercoles_21"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="jueves_21"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="viernes_21"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="sabado_21"></span>
+                            </td>
+                            <td class="columna_horario">
+                                <span  id="domingo_21"></span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button id="btn_modificar_horario" class="btn">
+                <i class="bi bi-wrench"></i>
+                <span>Moficar horario</span>
+            </button>
+        </section>
+
+        <section id="seccion_agregar_materia_horario" class="invisible">
+            <h1 class="titulo_seccion">Modificar horario</h1>
+            <form class="formulario">
+                <label for="buscador_materias">
+                    <span>Seleccione la materia que desea agregar al horario: </span>
+                    <input required list="buscador_materias">
+                    <datalist id="buscador_materias"></datalist>
+                </label>
+                <label for="dia_materia">
+                    <span>Elija el día: </span>
+                    <select id="dia_materia">
+                        <option value="Lunes">Lunes</option>
+                        <option value="Martes">Martes</option>
+                        <option value="Miercoles">Miercoles</option>
+                        <option value="Jueves">Jueves</option>
+                        <option value="Viernes">Viernes</option>
+                        <option value="Sabado">Sabado</option>
+                        <option value="Domingo">Domingo</option>
+                    </select>
+                </label>
+                <label for="hora_materia">
+                    <span>Elija la hora: </span>
+                    <select id="hora_materia">
+                        <option value="06:00">06:00</option>
+                        <option value="07:00">07:00</option>
+                        <option value="08:00">08:00</option>
+                        <option value="09:00">09:00</option>
+                        <option value="10:00">10:00</option>
+                        <option value="11:00">11:00</option>
+                        <option value="12:00">12:00</option>
+                        <option value="13:00">13:00</option>
+                        <option value="14:00">14:00</option>
+                        <option value="15:00">15:00</option>
+                        <option value="16:00">16:00</option>
+                        <option value="17:00">17:00</option>
+                        <option value="18:00">18:00</option>
+                        <option value="19:00">19:00</option>
+                        <option value="20:00">20:00</option>
+                        <option value="21:00">21:00</option>
+                    </select>
+                </label>
+                <div class="contenedor_botones">
+                    <button type="button" class="btn">
+                        <i class="bi bi-check-circle"></i>
+                        <span>Guardar</span>
+                    </button>
+                    <button type="button" class="btn">
+                        <i class="bi bi-x-circle"></i>
+                        <span>Descartar</span>
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <section id="seccion_creditos" class="container_creditos invisible">
+            <h2 class="titulo_seccion">Creditos academicos</h2>
+            <div class="container_tabla">
+                <table class="tabla_creditos">
+                    <thead>
+                        <th scope="col">
+                            <div><i class="bi bi-folder2-open"></i><span>Clasificación</span></div>
+                        </th>
+                        <th scope="col">
+                            <div><i class="bi bi-plus-lg"></i><span>Total</span></div>
+                        </th>
+                        <th scope="col">
+                            <div><i class="bi bi-card-checklist"></i><span>Aprobados</span></div>
+                        </th>
+                        <th scope="col">
+                            <div><i class="bi bi-bar-chart-steps"></i><span>Por cursar</span></div>
+                        </th>
+                        <th scope="col">
+                            <div><i class="bi bi-percent"></i></i><span>Cursado</span></div>
+                        </th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row"><span>OB</span></th>
+                            <td id="total_creditos_1"></td>
+                            <td id="creditos_aprovados_1"></td>
+                            <td id="creditos_por_aprobar_1"></td>
+                            <td id="grafica_1"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><span>OC</span></th>
+                            <td id="total_creditos_2"></td>
+                            <td id="creditos_aprovados_2"></td>
+                            <td id="creditos_por_aprobar_2"></td>
+                            <td id="grafica_2"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><span>EI</span></th>
+                            <td id="total_creditos_3"></td>
+                            <td id="creditos_aprovados_3"></td>
+                            <td id="creditos_por_aprobar_3"></td>
+                            <td id="grafica_3"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><span>EE</span></th>
+                            <td id="total_creditos_4"></td>
+                            <td id="creditos_aprovados_4"></td>
+                            <td id="creditos_por_aprobar_4"></td>
+                            <td id="grafica_4"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><div><span>Creditos</span></div></th>
+                            <td id="total_creditos_5"></td>
+                            <td id="creditos_aprovados_5"></td>
+                            <td id="creditos_por_aprobar_5"></td>
+                            <td id="grafica_5"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="seccion_agregar_materia" class="invisible">
+            <h1 class="titulo_seccion">Nueva materia</h1>
+            <form class="formulario">
+                <p>Ingresa los datos correspondientes:</p>
+                <label for="name">
+                    <span>Nombre: </span>
+                    <input type="text" name="nombre" id="name" data-add-course-name required>
+                </label>
+                <label for="htd">
+                    <span>Horas de trabajo directo: </span>
+                    <input type="number" name="thd" id="htd" data-add-course-htd required min="1" max="5">
+                </label>
+                <label for="hta">
+                    <span>Horas de trabajo autonomo: </span>
+                    <input type="number" name="tha" id="hta" data-add-course-hta required min="1" max="5">
+                </label>
+                <label for="">
+                    <span>Horas de trabajo cooperativo: </span>
+                    <input type="number" name="htc" id="thc" data-add-course-htc required min="1" max="5">
+                </label>
+                <label for="requerimientos">
+                    <span>Espacios que necesita: </span>
+                    <input list="requerimientos" required data-add-course-requirements id="requerimientos_0" name="requerimientos_0">
+                    <datalist>
+                        <!-- Inyectar desde js
+                        <option value=""></option> -->
+                    </datalist>
+                </label>
+                <label for="clasificacion">
+                    <span>Clasificación</span>
+                    <select name="clasificacion" id="clasificacion">
+                        <option value="1">Obligatorios Básicos</option>
+                        <option value="2">Obligatorios Complementarios</option>
+                        <option value="3">Electivos Intrínsecos</option>
+                        <option value="4">Electivos Extrínsecos</option>
+                        <option value="5">Componente Propedéutico</option>
+                    </select>
+                </label>
+                <label for="creditos">
+                    <span>Cantidad de creditos: </span>
+                    <input type="number" name="creditos" id="creditos" data-add-course-credits required min="1" max="5">
+                </label>
+                <label for="semestre">
+                    <span>Semestre: </span>
+                    <input type="number" name="semestre" id="semestre" data-add-course-semester required min="1" max="10">
+                </label>
+                <label>
+                    <span>Color: </span>
+                    <input type="radio" name="color" id="1" value="1" data-add-course-color required>
+                    <label for="1" class="color color_1"></label>
+                    <input type="radio" name="color" id="2" value="2" data-add-course-color required>
+                    <label for="2" class="color color_2"></label>
+                    <input type="radio" name="color" id="3" value="3" data-add-course-color required>
+                    <label for="3" class="color color_3"></label>
+                    <input type="radio" name="color" id="4" value="4" data-add-course-color required>
+                    <label for="4" class="color color_4"></label>
+                </label>
+                <label for="requerimientos">
+                    <span>Espacios que desbloquea: </span>
+                    <input list="requerimientos" required data-add-course-beneficts id="beneficios_0" name="beneficios_0">
+                    <datalist>
+                        <!-- Inyectar desde js
+                        <option value=""></option> -->
+                    </datalist>
+                </label>
+                <div class="contenedor_botones">
+                    <button type="button" class="btn">
+                        <i class="bi bi-check-circle"></i>
+                        <span>Guardar</span>
+                    </button>
+                    <button type="button" class="btn">
+                        <i class="bi bi-x-circle"></i>
+                        <span>Descartar</span>
+                    </button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <script type="text/javascript" src="../components/nodes.js"></script>
+    <script type="text/javascript" src="../components/utilidades.js"></script>
+    <script type="text/javascript" src="../components/navigation.js"></script>
+    <script type="text/javascript" src="../lib/Sweetalert2/sweetalert2.js"></script>
+</body>
+</html>

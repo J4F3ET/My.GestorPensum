@@ -30,9 +30,7 @@ router.post("/materias_del_usuario", auntenticando, async(req, res) => {
 	console.log(materia);
 	return res.json(materia);
 });
-router.get("/add_course", auntenticando, (req, res) => {
-	res.render("add_course");
-});
+
 router.post("/add_course_pensum", auntenticando, async(req, res) => {
 	if (!req.cookies.DataLogin) return res.json({message: "Error en cookies"}).res.redirect('/login');
 	console.log(req.body.color);

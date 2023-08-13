@@ -1,52 +1,64 @@
-.creditos {
+.container_creditos {
     .container_tabla {
+        display: flex;
+        justify-content: start;
+        width: 100%;
         overflow: auto;
+        padding-bottom: 40px;
     }
 
     .tabla_creditos {
-        width: 900px;
         table-layout: fixed;
 		border-spacing: 10px;
 		border-collapse: separate;
-    }
 
-    .contenido, .input_creditosAcademicos {
-        @include caja(168px, 40px); 
-    }
+        min-width: 700px;
+        width: 100%;
+        max-width: 75vw;
+        padding: 5px;
 
-    .input_creditosAcademicos {
-        @include estilo($primario, $secundario); 
-    }
+        th {
+            background-color: $secundario;
+            border: 0.5 solid $terciario;
 
-    .extremos {
-        height: 40px; 
-        overflow: auto; 
-        @include estilo(#959e77, $secundario); 
+            color: white;
+            text-align: center;
+            letter-spacing: 2px;
+            font-family: $font-content;
 
-        .contenido {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            gap: 5px;
+            padding: 12px;
+            min-width: 100px;
+            border-radius: 10px;
+            font-size: 95%;
+            overflow: auto;
         }
 
-        &::-webkit-scrollbar {
-            display: none;
+        tbody {
+            background-color: $primario;
+            border: 0.5 solid $terciario;
+        }
+
+        td {
+            border-radius: 10px;
+        }
+
+        tr {
+            padding: 10px;
+            border-bottom: 0.5px solid $secundario;
+            border-radius: 10px;
+        }
+
+        i {
+            margin-right: 8px;
         }
     }
 }
 
-@media (max-width: 550px) {
-    .creditos {
-        .tabla_creditos {
-            font-size: 0.8rem;
-            width: 700px;
-            border-spacing: 10px;
-        }
-
-        .contenido, .input_creditosAcademicos {
-            @include caja(130px, 35px); 
+@media (min-width: 450px) {
+    .container_creditos {
+        .container_tabla {
+            display: grid;
+            place-content: center;
         }
     }
 }

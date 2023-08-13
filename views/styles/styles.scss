@@ -1,5 +1,6 @@
 $primario: #c2c5aa;
 $secundario: #656d4a;
+$terciario: #333d29;
 $font-content: "Inconsolata", monospace;
 
 $opcion1: #b6ad90;
@@ -11,90 +12,127 @@ $b-opcion3: #333d29;
 $opcion4: #a4ac86;
 $b-opcion4: #656d4a;
 
+
+// Estilos generales
 * {
-	margin: 0;
-	box-sizing: border-box;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    padding: 0;
+    margin: 0;
+    background-color: $terciario;
 }
 
 body {
     font-family: $font-content;
+    min-height: 100vh;
+    height: auto;
+    margin: 0;
+    padding: 0;
     background-image: linear-gradient(to right bottom, #c2c5aa, #bdc2a2, #b8be9b, #b3bb93, #aeb88c);
 }
 
-a {
+h2 {
+    margin: 0;
+}
+
+// Mixins
+@mixin seccion($g){
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: $g;
+
+    width: 100%;
+    height: auto;
+}
+
+@mixin texto_normal($w) {
+    color: black;
     text-decoration: none;
+    font-size: $w;
 }
 
-.titulo_Seccion {
-	margin-bottom: 10px;
+@mixin bloque($w, $h, $p, $r){
+    width: $w;
+    height: $h;
+    padding: $p;
+    border-radius: $r;
 
-	font-size: 2rem;
-	text-align: center;
-	text-shadow: 1px 1px 10px #656d4a, 0 0 1em #b6ad90, 0 0 0.2em #b6ad90;
+    overflow: auto;
 }
 
-.seccion {
-    margin-top: 60px;
-    margin-bottom: 50px;
+@mixin bloque_decorado($bac, $bor) {
+    background-color: $bac;
+    border: 1px solid $bor;
 }
 
-.seccion_centrada {
-	display: flex;
-	align-items: center;
-	justify-content: center;
+// Estilos a clases que se ven en varias secciones
+.titulo_seccion {
+    font-size: 2.4rem;
+    font-weight: 300;
+    text-align: center;
+    padding: 30px 0;
+    letter-spacing: 5px;
+    font-family: 'Concert One', cursive;
+    color: $terciario;
 }
 
 .btn {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    justify-content: center;
-
-    margin: 10px;
-    padding: 8px;
-
-    border-radius: 5px;
-    border: 1px solid $secundario;
-    background-color: $primario;
-
-    font-weight: 600;
-    font-size: 1.1rem;
-    color: $secundario;
-    font-family: $font-content;
-}
-
-.btn:hover {
-	background-color: $secundario;
-	color: white;
-	cursor: pointer;
-}
-
-.btn:active {
+    @include bloque(200px, auto, 12px, 8px);
+    @include bloque_decorado($secundario, $primario);
+    cursor: pointer;
     color: white;
-}
+    font-size: 1rem;
+    overflow: visible;
+    transition: all 0.4s ease-in-out;
+    font-family: $font-content;
+    font-weight: 600;
+    margin: 8px;
 
-@mixin estilo($back, $bord){
-	border-radius: 5px; 
-    background-color: $back; 
-    border: 1px solid $bord; 
-}
+    i {
+        margin-right: 8px;
+    }
 
-@mixin caja($w, $h) {
-	display: inline-block;
-	width: $w;
-	height: $h;
-	padding: 10px;
-	text-align: center;
-}
+    &:hover {
+        background-color: $primario;
+        color: $secundario;
+        border: 1px solid $secundario;
+        transition: all 0.4s ease-in-out;
+        font-weight: 800;
+    }
 
-@media (max-width: 550px) {
-    .titulo_Seccion {
-        font-size: 1.6rem; 
+    &:active {
+        color: white;
+        border: 1px solid white;
+        transition: all 0.4s ease-in-out;
     }
 }
 
-@import "header.scss";
-@import "pensum.scss";
-@import "horario.scss";
-@import "creditos.scss";
-@import "footer.scss";
+@import "./nav";
+@import "./pensum";
+@import "./horario";
+@import "./creditos";
+@import "./agregar_materia";
+
+// Por temas del concepto de cascada de css, se deja aquí, no la muevas
+.invisible {
+    display: none;
+}
+
+// Detalles para mobile
+@media (max-width: 425px) {
+    main {
+        padding-top: 70px;
+    }
+}
+
+// Detalles para desktop
+@media (min-width: 426px) {
+    main {
+        padding-left: 80px;
+    }
+}
