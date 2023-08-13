@@ -1,45 +1,61 @@
-.horario {
-	.container_tabla {
-		overflow: auto;
-	}
+.container_horario {
+    .container_tabla {
+        display: grid;
+        place-content: start;
+        overflow-x: auto;
 
-	.tabla_horario {
-		width: 1140px;
-		table-layout: fixed;
-		border-spacing: 10px;
-		border-collapse: separate;
-	}
+        max-width: 100vw;
+        padding: 20px;
+    }
 
-	.contenido {
-		overflow: auto;
-		@include caja(130px, 60px); 
-	}
+    .tabla_horario {
+        table-layout: fixed;
+        border-collapse: collapse;
 
-	.contenido::-webkit-scrollbar {
-		display: none;
-	}
+        min-width: 800px;
+        width: 100%;
+        max-width: 80vw;
+        padding: 5px;
 
-	.extremos_tabla {
-		@include estilo(#959e77, $secundario)
-	}
+        border: 0.5px solid $secundario;
 
-	.materia {
-		@include estilo($opcion1, $b-opcion1)
-	}
+        thead {
+            background-color: $secundario;
+            border: 0.5 solid $terciario;
 
-	tr:nth-child(even) {
-		display: none;
-	}
+            color: white;
+            font-size: 1rem;
+            text-align: center;
+            letter-spacing: 2px;
+            font-family: $font-content;
+        }
+
+        tbody {
+            background-color: $primario;
+            border: 0.5 solid $terciario;
+        }
+
+        th {
+            padding: 12px;
+        }
+
+        tr {
+            padding: 10px;
+            border-bottom: 0.5px solid $secundario;
+            border-right: 0.5px solid $secundario;
+        }
+
+        tr:nth-child(even) {
+            display: none;
+        }
+    }
 }
 
-@media (max-width: 550px) {
-	.horario {
-		.tabla_horario {
-			font-size: 0.8rem;
-			width: 1010px;
-		}
-		.contenido {
-			@include caja(110px, 40px); 
-		}
-	}
+@media (min-width: 450px) {
+    .container_horario {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 }
