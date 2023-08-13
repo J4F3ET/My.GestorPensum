@@ -110,8 +110,8 @@ h2 {
   padding: 8px;
   border-radius: 5px;
   overflow: auto;
-  background-color: #656d4a;
-  border: 1px solid #656d4a;
+  background-color: inherit;
+  border: 1px solid inherit;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
@@ -323,6 +323,7 @@ h2 {
 .container_horario .tabla_horario tr {
   padding: 10px;
   border-bottom: 0.5px solid #656d4a;
+  border-right: 0.5px solid #656d4a;
 }
 .container_horario .tabla_horario tr:nth-child(even) {
   display: none;

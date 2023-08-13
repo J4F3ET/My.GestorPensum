@@ -29,7 +29,7 @@
         cursor: pointer;
         @include texto_normal(1rem);
         @include bloque(80%, auto, 8px, 5px);
-        @include bloque_decorado($secundario, $secundario);
+        @include bloque_decorado(inherit, inherit);
         transition: all 0.3s ease-in-out;
     }
 
