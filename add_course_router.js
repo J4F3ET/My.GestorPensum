@@ -1,8 +1,8 @@
 const {Router} = require("express");
 const jwt = require("jsonwebtoken");
-const secret = require("./util").secret;
-const conn = require("../data_base/db.js");
-const {auntenticando} = require("./util");
+const secret = require("./model/router/util").secret;
+const conn = require("./model/data_base/db.js");
+const {auntenticando} = require("./model/router/util");
 const router = Router();
 router.post("/return_materia_requisito", auntenticando, async (req, res) => {
 	if (!req.cookies.DataLogin) return res.json({message: "Error en cookies"});
@@ -14,7 +14,7 @@ router.post("/return_materia_requisito", auntenticando, async (req, res) => {
 	if (!materia) return res.json({message: "No posee materias"});
 	return res.json(materia);
 });
-router.post("/materias_del_usuario", auntenticando, async(req, res) => {
+router.post("/materias_del_usuario", auntenticando, async (req, res) => {
 	if (!req.cookies.DataLogin) return res.json({message: "Error en cookies"});
 	const decode = jwt.verify(req.cookies.DataLogin, secret);
 	const [materia] = await conn.execute(
@@ -31,13 +31,14 @@ router.post("/materias_del_usuario", auntenticando, async(req, res) => {
 	return res.json(materia);
 });
 
-router.post("/add_course_pensum", auntenticando, async(req, res) => {
-	if (!req.cookies.DataLogin) return res.json({message: "Error en cookies"}).res.redirect('/login');
+router.post("/add_course_pensum", auntenticando, async (req, res) => {
+	if (!req.cookies.DataLogin)
+		return res.json({message: "Error en cookies"}).res.redirect("/login");
 	console.log(req.body.color);
 	const decode = jwt.verify(req.cookies.DataLogin, secret);
 	// const [materia] = await conn.execute(
 	// 	`INSERT INTO materia
-	// 	(nombre, semestre, tipo, creditos, HTD, HTA, HTC, color, estado, usuario) 
+	// 	(nombre, semestre, tipo, creditos, HTD, HTA, HTC, color, estado, usuario)
 	// 	VALUES (?,?,?,?,?,?,?,?,?,?)`,
 	// 	[
 	// 		req.body.nombre,
@@ -65,9 +66,9 @@ router.post("/add_course_pensum", auntenticando, async(req, res) => {
 	// 		);
 	// 	}
 	// }
-	// if (!req.body.beneficios_0 || req.body.beneficios_0 == "") return res.redirect("/index");	
+	// if (!req.body.beneficios_0 || req.body.beneficios_0 == "") return res.redirect("/index");
 	// console.log(materia);
-	console.log(req.body);	
+	console.log(req.body);
 	res.end();
 	// res.redirect("/index");
 });

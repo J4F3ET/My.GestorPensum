@@ -5,7 +5,7 @@
 	"description": "Pensum de todos y pa todos",
 	"main": "./model/app.js",
 	"scripts": {
-		"start": "nodemon ./model/app.js"
+		"start": "nodemon ./model/app.js --exec babel-node -e js"
 	},
 	"repository": {
 		"type": "git",
@@ -32,6 +32,7 @@
 		"uuid": "^9.0.0"
 	},
 	"devDependencies": {
+		"@babel/preset-env": "^7.22.10",
 		"nodemon": "^2.0.20"
 	}
 }
