@@ -9,6 +9,11 @@ import add_course from "./router/add_course_router.js";
 import cookieParser from "cookie-parser";
 import {join, resolve} from "path";
 const app = express();
+/**
+ * process.env.PORT cuando se despliegue en un servidor externo el servidor
+ * dara el numero de puerto de lo contrario se tomara el puerto 8080 cuando
+ * se despliegue en local
+*/
 const port = process.env.PORT || 8080;
 // SETTINGS
 app.set("views", join(resolve(__dirname, "..", "views"), "public"));
