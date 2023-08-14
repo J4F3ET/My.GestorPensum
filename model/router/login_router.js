@@ -1,26 +1,27 @@
-const {Router} = require("express");
-const {serialize} = require("cookie");
-const jwt = require("jsonwebtoken");
-const bcrypt = require("bcrypt");
-const step_back = require("./util").step_back;
-const secret = require("./util").secret;
-const conn = require("../data_base/db.js");
+import { Router } from "express";
+import path from 'path'; // Asegúrate de importar el módulo path
+import { serialize } from "cookie";
+import { sign } from "jsonwebtoken";
+import { compare } from "bcrypt";
+import { step_back } from "./util";
+import { secret } from "./util";
+import { execute } from "../data_base/db.js";
 const router = Router();
 router.get("/", step_back, (req, res) => res.render("login"));
 router.get("/login", step_back, (req, res) => res.render("login"));
 router.post("/login", async (req, res) => {
-	const [rows] = await conn.execute(
+	const [rows] = await execute(
 		`SELECT usuario.nombre, usuario.password, usuario.id 
 			FROM usuario
 			WHERE usuario.nombre= ?`,
-			[req.body.user]
+		[req.body.user]
 	);
 	if (!rows[0]) return res.json({message: "Usuario no existe."});
-	if (!(await bcrypt.compare(req.body.password, rows[0].password)))
+	if (!(await compare(req.body.password, rows[0].password)))
 		return res.json({message: "Contraseña incorrecta."});
-		
+
 	try {
-		const token = jwt.sign(
+		const token = sign(
 			{
 				userId: rows[0].id,
 				password: rows[0].password,
@@ -42,4 +43,4 @@ router.post("/login", async (req, res) => {
 		res.json({message: `Error: ${error}`});
 	}
 });
-module.exports = router;
+export default router;

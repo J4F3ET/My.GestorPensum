@@ -1,17 +1,11 @@
-const jwt = require("jsonwebtoken");
-const secret = "s23d23fg34k2jb34";//Un aes
+import {verify} from "jsonwebtoken";
+const secret = "s23d23fg34k2jb34"; //Un aes
 function step_back(req, res, next) {
-	if (!req.cookies.DataLogin) next();
-	else return res.redirect("/index");
+	!req.cookies.DataLogin ? next() : res.render("/index");
 }
 function auntenticando(req, res, next) {
-	jwt.verify(req.cookies.DataLogin, secret, (err) => {
-		if (!err) next();
-		else return res.redirect("/login");
+	verify(req.cookies.DataLogin, secret, (err) => {
+		!err ? next() : res.render("/login");
 	});
 }
-module.exports = {
-	auntenticando,
-	secret,
-	step_back,
-};
+export{auntenticando,secret,step_back,};

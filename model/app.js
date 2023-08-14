@@ -1,22 +1,23 @@
-const express = require("express");
-const morgan = require("morgan");
-const login = require("./router/login_router.js");
-const index = require("./router/index_router.js");
-const logout = require("./router/logout_router.js");
-const signup = require("./router/signup_router.js");
-const add_course = require("./router/add_course_router.js");
-const cookieParser = require("cookie-parser");
-const path = require("path");
+import express from "express";
+import {json, urlencoded} from "body-parser";
+import morgan from "morgan";
+import login from "./router/login_router.js";
+import index from "./router/index_router.js";
+import logout from "./router/logout_router.js";
+import signup from "./router/signup_router.js";
+import add_course from "./router/add_course_router.js";
+import cookieParser from "cookie-parser";
+import {join, resolve} from "path";
 const app = express();
-const port = process.env.PORT || 5500;
+const port = process.env.PORT || 8080;
+// SETTINGS
+app.set("views", join(resolve(__dirname, "..", "views"), "public"));
 // MIDDLEWARES
 app.use(morgan());
-app.set("view engine", "ejs");
-app.set("views", path.join(path.resolve(__dirname, "..", "views"), "public"));
 app.use(express.static("views"));
-app.use(express.json());
+app.use(json());
 app.use(cookieParser());
-app.use(express.urlencoded({extended: true}));
+app.use(urlencoded({extended: true}));
 // ENROUTERS
 app.use(login);
 app.use(signup);

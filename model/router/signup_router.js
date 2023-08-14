@@ -1,15 +1,16 @@
-const {Router} = require("express");
-const {serialize} = require("cookie");
-const jwt = require("jsonwebtoken");
-const bcrypt = require("bcrypt");
-const conn = require("../data_base/db.js");
+import { Router } from "express";
+import { serialize } from "cookie";
+import { sign } from "jsonwebtoken";
+import { hash } from "bcrypt";
+import { execute } from "../data_base/db.js";
 const step_back = require("./util").step_back;
 const secret = require("./util").secret;
 const router = Router();
+
 router.post("/register", async (req, res) => {
-	const [exists] = await conn.execute(
-		`SELECT usuario.nombre, usuario.password, usuario.id 
-		FROM usuario 
+	const [exists] = await execute(
+		`SELECT usuario.nombre, usuario.password, usuario.id
+		FROM usuario
 		WHERE usuario.nombre= ?`,
 		[req.body.user]
 	);
@@ -18,22 +19,22 @@ router.post("/register", async (req, res) => {
 			message: `El nombre de usuario ${req.body.user} ya existe.`,
 		});
 	}
-	const password = await bcrypt.hash(req.body.password, 10);
-	const [response] = await conn.execute(
+	const password = await hash(req.body.password, 10);
+	const [response] = await execute(
 		`INSERT INTO usuario (nombre, password) VALUES (?,?)`,
-		[req.body.user,password]
+		[req.body.user, password]
 	);
 	if (!response.insertId) {
 		return res.json({
 			message: `Se presento un error ,${req.body.user} disculpanos.`,
 		});
 	}
-	const [rows] = await conn.execute(
+	const [rows] = await execute(
 		`SELECT usuario.nombre, usuario.password, usuario.id FROM usuario WHERE usuario.nombre= ?`,
 		[req.body.user]
 	);
 	console.log(rows);
-	const token = jwt.sign(
+	const token = sign(
 		{
 			userId: rows[0].id,
 			password: rows[0].password,
@@ -53,4 +54,4 @@ router.post("/register", async (req, res) => {
 	res.json(rows[0]);
 });
 router.get("/signup", step_back, (req, res) => res.render("signup"));
-module.exports = router;
+export default router;
