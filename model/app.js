@@ -1,19 +1,20 @@
-import express, { static, json, urlencoded } from "express";
+import express from "express";
+import {json, urlencoded} from "body-parser";
 import morgan from "morgan";
 import login from "./router/login_router.js";
 import index from "./router/index_router.js";
 import logout from "./router/logout_router.js";
 import signup from "./router/signup_router.js";
-import add_course from "../add_course_router.js";
+import add_course from "./router/add_course_router.js";
 import cookieParser from "cookie-parser";
-import { join, resolve } from "path";
+import {join, resolve} from "path";
 const app = express();
-const port = process.env.PORT || 5500;
+const port = process.env.PORT || 8080;
+// SETTINGS
+app.set("views", join(resolve(__dirname, "..", "views"), "public"));
 // MIDDLEWARES
 app.use(morgan());
-// app.set("view engine", "ejs");
-app.set("views", join(resolve(__dirname, "..", "views"), "public"));
-app.use(static("views"));
+app.use(express.static("views"));
 app.use(json());
 app.use(cookieParser());
 app.use(urlencoded({extended: true}));
