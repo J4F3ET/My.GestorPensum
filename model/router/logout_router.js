@@ -1,15 +1,15 @@
-const {Router} = require("express");
-const {serialize} = require("cookie");
-const jwt = require("jsonwebtoken");
-const {auntenticando} = require("./util");
-const secret = require("./util").secret;
+import { Router } from "express";
+import { serialize } from "cookie";
+import { verify } from "jsonwebtoken";
+import { auntenticando } from "./util";
+import { secret } from "./util";
 const router = Router();
-router.get("/seccion_close",auntenticando, (req, res) => {
+router.get("/seccion_close", auntenticando, (req, res) => {
 	if (!req.cookies) {
 		return res.render("login");
 	}
 	try {
-		jwt.verify(req.cookies.DataLogin, secret);
+		verify(req.cookies.DataLogin, secret);
 		const serialized = serialize("DataLogin", null, {
 			httpOnly: true,
 			secure: process.env.NODE_ENV === "production",
@@ -23,4 +23,4 @@ router.get("/seccion_close",auntenticando, (req, res) => {
 		throw error;
 	}
 });
-module.exports = router;
+export default router;

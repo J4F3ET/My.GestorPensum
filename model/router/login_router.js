@@ -1,14 +1,13 @@
-import {Router} from "express";
-import {serialize} from "cookie";
-import {sign} from "jsonwebtoken";
-import {compare} from "bcrypt";
-import {step_back} from "./util";
-import {secret} from "./util";
-import {execute} from "../data_base/db.js";
+import { Router } from "express";
+import path from 'path'; // Asegúrate de importar el módulo path
+import { serialize } from "cookie";
+import { sign } from "jsonwebtoken";
+import { compare } from "bcrypt";
+import { step_back } from "./util";
+import { secret } from "./util";
+import { execute } from "../data_base/db.js";
 const router = Router();
-router.get("/", step_back, (req, res) =>
-	res.sendFile(path.join(__dirname, "../public", "login.html"))
-);
+router.get("/", step_back, (req, res) => res.render("login"));
 router.get("/login", step_back, (req, res) => res.render("login"));
 router.post("/login", async (req, res) => {
 	const [rows] = await execute(

@@ -1,13 +1,13 @@
-const {Router} = require("express");
-const jwt = require("jsonwebtoken");
-const secret = require("./model/router/util").secret;
-const conn = require("./model/data_base/db.js");
-const {auntenticando} = require("./model/router/util");
+import { Router } from "express";
+import { verify } from "jsonwebtoken";
+import { secret } from "./util";
+import { execute } from "../data_base/db.js";
+import { auntenticando } from "./util";
 const router = Router();
 router.post("/return_materia_requisito", auntenticando, async (req, res) => {
 	if (!req.cookies.DataLogin) return res.json({message: "Error en cookies"});
-	const decode = jwt.verify(req.cookies.DataLogin, secret);
-	const [materia] = await conn.execute(
+	const decode = verify(req.cookies.DataLogin, secret);
+	const [materia] = await execute(
 		`SELECT materia.nombre as materia, materia.semestre as semestre,materia.id as id_materia FROM materia WHERE materia.usuario = ?`,
 		[decode.userId]
 	);
@@ -16,12 +16,12 @@ router.post("/return_materia_requisito", auntenticando, async (req, res) => {
 });
 router.post("/materias_del_usuario", auntenticando, async (req, res) => {
 	if (!req.cookies.DataLogin) return res.json({message: "Error en cookies"});
-	const decode = jwt.verify(req.cookies.DataLogin, secret);
-	const [materia] = await conn.execute(
-		`SELECT usuario		
-			FROM usuario  
-				LEFT JOIN materia_relacion ON (id_usuario=usuario.id) 
-				LEFT JOIN materia ON (id_materia= materia.id) 
+	const decode = verify(req.cookies.DataLogin, secret);
+	const [materia] = await execute(
+		`SELECT usuario
+			FROM usuario
+				LEFT JOIN materia_relacion ON (id_usuario=usuario.id)
+				LEFT JOIN materia ON (id_materia= materia.id)
 				LEFT JOIN materia AS materia_requisito ON (materia_requisito.id=materia_relacion.id_relacion)
 				WHERE usuario.id = ?;`,
 		[decode.userId]
@@ -35,7 +35,7 @@ router.post("/add_course_pensum", auntenticando, async (req, res) => {
 	if (!req.cookies.DataLogin)
 		return res.json({message: "Error en cookies"}).res.redirect("/login");
 	console.log(req.body.color);
-	const decode = jwt.verify(req.cookies.DataLogin, secret);
+	const decode = verify(req.cookies.DataLogin, secret);
 	// const [materia] = await conn.execute(
 	// 	`INSERT INTO materia
 	// 	(nombre, semestre, tipo, creditos, HTD, HTA, HTC, color, estado, usuario)
@@ -73,4 +73,4 @@ router.post("/add_course_pensum", auntenticando, async (req, res) => {
 	// res.redirect("/index");
 });
 
-module.exports = router;
+export default router;
