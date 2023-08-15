@@ -1,57 +1,41 @@
-import { Router } from "express";
-import { serialize } from "cookie";
-import { sign } from "jsonwebtoken";
+import { Router, json } from "express";
 import { hash } from "bcrypt";
-import { execute } from "../data_base/db.js";
-const step_back = require("./util").step_back;
-const secret = require("./util").secret;
+import conn from "../data_base/db.js";
+import { step_back,path_views,create_cookie,create_token } from "./util.js";
 const router = Router();
-
+/**Metodo envia al usuario a registrarse */
+router.get("/signup", step_back, (req, res) =>
+	res.sendFile("signup.html", {root: path_views})
+);
+/**Metodo envia al usuario a iniciar sesion y registrarse*/
 router.post("/register", async (req, res) => {
-	const [exists] = await execute(
-		`SELECT usuario.nombre, usuario.password, usuario.id
-		FROM usuario
-		WHERE usuario.nombre= ?`,
-		[req.body.user]
-	);
-	if (exists[0]) {
-		return res.json({
-			message: `El nombre de usuario ${req.body.user} ya existe.`,
-		});
+	try{
+		//validar que no exista el usuario
+		let query = `SELECT usuario.nombre, usuario.password, usuario.id FROM usuario WHERE usuario.nombre= $1`;
+		let queryParam = [req.body.user];
+		let result = await conn.query(query, queryParam);
+		if (result.rows[0]) {
+			return res.json({
+				message: `El nombre de usuario ${req.body.user} ya existe.`,
+			});
+		}
+		//crear usuario
+		const password = await hash(req.body.password, 10);
+		query = `INSERT INTO usuario (nombre, password) VALUES ($1,$2)`;
+		queryParam = [req.body.user, password];
+		result = await conn.query(query, queryParam);
+		//crear token
+		query = `SELECT usuario.nombre, usuario.password, usuario.id FROM usuario WHERE usuario.nombre= $1`;
+		queryParam = [req.body.user];
+		result = await conn.query(query, queryParam);
+		console.log(result.rows);
+		const token = create_token(result.rows);
+		const cookie = create_cookie(token);
+		res.setHeader("Set-Cookie", cookie);
+		res.json(result.rows);
+	}catch(err){
+		console.log(err);
 	}
-	const password = await hash(req.body.password, 10);
-	const [response] = await execute(
-		`INSERT INTO usuario (nombre, password) VALUES (?,?)`,
-		[req.body.user, password]
-	);
-	if (!response.insertId) {
-		return res.json({
-			message: `Se presento un error ,${req.body.user} disculpanos.`,
-		});
-	}
-	const [rows] = await execute(
-		`SELECT usuario.nombre, usuario.password, usuario.id FROM usuario WHERE usuario.nombre= ?`,
-		[req.body.user]
-	);
-	console.log(rows);
-	const token = sign(
-		{
-			userId: rows[0].id,
-			password: rows[0].password,
-			username: rows[0].nombre,
-		},
-		secret,
-		{expiresIn: "1h"}
-	);
-	const serialized = serialize("DataLogin", token, {
-		httpOnly: true,
-		secure: process.env.NODE_ENV === "production",
-		sameSite: "strict",
-		maxAge: 3650,
-		path: "/",
-	});
-	res.setHeader("Set-Cookie", serialized);
-	res.json(rows[0]);
 });
-router.get("/signup", step_back, (req, res) => res.render("signup"));
+
 export default router;
