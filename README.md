@@ -15,8 +15,8 @@ Este proyecto utiliza las siguientes tecnologías:
 
 ## Configuración
 
-- El puerto de preferencia para el servidor es el `CONFIGURANDO`.
-- El puerto de preferencia para la base de datos es el `CONFIGURANDO`.
+- El puerto de preferencia para el servidor es el `8080`.
+- El puerto de preferencia para la base de datos es el `5432`.
 
 ## Diagramas de la base de datos
 
