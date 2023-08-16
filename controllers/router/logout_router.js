@@ -1,8 +1,8 @@
-import { Router } from "express";
-import { serialize } from "cookie";
-import { verify } from "jsonwebtoken";
-import { auntenticando } from "./util";
-import { secret } from "./util";
+import {Router} from "express";
+import {serialize} from "cookie";
+import {verify} from "jsonwebtoken";
+import {auntenticando} from "../util";
+import {secret} from "../util";
 const router = Router();
 router.get("/seccion_close", auntenticando, (req, res) => {
 	if (!req.cookies) {
