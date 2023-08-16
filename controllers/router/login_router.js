@@ -1,6 +1,7 @@
 import {Router} from "express";
 import {compare} from "bcrypt";
 import {path_views, step_back, create_cookie, create_token} from "../util.js";
+import {login_user_services} from "../../model/services/user_services.js";
 import conn from "../../model/data_base/db.js";
 const router = Router();
 /**
@@ -20,25 +21,22 @@ router.get("/login", step_back, (req, res) =>
  *  Método para iniciar sesión en la aplicación.
  */
 router.post("/login", async (req, res) => {
-	const query = `SELECT usuario.nombre, usuario.password, usuario.id FROM usuario WHERE usuario.nombre= $1`;
-	const queryParam = [req.body.username];
+	let result;
 	try {
-		let result = await conn.query(query, queryParam);
-		if (!result.rows) {
-			return res.json({message: "Usuario no existe."});
+		result = await login_user_services(req.body.username);
+		if (result.message){
+			return res.json(result.message);
 		}
-		if (!compare(req.body.password, result.rows[0].password)) {
+		if (! await compare(req.body.password, result.password)){
 			return res.json({message: "Contraseña incorrecta."});
 		}
-		// Generar token
-		const token = create_token(result.rows);
-		// Setear cookie
+		const token = create_token(result);
 		const serialized = create_cookie(token);
 		// Enviar respuesta
 		res.setHeader("Set-Cookie", serialized);
-		res.json(result.rows);
+		res.json({nombre:result.nombre, id:result.id});
 	} catch (error) {
-		console.log(error);
+		console.log("Error en CTO /login \n"+error);
 	}
 });
 export default router;
