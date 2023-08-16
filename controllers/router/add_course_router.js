@@ -1,8 +1,8 @@
-import { Router } from "express";
-import { verify } from "jsonwebtoken";
-import { secret } from "./util";
-import { execute } from "../data_base/db.js";
-import { auntenticando } from "./util";
+import {Router} from "express";
+import {verify} from "jsonwebtoken";
+import {secret} from "../util";
+import conn from "../../model/data_base/db.js";
+import {auntenticando} from "../util";
 const router = Router();
 router.post("/return_materia_requisito", auntenticando, async (req, res) => {
 	if (!req.cookies.DataLogin) return res.json({message: "Error en cookies"});

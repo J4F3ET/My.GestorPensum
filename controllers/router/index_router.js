@@ -1,7 +1,7 @@
-import { Router } from "express";
-import { verify } from "jsonwebtoken";
-import {auntenticando, path_views, secret} from "./util";
-import { conn } from "../data_base/db.js";
+import {Router} from "express";
+import {verify} from "jsonwebtoken";
+import {auntenticando, path_views, secret} from "../util";
+import conn from "../../model/data_base/db.js";
 const router = Router();
 /**
  * Metodo para entrar a la pagina principal.
@@ -15,16 +15,15 @@ router.get("/index", auntenticando, (req, res) =>
  * 1 = No inscrita
  * 2 = Cursando
  * 3 = Aprobada
-*/
+ */
 router.post("/horario_materias", auntenticando, async (req, res) => {
 	const decode = verify(req.cookies.DataLogin, secret);
 	const query = `SELECT materia.nombre AS Materia, (materia.HTD+materia.HTC) AS Horas
 		FROM usuario INNER JOIN materia on (usuario.id=materia.usuario)
-		WHERE usuario.id = $1 AND materia.estado = 2`
+		WHERE usuario.id = $1 AND materia.estado = 2`;
 	const queryParams = [decode.userId];
 	const materias = await conn.query(query, queryParams, (err, result) => {
-		if (err)
-			return res.json({message: "Error al obtener las materias"});
+		if (err) return res.json({message: "Error al obtener las materias"});
 		return result.rows;
 	});
 	if (materias[0]) return res.json(materias);
