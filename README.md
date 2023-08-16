@@ -27,14 +27,31 @@ Este proyecto utiliza las siguientes tecnologías:
 
 ## Diagramas de la base de datos
 
-- [Diagrama de la base de datos](model/data_base/DiagramaRelacional.svg)
+- [Diagrama de la base de datos](docs/Diagramas/DiagramaRelacional.svg)
 
 ## Información adicional
 
-- [Diccionario de datos](model/data_base/DataDictionary.html)
-- [Diagrama de secuencias](https://www.ejemplo.com/diagrama_secuencias) No echo
-- [Descripción de la arquitectura MVC](https://www.ejemplo.com/arquitectura_mvc) No echo
 - Utilizamos el estilo de nomenclatura Snake_case para las variables y funciones.
+- Utilizamos MVC
+  <pre>
+  Raiz
+    ├── controllers
+    │   ├── routers
+    │   └── util
+    ├── model
+    │   ├── app
+    │   ├── bd
+    │   └── services
+    └── views
+        ├── public
+        ├── styles
+        └── components
+  </pre>
+
+
+- [Diccionario de datos](docs/data_base/DataDictionary.html)
+- [Diagrama de secuencia inicio de sesión](docs/Diagramas/DiagramaSecuenciaInisioDeSesion.svg)
+- [Diagrama de secuencia registrar usuario](docs/Diagramas/DiagramaSecuenciaRegistrarUsuario.svg)
 
 ## Acceso al entorno de desarrollo
 
