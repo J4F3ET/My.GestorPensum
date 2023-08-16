@@ -1,12 +1,13 @@
 import {Router} from "express";
 import {compare} from "bcrypt";
-import {path_views, step_back, create_cookie, create_token} from "./util";
-import conn from "../data_base/db.js";
+import {path_views, step_back, create_cookie, create_token} from "../util.js";
+import conn from "../../model/data_base/db.js";
 const router = Router();
 /**
- * Método para mostrar la vista de inicio de sesión con la ruta /.
+ * Método para mostrar la vista de inicio de sesión con la ruta
  */
 router.get("/", step_back, (req, res) => {
+	console.log(path_views);
 	res.sendFile("login.html", {root: path_views});
 });
 /**
@@ -26,7 +27,7 @@ router.post("/login", async (req, res) => {
 		if (!result.rows) {
 			return res.json({message: "Usuario no existe."});
 		}
-		if (!(compare(req.body.password, result.rows[0].password))) {
+		if (!compare(req.body.password, result.rows[0].password)) {
 			return res.json({message: "Contraseña incorrecta."});
 		}
 		// Generar token
