@@ -2,6 +2,7 @@ import {Router} from "express";
 import {verify} from "jsonwebtoken";
 import {auntenticando, path_views, secret} from "../util";
 import conn from "../../model/data_base/db.js";
+import {get_subjects_schedule_services,get_subjects_services} from "../../model/services/subject_services.js";
 const router = Router();
 /**
  * Metodo para entrar a la pagina principal.
@@ -10,31 +11,33 @@ router.get("/index", auntenticando, (req, res) =>
 	res.sendFile("index.html", {root: path_views})
 );
 /**
- * Metodo para retornar informacion del usuario las materias que actualmente esta cursando.
- * Estados de materias
- * 1 = No inscrita
- * 2 = Cursando
- * 3 = Aprobada
+ * Metodo para retornar las materias que esta cursando actualmente el usuario
+ * @returns {json} materias que esta cursando el usuario o un mensaje de error
  */
 router.post("/horario_materias", auntenticando, async (req, res) => {
 	const decode = verify(req.cookies.DataLogin, secret);
-	const query = `SELECT materia.nombre AS Materia, (materia.HTD+materia.HTC) AS Horas
-		FROM usuario INNER JOIN materia on (usuario.id=materia.usuario)
-		WHERE usuario.id = $1 AND materia.estado = 2`;
-	const queryParams = [decode.userId];
-	const materias = await conn.query(query, queryParams, (err, result) => {
-		if (err) return res.json({message: "Error al obtener las materias"});
-		return result.rows;
-	});
-	if (materias[0]) return res.json(materias);
-	else res.json({message: "No se encontraron materias"});
+	let subjects;
+	try {
+		subjects = await get_subjects_schedule_services(decode.userId);
+	} catch (error) {
+		console.log("Error en el CTO \n"+error);
+	}
+	return !subjects.message
+		? res.json(materias)
+		: res.json({message: "No se encontraron materias"});
 });
+
 router.post("/pensum_materias", auntenticando, async (req, res) => {
 	const decode = verify(req.cookies.DataLogin, secret);
-	const [materias] = await execute(
-		`SELECT materia.id as id,materia.color as color,materia.nombre as materia, materia.semestre as semestre FROM materia WHERE materia.usuario = ?`,
-		[decode.userId]
-	);
-	return res.json(materias);
+	let subjects;
+	try {
+		subjects = get_subjects_services(decode.userId);
+	} catch (error) {
+		if(error.message === "No se encontraron materias"){
+			return res.json({message: "No se encontraron materias"});
+		}
+		console.log("Error en el CTO \n"+error);
+	}
+	return !subjects.message? res.json(subjects): res.json({message: "No se encontraron materias"});
 });
 export default router;
